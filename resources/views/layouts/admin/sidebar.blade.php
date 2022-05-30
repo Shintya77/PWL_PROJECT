@@ -12,8 +12,8 @@
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-              <span>Gold Member</span>
+              <h5 class="mb-0 font-weight-normal">BUDI</h5>
+              <span>Admin</span>
             </div>
           </div>
           <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -54,7 +54,7 @@
         </div>
       </li>
       <li class="nav-item nav-category">
-        <span class="nav-link">Navigation</span>
+        <span class="nav-link">Navigasi</span>
       </li>
       <li class="nav-item menu-items">
         <a class="nav-link" href="index.html">
@@ -64,28 +64,13 @@
           <span class="menu-title">Dashboard</span>
         </a>
       </li>
-      <li class="nav-item menu-items">
-        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-          <span class="menu-icon">
-            <i class="mdi mdi-laptop"></i>
-          </span>
-          <span class="menu-title">Basic UI Elements</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="ui-basic">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
-          </ul>
-        </div>
-      </li>
+      
       <li class="nav-item menu-items">
         <a class="nav-link" href="pages/forms/basic_elements.html">
           <span class="menu-icon">
-            <i class="mdi mdi-playlist-play"></i>
+            <i class="mdi mdi-account-multiple"></i>
           </span>
-          <span class="menu-title">Form Elements</span>
+          <span class="menu-title">Data Nasabah</span>
         </a>
       </li>
       <li class="nav-item menu-items">
@@ -93,7 +78,7 @@
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>
           </span>
-          <span class="menu-title">Tables</span>
+          <span class="menu-title">Data Barang</span>
         </a>
       </li>
       <li class="nav-item menu-items">
@@ -101,7 +86,15 @@
           <span class="menu-icon">
             <i class="mdi mdi-chart-bar"></i>
           </span>
-          <span class="menu-title">Charts</span>
+          <span class="menu-title">Data Transaksi</span>
+        </a>
+      </li>
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+          <span class="menu-icon">
+            <i class="mdi mdi-file-document-box"></i>
+          </span>
+          <span class="menu-title">Data --</span>
         </a>
       </li>
       <li class="nav-item menu-items">
@@ -109,15 +102,15 @@
           <span class="menu-icon">
             <i class="mdi mdi-contacts"></i>
           </span>
-          <span class="menu-title">Icons</span>
+          <span class="menu-title">Data Petugas</span>
         </a>
       </li>
       <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
           <span class="menu-icon">
-            <i class="mdi mdi-security"></i>
+            <i class="mdi mdi-bank"></i>
           </span>
-          <span class="menu-title">User Pages</span>
+          <span class="menu-title">Data ---</span>
           <i class="menu-arrow"></i>
         </a>
         <div class="collapse" id="auth">
@@ -131,12 +124,21 @@
         </div>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-icon">
-            <i class="mdi mdi-file-document-box"></i>
+            <i class="mdi mdi-animation"></i>
           </span>
-          <span class="menu-title">Documentation</span>
+          <span class="menu-title">Cetak Data</span>
+          <i class="menu-arrow"></i>
         </a>
+        <div class="collapse" id="ui-basic">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Data Nasabah</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Data Barang</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Data Transaksi</a></li>
+          </ul>
+        </div>
       </li>
+      
     </ul>
   </nav>

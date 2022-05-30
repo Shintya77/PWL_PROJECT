@@ -9,16 +9,17 @@ class AdminController extends Controller
     public function dasboard(){
         return view('admin.dasboard');
     }
-    public function table(){
-        return view('admin.table');
-    }
+   
     public function form(){
-        return view('admin.form');
+        return view('admin.nasabah');
+    }
+    public function table(){
+        return view('admin.barang');
     }
     public function icon(){
-        return view('admin.icon');
+        return view('admin.petugas');
     }
     public function chart(){
-        return view('admin.chart');
+        return view('admin.transaksi');
     }
 }
