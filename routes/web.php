@@ -19,9 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dasboard',[AdminController::class, 'dasboard']);
-Route::get('/table',[AdminController::class, 'table']);
-Route::get('/form',[AdminController::class, 'form']);
-Route::get('/chart',[AdminController::class, 'chart']);
-Route::get('/icon',[AdminController::class, 'icon']);
+Route::get('/nasabah',[AdminController::class, 'nasabah']);
+Route::get('/barang',[AdminController::class, 'barang']);
+Route::get('/transaksi',[AdminController::class, 'transaksi']);
+Route::get('/petugas',[AdminController::class, 'petugas']);
+
 
 
