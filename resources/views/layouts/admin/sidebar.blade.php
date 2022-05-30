@@ -1,7 +1,11 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+    {{-- <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
       <a class="sidebar-brand brand-logo" href="index.html"><img src="{{asset('admin/template')}}/assets/images/logo.svg" alt="logo" /></a>
       <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="{{asset('admin/template')}}/assets/images/logo-mini.svg" alt="logo" /></a>
+    </div> --}}
+    
+    <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+     <h1>SIGADAI</h1>
     </div>
     <ul class="nav">
       <li class="nav-item profile">
@@ -12,7 +16,7 @@
               <span class="count bg-success"></span>
             </div>
             <div class="profile-name">
-              <h5 class="mb-0 font-weight-normal">BUDI</h5>
+              <h5 class="mb-0 font-weight-normal">{{$admin}}</h5>
               <span>Admin</span>
             </div>
           </div>
@@ -22,7 +26,7 @@
         <span class="nav-link">Navigasi</span>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{url('/dasboard')}}">
           <span class="menu-icon">
             <i class="mdi mdi-speedometer"></i>
           </span>
@@ -31,7 +35,7 @@
       </li>
       
       <li class="nav-item menu-items">
-        <a class="nav-link" href="pages/forms/basic_elements.html">
+        <a class="nav-link" href="{{url('/nasabah')}}">
           <span class="menu-icon">
             <i class="mdi mdi-account-multiple"></i>
           </span>
@@ -39,7 +43,7 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="pages/tables/basic-table.html">
+        <a class="nav-link" href="{{url('/barang')}}">
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>
           </span>
@@ -47,7 +51,7 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="pages/charts/chartjs.html">
+        <a class="nav-link" href="transaksi">
           <span class="menu-icon">
             <i class="mdi mdi-chart-bar"></i>
           </span>
@@ -55,7 +59,7 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+        <a class="nav-link" href="#">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
@@ -63,7 +67,7 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="pages/icons/mdi.html">
+        <a class="nav-link" href="{{url('/petugas')}}">
           <span class="menu-icon">
             <i class="mdi mdi-contacts"></i>
           </span>
@@ -89,14 +93,14 @@
         </div>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+        <a class="nav-link" data-toggle="collapse" href="#cetak" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-icon">
             <i class="mdi mdi-animation"></i>
           </span>
           <span class="menu-title">Cetak Data</span>
           <i class="menu-arrow"></i>
         </a>
-        <div class="collapse" id="ui-basic">
+        <div class="collapse" id="cetak">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Data Nasabah</a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Data Barang</a></li>
