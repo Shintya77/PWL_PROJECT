@@ -33,7 +33,8 @@ Route::get('/petugas',[AdminController::class, 'petugas']);
 Route::get('/home',[UserController::class, 'home']);
 Route::get('/about',[UserController::class, 'about']);
 Route::get('/service',[UserController::class, 'service']);
-Route::get('/blog',[UserController::class, 'blog']);
+Route::get('/pengajuan',[UserController::class, 'pengajuan']);
 Route::get('/contact',[UserController::class, 'contact']);
+Route::get('/formgadai',[UserController::class, 'formgadai']);
 
 

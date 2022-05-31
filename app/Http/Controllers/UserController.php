@@ -8,26 +8,32 @@ class UserController extends Controller
 {
     public function home()
     {
-        return view('user.home', ['title'=> 'home']);
+        return view('user.home', ['title'=> 'Beranda']);
     }
 
     public function about()
     {
-        return view('user.about', ['title'=> 'about']);
+        return view('user.about', ['title'=> 'Tentang Kami']);
     }
 
     public function service()
     {
-        return view('user.service', ['title'=> 'service']);
+        return view('user.service', ['title'=> 'Layanan']);
     }
 
-    public function blog()
+    public function pengajuan()
     {
-        return view('user.blog', ['title'=> 'blog']);
+        return view('user.formgadai', ['title'=> 'Pengajuan']);
     }
 
     public function contact()
     {
-        return view('user.contact', ['title'=> 'contact']);
+        return view('user.contact', ['title'=> 'Kontak']);
     }
+
+    public function formgadai()
+    {
+        return view('user.formgadai', ['title'=> 'form pengajuan gadai']);
+    }
+
 }
