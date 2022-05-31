@@ -51,19 +51,27 @@
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="transaksi">
+        <a class="nav-link" href="{{url('/gudang')}}">
           <span class="menu-icon">
-            <i class="mdi mdi-chart-bar"></i>
+            <i class="mdi mdi-package-variant-closed"></i>
           </span>
-          <span class="menu-title">Data Transaksi</span>
+          <span class="menu-title">Data Gudang</span>
         </a>
       </li>
       <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{url('/pinjaman')}}">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
-          <span class="menu-title">Data --</span>
+          <span class="menu-title">Data Pinjaman</span>
+        </a>
+      </li>
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{url('/pembayaran')}}">
+          <span class="menu-icon">
+            <i class="mdi mdi-chart-bar"></i>
+          </span>
+          <span class="menu-title">Data Pembayaran</span>
         </a>
       </li>
       <li class="nav-item menu-items">
@@ -74,15 +82,15 @@
           <span class="menu-title">Data Petugas</span>
         </a>
       </li>
-      <li class="nav-item menu-items">
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
           <span class="menu-icon">
             <i class="mdi mdi-bank"></i>
           </span>
           <span class="menu-title">Data ---</span>
           <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="auth">
+        </a> --}}
+        {{-- <div class="collapse" id="auth">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
@@ -91,7 +99,7 @@
             <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
           </ul>
         </div>
-      </li>
+      </li> --}}
       <li class="nav-item menu-items">
         <a class="nav-link" data-toggle="collapse" href="#cetak" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-icon">
@@ -104,7 +112,8 @@
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Data Nasabah</a></li>
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Data Barang</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Data Transaksi</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Struk Peminjaman</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Struk Pembayaran</a></li>
           </ul>
         </div>
       </li>

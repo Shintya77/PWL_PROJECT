@@ -23,7 +23,9 @@ Route::get('/', function () {
 Route::get('/dasboard',[AdminController::class, 'dasboard']);
 Route::get('/nasabah',[AdminController::class, 'nasabah']);
 Route::get('/barang',[AdminController::class, 'barang']);
-Route::get('/transaksi',[AdminController::class, 'transaksi']);
+Route::get('/gudang',[AdminController::class, 'gudang']);
+Route::get('/pembayaran',[AdminController::class, 'pembayaran']);
+Route::get('/pinjaman',[AdminController::class, 'pinjaman']);
 Route::get('/petugas',[AdminController::class, 'petugas']);
 
 

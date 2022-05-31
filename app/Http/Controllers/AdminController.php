@@ -22,14 +22,24 @@ class AdminController extends Controller
         ['title'=> 'Data Barang Pegadaian',
          'admin'=>'AHMAD SIWON']);
     }
+    public function gudang(){
+        return view('admin.gudang',
+        ['title'=> 'Data Gudang Pegadaian',
+         'admin'=>'AHMAD SIWON']);
+    }
     public function petugas(){
         return view('admin.petugas',
         ['title'=> 'Data Petugas Pegadaian',
         'admin'=>'AHMAD SIWON']);
     }
-    public function transaksi(){
-        return view('admin.transaksi', 
+    public function pembayaran(){
+        return view('admin.pembayaran', 
         ['title'=> 'Data Transaksi Pegadaian',
+        'admin'=>'AHMAD SIWON']);
+    }
+    public function pinjaman(){
+        return view('admin.pinjaman', 
+        ['title'=> 'Data Pinjaman Pegadaian',
         'admin'=>'AHMAD SIWON']);
     }
 }
