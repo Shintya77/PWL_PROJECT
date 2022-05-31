@@ -3,16 +3,19 @@
 @section('content')
  
  
+ <!-- active -->
+ <!-- <li class="active"><a href="{{url('/about')}}">About</a></li> -->
+
   <!-- Breadcrumb Section Begin -->
   <div class="breadcrumb-option set-bg" data-setbg="img/breadcrumb/breadcrumb-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>About Us</h2>
+                        <h2>Tentang Kami</h2>
                         <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <span>About</span>
+                            <a href="{{url('/home')}}">Beranda</a>
+                            <span>Tentang Kami</span>
                         </div>
                     </div>
                 </div>
@@ -35,14 +38,11 @@
                     </div>
                     <div class="col-lg-6 offset-lg-1">
                         <div class="about__text">
-                            <h2>Welcome To Loanday.</h2>
-                            <h4>However, there is much more to branding than</h4>
-                            <p class="first_para">Where a powerful web presence has become a vital ingredient of your
-                                branding </p>
-                            <p class="last_para">Unfortunately, many graphic design firms who position themselves as
-                                advertising agencies believe that branding your corporate identity is all about
-                                developing great looking visual solutions.</p>
-                            <a href="#" class="primary-btn">Contact Us</a>
+                            <h2>Selamat Datang di Si Gadai.</h2>
+                            <p>
+                             Gadai MASPT. MAS Agung Sejahtera (MAS) dengan merk dagang “Gadai MAS” merupakan perusahaan pergadaian swasta berskala nasional yang memiliki sejarah dan pengalaman panjang di bidang pergadaian. Gadai MAS telah menjalankan bisnis pergadaian sejak bulan Maret 2014. Perusahaan didirikan di Jakarta berdasarkan Akte Notaris Rini Handayani SH. No. 05 tanggal 14 Februari 2014, serta telah terdaftar oleh Badan Otoritas Jasa Keuangan (OJK) dengan nomor S-1857/NB.111/201 sebagai perusahaan pergadaian emas swasta yang resmi dan terpercaya.Semangat untuk mewujudkan pertumbuhan ekonomi merupakan satu komitmen kami dalam menjalankan setiap kiprahnya. Mempertimbangkan kebutuhan masyarakat yang semakin meningkat. Gadai MAS berinovasi untuk memberikan solusi keuangan yang mudah dan efektif melalui jasa gadai terutama emas. Seiring dengan berjalannya waktu, Gadai MAS terus melakukan upaya perbaikan baik dari segi layanan program, maupun SDM. 
+                            </p>
+                            <a href="{{url('/contact')}}" class="primary-btn">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -50,26 +50,26 @@
             <div class="row">
                 <div class="col-lg-4 col-md-4">
                     <div class="about__item">
-                        <h4>Our Vision</h4>
-                        <p>The modern world is in a continuous movement and people everywhere are looking for quick,
-                            safe means of accessing accurate information. Prompt information is vital for people who
-                            want to keep the</p>
+                        <h4>Visi</h4>
+                        <p>
+                        Menjadi perusahaan gadai swasta terbaik pilihan masyarakat di indonesia
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="about__item">
-                        <h4>Our Mission</h4>
-                        <p>The modern world is in a continuous movement and people everywhere are looking for quick,
-                            safe means of accessing accurate information. Prompt information is vital for people who
-                            want to keep the</p>
+                        <h4>Misi</h4>
+                        <p>Menyediakan jasa layanan gadai terbaik, serta turut aktif meningkatkan produktivitas dan kesejahteraan masyarakat</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="about__item">
-                        <h4>Our Value</h4>
-                        <p>The modern world is in a continuous movement and people everywhere are looking for quick,
-                            safe means of accessing accurate information. Prompt information is vital for people who
-                            want to keep the</p>
+                        <h4>Tujuan</h4>
+                        <p>
+                        Mengikuti pelaksanaan dan program pemerintah di bidang ekonomi melalui penyaluran pinjaman uang atas dasar hukum gadai.
+                         Mencegah praktik pegadaian gelap atau pinjaman tidak wajar lainnya. Gadai syariah memiliki efek jaring pengaman sosial, 
+                         aitu peminjamannya bebas bunga
+                        </p>
                     </div>
                 </div>
             </div>
@@ -78,7 +78,7 @@
     <!-- About End -->
 
     <!-- History Section Begin -->
-    <section class="history spad set-bg" data-setbg="img/history/history-bg.jpg">
+    <!-- <section class="history spad set-bg" data-setbg="img/history/history-bg.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- History Section End -->
 
     <!-- Choose Section Begin -->
@@ -129,8 +129,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Why People Choose Us</h2>
-                        <p>This question should make the viewer want to open the brochure to learn more.</p>
+                        <h2>Mengapa Orang Harus Memilih Kami</h2>
+                        
                     </div>
                 </div>
             </div>
@@ -138,43 +138,42 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="choose__item">
                         <img src="img/choose/choose-1.png" alt="">
-                        <h5>Quick & Easy</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
+                        <h5>Cepat dan Mudah</h5>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="choose__item">
                         <img src="img/choose/choose-2.png" alt="">
-                        <h5>Absolute Security</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
+                        <h5>Jaminan Keamanan</h5>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="choose__item">
                         <img src="img/choose/choose-3.png" alt="">
-                        <h5>Quick Approval</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
-                    </div>
+                        <h5>Persetujuan</h5>
+                        </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="choose__item">
                         <img src="img/choose/choose-4.png" alt="">
-                        <h5>Low Interest Rates</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
+                        <h5>Suku Bunga Rendah</h5>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="choose__item">
                         <img src="img/choose/choose-5.png" alt="">
-                        <h5>Personal Security</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
+                        <h5>Keamanan Pribadi</h5>
+                        
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="choose__item">
                         <img src="img/choose/choose-6.png" alt="">
-                        <h5>Disbursement Day</h5>
-                        <p>Typography should be relevant and thought out. Type is so strong that it can</p>
+                        <h5>Pencairan Cepat</h5>
+                        
                     </div>
                 </div>
             </div>
@@ -182,148 +181,7 @@
     </section>
     <!-- Choose Section End -->
 
-    <!-- Call Section Begin -->
-    <section class="call spad set-bg" data-setbg="img/call-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-md-6">
-                    <div class="call__text">
-                        <div class="section-title">
-                            <h2>Request A Call Back</h2>
-                            <p>Posters had been a very beneficial marketing tool because it had paved to deliver an
-                                effective message that conveyed customer’s attention.</p>
-                        </div>
-                        <a href="#">Contact Us</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 offset-lg-1 col-md-6">
-                    <form action="#" class="call__form">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Name">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Email">
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="text" placeholder="Phone">
-                            </div>
-                            <div class="col-lg-6">
-                                <select>
-                                    <option value="">Choose Our Services</option>
-                                </select>
-                            </div>
-                        </div>
-                        <button type="submit" class="site-btn">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Call Section End -->
-
-    <!-- Team Section Begin -->
-    <section class="team spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6">
-                    <div class="section-title">
-                        <h2>Our Team</h2>
-                        <p>Meet Our Team</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 text-right">
-                    <a href="#" class="primary-btn">View All</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
-                        <div class="team__text">
-                            <div class="team__title">
-                                <h4>John Smith</h4>
-                                <span>CEO & Founder</span>
-                            </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
-                                ultricies nisl sit amet.</p>
-                            <div class="team__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team__item set-bg" data-setbg="img/team/team-2.jpg">
-                        <div class="team__text">
-                            <div class="team__title">
-                                <h4>Violet McCoy</h4>
-                                <span>CEO</span>
-                            </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
-                                ultricies nisl sit amet.</p>
-                            <div class="team__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="team__item set-bg" data-setbg="img/team/team-1.jpg">
-                        <div class="team__text">
-                            <div class="team__title">
-                                <h4>Rachel Carson</h4>
-                                <span>Sale Marketing</span>
-                            </div>
-                            <p>Vestibulum dapibus odio quam, sit amet hendrerit dui ultricies consectetur. Ut viverra
-                                porta leo, non tincidunt mauris condimentu eget. Vivamus non turpis elit. Aenean
-                                ultricies nisl sit amet.</p>
-                            <div class="team__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Team Section End -->
-
-    <!-- Contact Begin -->
-    <div class="contact-widget set-bg" data-setbg="img/contact-widget.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="contact__widget__item">
-                                <h4>New York Office</h4>
-                                <p>917 Atlantic Lane, Strongsville, NY, United State</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="contact__widget__item">
-                                <h4>New Jersey Office</h4>
-                                <p>1 Walnut Court, East Orange, NJ, United State</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact__widget__phone">
-                        <span>Contact Us Now!</span>
-                        <h2>(+12) 345-678-910</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Contact End -->
+    
+   
+    
     @endsection

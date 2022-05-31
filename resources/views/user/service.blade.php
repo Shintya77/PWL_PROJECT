@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>Main Loan Services</h2>
+                        <h2>Layanan Kami</h2>
                         <div class="breadcrumb__links">
-                            <a href="./index.html">Home</a>
-                            <a href="./index.html">Features</a>
-                            <span>Services</span>
+                            <a href="{{url('/home')}}">Beranda</a>
+                            <span>Layanan</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -31,9 +31,9 @@
                             <img src="img/services/services-1.jpg" alt="">
                         </div>
                         <div class="services__item__text">
-                            <h4><span>01.</span> Business Loan</h4>
-                            <p>However, there is much more to branding</p>
-                            <a href="#">Find Out More</a>
+                            <h4><span>01.</span> Gadai Harian</h4>
+                            <p>Layanan Gadai dengan jangka waktu harian</p>
+                            <a href="{{url('/formgadai')}}">Ajukan Sekarang</a>
                         </div>
                     </div>
                 </div>
@@ -43,9 +43,9 @@
                             <img src="img/services/services-2.jpg" alt="">
                         </div>
                         <div class="services__item__text">
-                            <h4><span>02.</span> Car Loan</h4>
-                            <p>However, there is much more to branding</p>
-                            <a href="#">Find Out More</a>
+                            <h4><span>02.</span> Gadai Mingguan</h4>
+                            <p>Layanan Gadai dengan jangka waktu mingguan</p>
+                            <a href="{{url('/formgadai')}}">Ajukan Sekarang</a>
                         </div>
                     </div>
                 </div>
@@ -55,48 +55,15 @@
                             <img src="img/services/services-3.jpg" alt="">
                         </div>
                         <div class="services__item__text">
-                            <h4><span>03.</span> Home Loan</h4>
-                            <p>However, there is much more to branding</p>
-                            <a href="#">Find Out More</a>
+                            <h4><span>03.</span> Gadai Bulanan</h4>
+                            <p>Layanan Gadai dengan jangka waktu bulanan</p>
+                            <a href="{{url('/formgadai')}}">Ajukan Sekarang</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="services__item">
-                        <div class="services__item__img">
-                            <img src="img/services/services-4.jpg" alt="">
-                        </div>
-                        <div class="services__item__text">
-                            <h4><span>04.</span> Credit & Debit Card</h4>
-                            <p>However, there is much more to branding</p>
-                            <a href="#">Find Out More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="services__item">
-                        <div class="services__item__img">
-                            <img src="img/services/services-5.jpg" alt="">
-                        </div>
-                        <div class="services__item__text">
-                            <h4><span>05.</span> Education Loan</h4>
-                            <p>However, there is much more to branding</p>
-                            <a href="#">Find Out More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-6">
-                    <div class="services__item">
-                        <div class="services__item__img">
-                            <img src="img/services/services-1.jpg" alt="">
-                        </div>
-                        <div class="services__item__text">
-                            <h4><span>06.</span> Health & Medical</h4>
-                            <p>However, there is much more to branding</p>
-                            <a href="#">Find Out More</a>
-                        </div>
-                    </div>
-                </div>
+               
+               
+
             </div>
         </div>
     </section>
