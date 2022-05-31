@@ -15,7 +15,8 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', function () {
-    return view('layouts.user.master');
+    return view('user.service');
 });
 
 Route::get('/dasboard',[AdminController::class, 'dasboard']);
+
