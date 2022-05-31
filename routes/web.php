@@ -19,13 +19,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dasboard',[AdminController::class, 'dasboard']);
-<<<<<<< HEAD
-=======
 Route::get('/nasabah',[AdminController::class, 'nasabah']);
 Route::get('/barang',[AdminController::class, 'barang']);
 Route::get('/transaksi',[AdminController::class, 'transaksi']);
 Route::get('/petugas',[AdminController::class, 'petugas']);
 
 
->>>>>>> a8825e66b51128b5aa01150519498ce806f9afbe
 
