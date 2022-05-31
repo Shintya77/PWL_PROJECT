@@ -3,7 +3,6 @@
       <a class="sidebar-brand brand-logo" href="index.html"><img src="{{asset('admin/template')}}/assets/images/logo.svg" alt="logo" /></a>
       <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="{{asset('admin/template')}}/assets/images/logo-mini.svg" alt="logo" /></a>
     </div> --}}
-    
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
      <h1>SIGADAI</h1>
     </div>
