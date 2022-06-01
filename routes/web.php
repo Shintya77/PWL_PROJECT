@@ -38,3 +38,7 @@ Route::get('/contact',[UserController::class, 'contact']);
 Route::get('/formgadai',[UserController::class, 'formgadai']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
