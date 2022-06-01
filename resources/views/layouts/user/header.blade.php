@@ -22,6 +22,11 @@
                     </ul> -->
                 </li>
                 <li><a href="{{url('/contact')}}">Kontak</a></li>
+               
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                    <li><a href="{{url('/login')}}">logout</a></li>
+                </form>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -86,11 +91,15 @@
                                     </ul>
                                 </li> -->
                                 <li><a href="{{url('/contact')}}">Kontak</a></li>
+                                
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                    <li><a href="{{url('/login')}}">logout</a></li>
+                                </form>
                             </ul>
+
+                            
                         </nav>
-                        <div class="header__search">
-                            <i class="fa fa-search search-switch"></i>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('user.service');
+    return redirect('login');
 });
 
 //Admin
@@ -41,4 +41,9 @@ Route::get('/formgadai',[UserController::class, 'formgadai']);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::match(['get', 'post'], '/register', function () {
+    return redirect('login');
+})->name=("register");
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home',[UserController::class, 'home']);
+
