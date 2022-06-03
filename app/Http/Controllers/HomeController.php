@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $role=Auth::user()->role;
+
+        if($role=='1')
+        {
+            return view('admin.dasboard', 
+            ['title'=> 'Dasboard Admin Pegadaian',
+             'admin'=>'AHMAD SIWON']);   
+        }
+        else
+        {
+            return view('user.home', ['title'=> 'Beranda']);
+        }
+       
     }
 }

@@ -55,7 +55,11 @@
                 </div>
               </div>
               <div class="preview-item-content">
-                  <p class="preview-subject mb-1">Log out</p>
+                  {{-- <p class="preview-subject mb-1">Log out</p> --}}
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                    @csrf
+                  <button type="submit" class="btn btn-default btn-flat"> Log Out</button>
+                </form>
               </div>
             </a>
           </div>

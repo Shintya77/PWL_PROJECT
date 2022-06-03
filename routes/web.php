@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 
@@ -37,7 +38,7 @@ Route::get('/', function () {
 // Route::get('/contact',[UserController::class, 'contact']);
 // Route::get('/formgadai',[UserController::class, 'formgadai']);
 
-
+Route::get('/redirects',[HomeController::class, 'index']);
 
 Auth::routes();
 
