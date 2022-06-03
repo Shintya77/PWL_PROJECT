@@ -50,7 +50,7 @@
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary btn-block enter-btn">Login</button>
                   </div>
-                  <p class="sign-up">Belum Punya Akun ?<a href="#"> Register </a></p>
+                  <p class="sign-up">Belum Punya Akun ?<a href="{{ route('register') }}"> Register </a></p>
                 </form>
               </div>
             </div>

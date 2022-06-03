@@ -41,9 +41,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::match(['get', 'post'], '/register', function () {
-    return redirect('login');
-})->name=("register");
+// Route::match(['get', 'post'], '/register', function () {
+//     return redirect('login');
+// })->name=("register");
 Route::get('/home',[UserController::class, 'home']);
 Route::get('/about',[UserController::class, 'about']);
 Route::get('/service',[UserController::class, 'service']);

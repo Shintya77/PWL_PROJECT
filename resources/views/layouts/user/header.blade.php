@@ -33,7 +33,7 @@
         </ul>
         <div class="offcanvas__language">
            
-            <span>Akun Saya</span>
+            <span> {{ Auth::user()->name }}</span>
             <i class="fa fa-angle-down"></i>
             <ul>
                 <li><a href="#">Pengaturan</a></li>
@@ -61,7 +61,7 @@
                     </div>
                         <div class="col-lg-3">
                         <div class="header__top__language">
-                            <span>Akun Saya</span>
+                            <span> {{ Auth::user()->name }}</span>
                             <i class="fa fa-angle-down"></i>
                             <ul>
                                 <li><a href="#">Pengaturan</a></li>
