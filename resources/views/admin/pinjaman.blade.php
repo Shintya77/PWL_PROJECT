@@ -6,7 +6,7 @@
             <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">
-                  <i class="fa fa-table"></i> Data Pembayaran</h3>
+                  <i class="fa fa-table"></i> Data Pinjaman</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -24,12 +24,12 @@
                     <thead>
                       <tr>
                         <th>No</th>
-                        <th>Nama Nasabah</th>
-                        <th>Username</th>
-                        <th>Barang</th>
-                        <th>Harga Gadai</th>
-                        <th>Tanggal Akhir Bayar</th>
-                        <th>Status</th>
+                        <th>kolom</th>
+                        <th>kolom</th>
+                        <th>kolom</th>
+                        <th>kkolom</th>
+                        <th>kolom</th>
+                        <th>kolom</th>
                       </tr>
                     </thead>
                     <tbody>
