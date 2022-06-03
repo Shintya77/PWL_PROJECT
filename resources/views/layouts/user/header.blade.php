@@ -22,11 +22,10 @@
                     </ul> -->
                 </li>
                 <li><a href="{{url('/contact')}}">Kontak</a></li>
-               
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                <li><form id="logout-form" action="{{ route('logout') }}" method="POST" >
                     @csrf
                     <button type="submit" class="btn btn-default btn-flat"> Log Out</button>
-                </form>
+                </form></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -34,6 +33,17 @@
             <li><i class="fa fa-map-marker"></i> Malang , Jl Soekarno Hatta No 10 , Jawa Timur</li>
             <li><i class="fa fa-phone"></i> (123) 456-78-910</li>
             <li><i class="fa fa-envelope"></i> sigadai@gmail.com</li>
+            <div class="col-lg-3">
+                <div class="header__top__language">
+                    <span>English</span>
+                    <i class="fa fa-angle-down"></i>
+                    <li><form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                        @csrf
+                        <button type="submit" class="btn btn-default btn-flat"> Log Out</button>
+                    </form></li>
+                   
+                </div>
+            </div>
         </ul>
         <div class="offcanvas__language">
             <img src="img/flag.png" alt="">
@@ -58,6 +68,17 @@
                             <li><i class="fa fa-map-marker"></i>Malang , Jl Soekarno Hatta No 10 , Jawa Timur </li>
                             <li><i class="fa fa-phone"></i> (123) 456-78-910</li>
                             <li><i class="fa fa-envelope"></i> sigadai@gmail.com</li>
+                            <div class="col-lg-3">
+                                <div class="header__top__language">
+                                    <span>English</span>
+                                    <i class="fa fa-angle-down"></i>
+                                    <li><form id="logout-form" action="{{ route('logout') }}" method="POST" >
+                                        @csrf
+                                        <button type="submit" class="btn btn-default btn-flat"> Log Out</button>
+                                    </form></li>
+                                   
+                                </div>
+                            </div>
                         </ul>
                     </div>
                     

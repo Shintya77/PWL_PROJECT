@@ -20,22 +20,22 @@ Route::get('/', function () {
 });
 
 //Admin
-Route::get('/dasboard',[AdminController::class, 'dasboard']);
-Route::get('/nasabah',[AdminController::class, 'nasabah']);
-Route::get('/barang',[AdminController::class, 'barang']);
-Route::get('/gudang',[AdminController::class, 'gudang']);
-Route::get('/pembayaran',[AdminController::class, 'pembayaran']);
-Route::get('/pinjaman',[AdminController::class, 'pinjaman']);
-Route::get('/petugas',[AdminController::class, 'petugas']);
+// Route::get('/dasboard',[AdminController::class, 'dasboard']);
+// Route::get('/nasabah',[AdminController::class, 'nasabah']);
+// Route::get('/barang',[AdminController::class, 'barang']);
+// Route::get('/gudang',[AdminController::class, 'gudang']);
+// Route::get('/pembayaran',[AdminController::class, 'pembayaran']);
+// Route::get('/pinjaman',[AdminController::class, 'pinjaman']);
+// Route::get('/petugas',[AdminController::class, 'petugas']);
 
 
 //User
-Route::get('/home',[UserController::class, 'home']);
-Route::get('/about',[UserController::class, 'about']);
-Route::get('/service',[UserController::class, 'service']);
-Route::get('/pengajuan',[UserController::class, 'pengajuan']);
-Route::get('/contact',[UserController::class, 'contact']);
-Route::get('/formgadai',[UserController::class, 'formgadai']);
+// Route::get('/home',[UserController::class, 'home']);
+// Route::get('/about',[UserController::class, 'about']);
+// Route::get('/service',[UserController::class, 'service']);
+// Route::get('/pengajuan',[UserController::class, 'pengajuan']);
+// Route::get('/contact',[UserController::class, 'contact']);
+// Route::get('/formgadai',[UserController::class, 'formgadai']);
 
 
 
@@ -44,6 +44,12 @@ Auth::routes();
 Route::match(['get', 'post'], '/register', function () {
     return redirect('login');
 })->name=("register");
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home',[UserController::class, 'home']);
+Route::get('/about',[UserController::class, 'about']);
+Route::get('/service',[UserController::class, 'service']);
+Route::get('/pengajuan',[UserController::class, 'pengajuan']);
+Route::get('/contact',[UserController::class, 'contact']);
+Route::get('/formgadai',[UserController::class, 'formgadai']);
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
