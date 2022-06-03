@@ -23,9 +23,9 @@
                 </li>
                 <li><a href="{{url('/contact')}}">Kontak</a></li>
                
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" >
                     @csrf
-                    <li><a href="{{url('/login')}}">logout</a></li>
+                    <button type="submit" class="btn btn-default btn-flat"> Log Out</button>
                 </form>
             </ul>
         </nav>
@@ -92,9 +92,9 @@
                                 </li> -->
                                 <li><a href="{{url('/contact')}}">Kontak</a></li>
                             
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                     @csrf
-                                    <li><a href="{{url('/login')}}">logout</a></li>
+                                    <button type="submit" class="btn btn-default btn-flat"> Log Out</button>
                                 </form>
                             </ul>
 
