@@ -8,38 +8,31 @@ class AdminController extends Controller
 {
     public function dasboard(){
         return view('admin.dasboard', 
-        ['title'=> 'Dasboard Admin Pegadaian',
-         'admin'=>'AHMAD SIWON']);
+        ['title'=> 'Dasboard Admin Pegadaian']);
     }
    
     public function nasabah(){
         return view('admin.nasabah', 
-        ['title'=> 'Data Nasabah Pegadaian',
-        'admin'=>'AHMAD SIWON']);
+        ['title'=> 'Data Nasabah Pegadaia']);
     }
     public function barang(){
         return view('admin.barang',
-        ['title'=> 'Data Barang Pegadaian',
-         'admin'=>'AHMAD SIWON']);
+        ['title'=> 'Data Barang Pegadaian']);
     }
     public function gudang(){
         return view('admin.gudang',
-        ['title'=> 'Data Gudang Pegadaian',
-         'admin'=>'AHMAD SIWON']);
+        ['title'=> 'Data Gudang Pegadaian']);
     }
     public function petugas(){
         return view('admin.petugas',
-        ['title'=> 'Data Petugas Pegadaian',
-        'admin'=>'AHMAD SIWON']);
+        ['title'=> 'Data Petugas Pegadaia']);
     }
     public function pembayaran(){
         return view('admin.pembayaran', 
-        ['title'=> 'Data Transaksi Pegadaian',
-        'admin'=>'AHMAD SIWON']);
+        ['title'=> 'Data Transaksi Pegadaia']);
     }
     public function pinjaman(){
         return view('admin.pinjaman', 
-        ['title'=> 'Data Pinjaman Pegadaian',
-        'admin'=>'AHMAD SIWON']);
+        ['title'=> 'Data Pinjaman Pegadaia']);
     }
 }
