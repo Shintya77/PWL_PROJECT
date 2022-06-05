@@ -23,7 +23,7 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>No</th>
+                        <th>Id Nasabah</th>
                         <th>Nama Nasabah</th>
                         <th>Username</th>
                         <th>Tanggal Lahir</th>
