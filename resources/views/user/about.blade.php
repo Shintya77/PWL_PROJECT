@@ -32,7 +32,8 @@
                     <div class="col-lg-5">
                         <div class="about__img">
                             <img src="img/about/about.jpg" alt="">
-                            <a href="https://www.youtube.com/watch?v=RpvAmG1NNN0"
+                            <a href="https://www.youtube.com/watch?v=Ol7ofq88KZQ"
+                           
                                 class="play-btn video-popup"><img src="img/about/video-play.png" alt=""></a>
                         </div>
                     </div>
