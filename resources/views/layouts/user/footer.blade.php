@@ -5,7 +5,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__logo">
-                            <a href="./index.html"><img src="img/footer-logo.png" alt=""></a>
+                            <a href="./index.html"><img src="img/logo2.png" alt=""></a>
                         </div>
                         <p>Jika Anda Butuh Bantuan, Ingat Selalu Kami</p>
                     </div>

@@ -6,7 +6,7 @@
             <i class="fa fa-search search-switch"></i>
         </div>
         <div class="offcanvas__logo">
-            <a href="{{url('/home')}}"><img src="img/logo.png" alt=""></a>
+            <a href="{{url('/home')}}"><img src="img/logo2.png" alt=""></a>
         </div>
         <nav class="offcanvas__menu mobile-menu">
             <ul>
@@ -79,7 +79,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="{{url('/home')}}"><img src="img/logo.png" alt=""></a>
+                        <a href="{{url('/home')}}"><img src="img/logo2.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-9">
