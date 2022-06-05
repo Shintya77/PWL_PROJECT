@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Nasabah;
+use Illuminate\Support\Facades\DB;
 
 class NasabahController extends Controller
 {
@@ -18,7 +20,7 @@ class NasabahController extends Controller
         
          //fungsi eloquent menampilkan data menggunakan pagination
          $posts = Nasabah::orderBy('Id_Nasabah', 'desc')->paginate(3);
-         return view('nasabah.', compact('mahasiswas'));
+         return view('nasabah.index', compact('nasabah'));
          with('i', (request()->input('page', 1) - 1) * 5);
  
     }
@@ -28,9 +30,22 @@ class NasabahController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function search(Request $request){
+        //menangkap data pencarian
+        $cari = $request->search;
+
+        //mengambil data dari table nasabah sesuai pencarian data
+        $nasabah = Nasabah::where('Nama','like',"%".$cari."%")->paginate();
+
+        //mengiriim data Nasabah ke view index
+        return view('nasabah.index', compact('nasabah'));
+    }
+
+
     public function create()
     {
-        //
+        return view('nasabah.create');
     }
 
     /**
@@ -41,7 +56,24 @@ class NasabahController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'Id_Nasabah' => 'required',
+            'Nama' => 'required',
+            'Username' => 'required',
+            'TangalLahir' => 'required',
+            'JenisKelamin' => 'required',
+            'Usia' => 'required',
+            'Alamat' => 'required',
+            'Pekerjaan' => 'required',
+        ]);
+        
+        //fungsi eloquent untuk menambah data
+        Nasabah::create($request->all());
+        
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Ditambahkan');
+   
     }
 
     /**
@@ -50,9 +82,11 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($Id_Nasabah)
     {
-        //
+        //menampilkan detail data dengan menemukan/berdasarkan Id Nasabah
+        $nasabah = Nasabah::find($Id_Nasabah);
+         return view('nasabah.detail', compact('nasabah'));
     }
 
     /**
@@ -61,9 +95,11 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($Id_Nasabah)
     {
-        //
+        //menampilkan detail data dengan menemukan berdasarkan id nasabah untuk diedit
+        $nasabah = Nasabah::find($Id_Nasabah);
+        return view('nasabah.edit', compact('nasabah'));
     }
 
     /**
@@ -73,9 +109,25 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $Id_Nasabah)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'Id_Nasabah' => 'required',
+            'Nama' => 'required',
+            'Username' => 'required',
+            'TangalLahir' => 'required',
+            'JenisKelamin' => 'required',
+            'Usia' => 'required',
+            'Alamat' => 'required',
+            'Pekerjaan' => 'required',
+        ]);
+        
+        //fungsi eloquent untuk mengupdate data inputan kita
+        Nasabah::find($Id_Nasabah)->update($request->all());
+        
+        //jika data berhasil diupdate, akan kembali ke halaman utama
+        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Diupdate');
     }
 
     /**
@@ -84,8 +136,10 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($Id_Nasabah)
     {
-        //
+         //fungsi eloquent untuk menghapus data
+         Nasabah::find($Id_Nasabah)->delete();
+         return redirect()->route('nasabah.index')-> with('success', 'Data Nasabah Berhasil Dihapus'); 
     }
 }
