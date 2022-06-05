@@ -77,7 +77,7 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <div class="col-lg-2">
                     <div class="header__logo">
                         <a href="{{url('/home')}}"><img src="img/logo2.png" alt=""></a>
                     </div>
