@@ -44,7 +44,6 @@
                       <td>{{ $nsb->Usia }}</td>
                       <td>{{ $nsb->Alamat }}</td>
                       <td>{{ $nsb->Pekerjaan }}</td>
-                      <td>
                         <td>
                           <form action="{{ route('nasabah.destroy',$nsb->Id_Nasabah) }}" method="POST">
                               <a class="btn btn-info" href="{{ route('nasabah.show',$nsb->Id_Nasabah) }}">Detail</a>
@@ -55,11 +54,12 @@
                           </form>
                         </td>
                       </tr>
+                      @endforeach
                     </tbody>
-                    </tfoot>
                   </table>
                 </div>
               </div>
-              <!-- /.card-body -->
+            </div>
           </div>
+        </div>
  @endsection
