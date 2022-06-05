@@ -21,7 +21,7 @@ class PetugasController extends Controller
         
         //fungsi eloquent menampilkan data menggunakan pagination
         $posts = Petugas::orderBy('id_Petugas', 'desc')->paginate(3);
-        return view('petugas.index', compact('petugas'));
+        return view('admin.petugas.index', compact('petugas'));
         with('i', (request()->input('page', 1) - 1) * 5);
 
     }
@@ -35,13 +35,13 @@ class PetugasController extends Controller
         $petugas = Petugas::where('Nama','like',"%".$cari."%")->paginate();
 
         //mengiriim data petugas ke view index
-        return view('petugas.index', compact('petugas'));
+        return view('admin.petugas.index', compact('petugas'));
     }
 
 
     public function create()
     {
-        return view('petugas.create');
+        return view('admin.petugas.create');
 
     }
 
@@ -70,7 +70,7 @@ class PetugasController extends Controller
         
        
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Ditambahkan');
+        return redirect()->route('admin.petugas.index')->with('success', 'Data Petugas Berhasil Ditambahkan');
     }
 
     /**
@@ -83,7 +83,7 @@ class PetugasController extends Controller
     {
         //menampilkan detail data dengan menemukan/berdasarkan id petugas
         $petugas = Petugas::find($id_Petugas);
-         return view('petugas.detail', compact('petugas'));
+         return view('admin.petugas.detail', compact('petugas'));
     }
 
     /**
@@ -96,7 +96,7 @@ class PetugasController extends Controller
     {
         //menampilkan detail data dengan menemukan berdasarkan id petugas untuk diedit
         $petugas = Petugas::find($id_Petugas);
-        return view('petugas.edit', compact('petugas'));
+        return view('admin.petugas.edit', compact('petugas'));
     }
 
     /**
@@ -124,7 +124,7 @@ class PetugasController extends Controller
         Petugas::find($id_Petugas)->update($request->all());
        
         //jika data berhasil diupdate, akan kembali ke halaman utama
-        return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Diupdate');
+        return redirect()->route('admin.petugas.index')->with('success', 'Data Petugas Berhasil Diupdate');
 
 
     }
@@ -139,6 +139,6 @@ class PetugasController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Petugas::find($id_Petugas)->delete();
-        return redirect()->route('petugas.index')-> with('success', 'Data Petugas Berhasil Dihapus');
+        return redirect()->route('admin.petugas.index')-> with('success', 'Data Petugas Berhasil Dihapus');
     }
 }
