@@ -37,6 +37,7 @@
                     <tbody>
                       @foreach ($petugas as $ptg)
                       <tr>
+                      <td>{{ $ptg->id_Petugas }}</td>
                       <td>{{ $ptg->Nama }}</td>
                       <td>{{ $ptg->Username }}</td>
                       <td>{{ $ptg->TanggalLahir}}</td>
