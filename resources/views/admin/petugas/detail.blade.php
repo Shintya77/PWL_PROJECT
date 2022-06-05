@@ -1,21 +1,50 @@
 @extends('layouts.admin.master')
  
 @section('content')
-<div class="container mt-5">
-    <div class="row justify-content-center align-items-center">
-        <div class="card" style="width: 24rem;" >
-        <div class="card-header">Detail Data Petugas</div>
+<div class="main-panel">
+    <div class="content-wrapper">
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">
+            <i class="fa fa-table"></i> Detail Data Petugas</h3>
+        </div>
         <div class="card-body">
-            <ul class="list-group list-group-flush ">
-                <li class="list-group-item-light"><b>id_Petugas: </b>{{$petugas->id_Petugas}}</li>
-                <li class="list-group-item-light"><b>Nama: </b>{{$petugas->Nama}}</li>
-                <li class="list-group-item-light"><b>Username: </b>{{$petugas->Username}}</li>
-                <li class="list-group-item-light"><b>TanggalLahir: </b>{{$petugas->TanggalLahir}}</li>
-                <li class="list-group-item-light"><b>JenisKelamin: </b>{{$petugas->JenisKelamin}}</li>
-                <li class="list-group-item-light"><b>Usia: </b>{{$petugas->Usia}}</li>
-                <li class="list-group-item-light"><b>Alamat: </b>{{$petugas->Alamat}}</li>
-                <li class="list-group-item-light"><b>Jabatan: </b>{{$petugas->Jabatan}}</li>
-            </ul>
+            <div class="table-responsive ">
+                <table id="example1" class="table table-bordered table-striped">
+                    <tr>
+                        <td>Id Petugas</td>
+                        <td>{{ $petugas->id_Petugas}}</td>
+                    </tr>
+                    <tr>
+                        <td>Nama Nasabah</td>
+                        <td>{{ $petugas->Nama }}</td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>{{ $petugas->Username }}</td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td>{{ $petugas->TangalLahir }}</td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td>{{ $petugas->JenisKelamin }}</td>
+                    </tr>
+                    <tr>
+                        <td>Usia</td>
+                        <td>{{ $petugas->Usia }}</td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>{{ $petugas->Alamat }}</td>
+                    </tr>
+                    <tr>
+                        <td>Jabatan</td>
+                        <td>{{ $petugas->Jabatan }}</td>
+                    </tr>
+                  </table>
+            </div>
         </div>
         <a class="btn btn-success mt-3" href="{{ route('petugas.index') }}">Kembali</a>
         </div>
