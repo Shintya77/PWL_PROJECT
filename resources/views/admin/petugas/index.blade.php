@@ -35,40 +35,29 @@
                     </thead>
                     <tbody>
             
-                      {{-- <?php
-                          $no = 1;
-                          $sql = $koneksi->query("select * from pengguna");
-                          while ($data= $sql->fetch_assoc()) {
-                        ?>
-            
-                      <tr>
-                        <td>
-                          <?php echo $no++; ?>
-                        </td>
-                        <td>
-                          <?php echo $data['nama_pengguna']; ?>
-                        </td>
-                        <td>
-                          <?php echo $data['username']; ?>
-                        </td>
-                        <td>
-                          <?php echo $data['level']; ?>
-                        </td>
-                        <td>
-                          <a href="?page=edit-pengguna&kode=<?php echo $data['id_pengguna']; ?>" title="Ubah"
-                           class="btn btn-success btn-sm">
-                            <i class="fa fa-edit"></i>
-                          </a>
-                          <a href="?page=del-pengguna&kode=<?php echo $data['id_pengguna']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')"
-                           title="Hapus" class="btn btn-danger btn-sm">
-                            <i class="fa fa-trash"></i>
-                            </>
-                        </td>
-                      </tr>
-            
-                      <?php
-                          }
-                        ?> --}}
+                    @foreach ($ptg as $ptg)
+    <tr>
+        <td>{{ $ptg->id_Petugas }}</td>
+        <td>{{ $ptg->Nama }}</td>
+        <td>{{ $ptg->Username }}</td>
+        <td>{{ $ptg->TanggalLahir}}</td>
+        <td>{{ $ptg->JenisKelamin }}</td>
+        <td>{{ $ptg->Usia }}</td>
+        <td>{{ $ptg->Alamat }}</td>
+        <td>{{ $ptg->Jabatan }}</td>
+        <td>
+
+        <td>
+            <form action="{{ route('petugas.destroy',$ptg->id_Petugas) }}" method="POST">
+                <a class="btn btn-info" href="{{ route('petugas.show',$ptg->id_Petugas) }}">Detail</a>
+                <a class="btn btn-primary" href="{{ route('petugas.edit',$ptg->id_Petugas) }}">Edit</a>
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </td>
+    </tr>
+
                     </tbody>
                     </tfoot>
                   </table>

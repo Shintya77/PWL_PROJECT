@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Petugas;
+use Illuminate\Support\Facades\DB;
 
 class PetugasController extends Controller
 {
@@ -24,14 +26,23 @@ class PetugasController extends Controller
 
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function search(Request $request){
+        //menangkap data pencarian
+        $cari = $request->search;
+
+        //mengambil data dari table petugas sesuai pencarian data
+        $petugas = Petugas::where('Nama','like',"%".$cari."%")->paginate();
+
+        //mengiriim data petugas ke view index
+        return view('petugas.index', compact('petugas'));
+    }
+
+
     public function create()
     {
-        //
+        return view('petugas.create');
+
     }
 
     /**
@@ -42,7 +53,24 @@ class PetugasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'id_Petugas' => 'required',
+            'Nama' => 'required',
+            'Username' => 'required',
+            'TanggalLahir' => 'required',
+            'JenisKelamin' => 'required',
+            'Usia' => 'required',
+            'Alamat' => 'required',
+            'Jabatan' => 'required',
+        ]);
+        
+        //fungsi eloquent untuk menambah data
+        Petugas::create($request->all());
+        
+       
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Ditambahkan');
     }
 
     /**
@@ -51,9 +79,11 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id_Petugas)
     {
-        //
+        //menampilkan detail data dengan menemukan/berdasarkan id petugas
+        $petugas = Petugas::find($id_Petugas);
+         return view('petugas.detail', compact('petugas'));
     }
 
     /**
@@ -62,9 +92,11 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id_Petugas)
     {
-        //
+        //menampilkan detail data dengan menemukan berdasarkan id petugas untuk diedit
+        $petugas = Petugas::find($id_Petugas);
+        return view('petugas.edit', compact('petugas'));
     }
 
     /**
@@ -74,9 +106,27 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_Petugas)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'id_Petugas' => 'required',
+            'Nama' => 'required',
+            'Username' => 'required',
+            'TanggalLahir' => 'required',
+            'JenisKelamin' => 'required',
+            'Usia' => 'required',
+            'Alamat' => 'required',
+            'Jabatan' => 'required',
+        ]);
+       
+        //fungsi eloquent untuk mengupdate data inputan kita
+        Petugas::find($id_Petugas)->update($request->all());
+       
+        //jika data berhasil diupdate, akan kembali ke halaman utama
+        return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Diupdate');
+
+
     }
 
     /**
@@ -85,8 +135,10 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id_Petugas)
     {
-        //
+        //fungsi eloquent untuk menghapus data
+        Petugas::find($id_Petugas)->delete();
+        return redirect()->route('petugas.index')-> with('success', 'Data Petugas Berhasil Dihapus');
     }
 }
