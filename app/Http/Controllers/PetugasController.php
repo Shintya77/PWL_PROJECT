@@ -20,8 +20,8 @@ class PetugasController extends Controller
         $petugas = Petugas::paginate(3); 
         
         //fungsi eloquent menampilkan data menggunakan pagination
-        $posts = Mahasiswa::orderBy('id_Petugas', 'desc')->paginate(3);
-        return view('petugas.index', compact('mahasiswas'));
+        $posts = Petugas::orderBy('id_Petugas', 'desc')->paginate(3);
+        return view('petugas.index', compact('petugas'));
         with('i', (request()->input('page', 1) - 1) * 5);
 
     }
