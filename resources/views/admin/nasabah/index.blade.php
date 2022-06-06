@@ -12,12 +12,12 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <div>
-                    <a href="?page=add-pengguna" class="btn btn-primary">
+                    <a href="{{ route('nasabah.create') }}" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Tambah Data</a>
-                    <a href="?page=add-pengguna" class="btn btn-primary">
-                      <i class="fa fa-edit"></i> Edit Data</a>
-                    <a href="?page=add-pengguna" class="btn btn-primary">
-                      <i class="fa fa-edit"></i> Hapus Data</a>
+                    {{-- <a href="{{ route('nasabah.edit') }}" class="btn btn-primary">
+                      <i class="fa fa-edit"></i> Edit Data</a> --}}
+                    {{-- <a href="{{ route('nasabah.destroy') }}" class="btn btn-primary">
+                      <i class="fa fa-edit"></i> Hapus Data</a> --}}
                   </div>
                   <br>
                   <table id="example1" class="table table-bordered table-striped">
@@ -31,6 +31,7 @@
                         <th>Usia</th>
                         <th>Alamat</th>
                         <th>Pekerjaan</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
