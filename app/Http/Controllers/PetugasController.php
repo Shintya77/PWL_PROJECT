@@ -70,7 +70,7 @@ class PetugasController extends Controller
         
        
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.petugas.index')->with('success', 'Data Petugas Berhasil Ditambahkan');
+        return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Ditambahkan');
     }
 
     /**
@@ -124,7 +124,7 @@ class PetugasController extends Controller
         Petugas::find($id_Petugas)->update($request->all());
        
         //jika data berhasil diupdate, akan kembali ke halaman utama
-        return redirect()->route('admin.petugas.index')->with('success', 'Data Petugas Berhasil Diupdate');
+        return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Diupdate');
 
 
     }
@@ -139,6 +139,6 @@ class PetugasController extends Controller
     {
         //fungsi eloquent untuk menghapus data
         Petugas::find($id_Petugas)->delete();
-        return redirect()->route('admin.petugas.index')-> with('success', 'Data Petugas Berhasil Dihapus');
+        return redirect()->route('petugas.index')-> with('success', 'Data Petugas Berhasil Dihapus');
     }
 }
