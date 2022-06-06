@@ -20,7 +20,7 @@ class NasabahController extends Controller
         
          //fungsi eloquent menampilkan data menggunakan pagination
          $posts = Nasabah::orderBy('Id_Nasabah', 'desc')->paginate(3);
-         return view('nasabah.index', compact('nasabah'));
+         return view('admin.nasabah.index', compact('nasabah'));
          with('i', (request()->input('page', 1) - 1) * 5);
  
     }
@@ -39,13 +39,13 @@ class NasabahController extends Controller
         $nasabah = Nasabah::where('Nama','like',"%".$cari."%")->paginate();
 
         //mengiriim data Nasabah ke view index
-        return view('nasabah.index', compact('nasabah'));
+        return view('admin.nasabah.index', compact('nasabah'));
     }
 
 
     public function create()
     {
-        return view('nasabah.create');
+        return view('admin.nasabah.create');
     }
 
     /**
@@ -72,7 +72,7 @@ class NasabahController extends Controller
         Nasabah::create($request->all());
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Ditambahkan');
+        return redirect()->route('admin.nasabah.index')->with('success', 'Data Nasabah Berhasil Ditambahkan');
    
     }
 
@@ -86,7 +86,7 @@ class NasabahController extends Controller
     {
         //menampilkan detail data dengan menemukan/berdasarkan Id Nasabah
         $nasabah = Nasabah::find($Id_Nasabah);
-         return view('nasabah.detail', compact('nasabah'));
+         return view('admin.nasabah.detail', compact('nasabah'));
     }
 
     /**
@@ -99,7 +99,7 @@ class NasabahController extends Controller
     {
         //menampilkan detail data dengan menemukan berdasarkan id nasabah untuk diedit
         $nasabah = Nasabah::find($Id_Nasabah);
-        return view('nasabah.edit', compact('nasabah'));
+        return view('admin.nasabah.edit', compact('nasabah'));
     }
 
     /**
@@ -127,7 +127,7 @@ class NasabahController extends Controller
         Nasabah::find($Id_Nasabah)->update($request->all());
         
         //jika data berhasil diupdate, akan kembali ke halaman utama
-        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Diupdate');
+        return redirect()->route('admin.nasabah.index')->with('success', 'Data Nasabah Berhasil Diupdate');
     }
 
     /**
@@ -140,6 +140,6 @@ class NasabahController extends Controller
     {
          //fungsi eloquent untuk menghapus data
          Nasabah::find($Id_Nasabah)->delete();
-         return redirect()->route('nasabah.index')-> with('success', 'Data Nasabah Berhasil Dihapus'); 
+         return redirect()->route('admin.nasabah.index')-> with('success', 'Data Nasabah Berhasil Dihapus'); 
     }
 }

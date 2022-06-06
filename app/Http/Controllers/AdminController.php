@@ -12,8 +12,8 @@ class AdminController extends Controller
     }
    
     public function nasabah(){
-        return view('admin.nasabah', 
-        ['title'=> 'Data Nasabah Pegadaia']);
+        return view('admin.nasabah.index', 
+        ['title'=> 'Data Nasabah Pegadaian']);
     }
     public function barang(){
         return view('admin.barang',
@@ -24,8 +24,8 @@ class AdminController extends Controller
         ['title'=> 'Data Gudang Pegadaian']);
     }
     public function petugas(){
-        return view('admin.petugas',
-        ['title'=> 'Data Petugas Pegadaia']);
+        return view('admin.petugas.index',
+        ['title'=> 'Data Petugas Pegadaian']);
     }
     public function pembayaran(){
         return view('admin.pembayaran', 
