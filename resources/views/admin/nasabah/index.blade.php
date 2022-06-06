@@ -34,41 +34,27 @@
                       </tr>
                     </thead>
                     <tbody>
-            
-                      {{-- <?php
-                          $no = 1;
-                          $sql = $koneksi->query("select * from pengguna");
-                          while ($data= $sql->fetch_assoc()) {
-                        ?>
-            
+                      @foreach ($nasabah as $nsb)
                       <tr>
+                      <td>{{ $nsb->Id_Nasabah }}</td>
+                      <td>{{ $nsb->Nama }}</td>
+                      <td>{{ $nsb->Username }}</td>
+                      <td>{{ $nsb->TanggalLahir }}</td>
+                      <td>{{ $nsb->JenisKelamin }}</td>
+                      <td>{{ $nsb->Usia }}</td>
+                      <td>{{ $nsb->Alamat }}</td>
+                      <td>{{ $nsb->Pekerjaan }}</td>
+                      <td>
                         <td>
-                          <?php echo $no++; ?>
-                        </td>
-                        <td>
-                          <?php echo $data['nama_pengguna']; ?>
-                        </td>
-                        <td>
-                          <?php echo $data['username']; ?>
-                        </td>
-                        <td>
-                          <?php echo $data['level']; ?>
-                        </td>
-                        <td>
-                          <a href="?page=edit-pengguna&kode=<?php echo $data['id_pengguna']; ?>" title="Ubah"
-                           class="btn btn-success btn-sm">
-                            <i class="fa fa-edit"></i>
-                          </a>
-                          <a href="?page=del-pengguna&kode=<?php echo $data['id_pengguna']; ?>" onclick="return confirm('Apakah anda yakin hapus data ini ?')"
-                           title="Hapus" class="btn btn-danger btn-sm">
-                            <i class="fa fa-trash"></i>
-                            </>
+                          <form action="{{ route('nasabah.destroy',$nsb->Id_Nasabah) }}" method="POST">
+                              <a class="btn btn-info" href="{{ route('nasabah.show',$nsb->Id_Nasabah) }}">Detail</a>
+                              <a class="btn btn-primary" href="{{ route('nasabah.edit',$nsb->Id_Nasabah) }}">Edit</a>
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger">Hapus</button>
+                          </form>
                         </td>
                       </tr>
-            
-                      <?php
-                          }
-                        ?> --}}
                     </tbody>
                     </tfoot>
                   </table>
