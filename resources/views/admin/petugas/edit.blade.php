@@ -1,11 +1,12 @@
 @extends('layouts.admin.master')
  
 @section('content')
-<div class="container mt-5">
-    <div class="row justify-content-center align-items-center">
-        <div class="card" style="width: 24rem;">
+<div class="main-panel">
+    <div class="content-wrapper">
+      <div class="card card-info">
         <div class="card-header">
-            Edit petugas
+          <h3 class="card-title">
+            <i class="fa fa-table"></i> Edit Data Petugas</h3>
         </div>
         <div class="card-body">
             @if ($errors->any())
