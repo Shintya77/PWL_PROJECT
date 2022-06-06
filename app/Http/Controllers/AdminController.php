@@ -16,11 +16,11 @@ class AdminController extends Controller
         ['title'=> 'Data Nasabah Pegadaian']);
     }
     public function barang(){
-        return view('admin.barang',
+        return view('admin.barang.barang',
         ['title'=> 'Data Barang Pegadaian']);
     }
     public function gudang(){
-        return view('admin.gudang',
+        return view('admin.gudang.gudang',
         ['title'=> 'Data Gudang Pegadaian']);
     }
     public function petugas(){
@@ -28,11 +28,11 @@ class AdminController extends Controller
         ['title'=> 'Data Petugas Pegadaian']);
     }
     public function pembayaran(){
-        return view('admin.pembayaran', 
+        return view('admin.pembayaran.pembayaran', 
         ['title'=> 'Data Transaksi Pegadaia']);
     }
     public function pinjaman(){
-        return view('admin.pinjaman', 
+        return view('admin.pinjaman.pinjaman', 
         ['title'=> 'Data Pinjaman Pegadaia']);
     }
 }
