@@ -16,7 +16,7 @@ class Nasabah extends Model
         'Id_Nasabah',
         'Nama',
         'Username',
-        'TanggalLahir',
+        'TangalLahir',
         'JenisKelamin',
         'Usia',
         'Alamat',

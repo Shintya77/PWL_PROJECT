@@ -1,11 +1,12 @@
 @extends('layouts.admin.master')
  
 @section('content')
-<div class="container mt-5">
-    <div class="row justify-content-center align-items-center">
-        <div class="card" style="width: 24rem;">
+<div class="main-panel">
+    <div class="content-wrapper">
+      <div class="card card-info">
         <div class="card-header">
-            Edit Data Nasabah
+          <h3 class="card-title">
+            <i class="fa fa-table"></i> Edit Data Nasabah</h3>
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -30,19 +31,19 @@
                     </div>
                     <div class="form-group">
                         <label for="Username">Username</label> 
-                        <input type="Username" name="Username" class="form-control" id="Username" value="{{ $nasabah->Kelas }}" aria-describedby="Username" > 
+                        <input type="Username" name="Username" class="form-control" id="Username" value="{{ $nasabah->Username }}" aria-describedby="Username" > 
                     </div>
                     <div class="form-group">
-                        <label for="TangalLahir">TangalLahir</label> 
-                        <input type="TangalLahir" name="TangalLahir" class="form-control" id="TangalLahir" value="{{ $nasabah->Jurusan }}" aria-describedby="TangalLahir" > 
+                        <label for="TangalLahir">TanggalLahir</label> 
+                        <input type="TangalLahir" name="TangalLahir" class="form-control" id="TangalLahir" value="{{ $nasabah->TangalLahir }}" aria-describedby="TangalLahir" > 
                     </div>
                     <div class="form-group">
                         <label for="JenisKelamin">JenisKelamin</label> 
-                        <input type="JenisKelamin" name="JenisKelamin" class="form-control" id="JenisKelamin" value="{{ $nasabah->Email }}" aria-describedby="JenisKelamin" > 
+                        <input type="JenisKelamin" name="JenisKelamin" class="form-control" id="JenisKelamin" value="{{ $nasabah->JenisKelamin }}" aria-describedby="JenisKelamin" > 
                     </div>
                     <div class="form-group">
                         <label for="Usia">Usia</label> 
-                        <input type="Usia" name="JenisKelamin" class="form-control" id="JenisKelamin" value="{{ $nasabah->Email }}" aria-describedby="JenisKelamin" > 
+                        <input type="Usia" name="Usia" class="form-control" id="Usia" value="{{ $nasabah->Usia }}" aria-describedby="Usia" > 
                     </div>
                     <div class="form-group">
                         <label for="Alamat">Alamat</label> 
@@ -53,9 +54,9 @@
                         <input type="Pekerjaan" name="Pekerjaan" class="form-control" id="Pekerjaan" value="{{ $nasabah->Pekerjaan }}" aria-describedby="Pekerjaan" > 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
+            </form>
         </div>
-    </div>
+        </div>
+      </div>
 </div>
 @endsection

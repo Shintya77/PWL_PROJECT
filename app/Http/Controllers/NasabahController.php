@@ -72,7 +72,7 @@ class NasabahController extends Controller
         Nasabah::create($request->all());
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('admin.nasabah.index')->with('success', 'Data Nasabah Berhasil Ditambahkan');
+        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Ditambahkan');
    
     }
 
@@ -127,7 +127,7 @@ class NasabahController extends Controller
         Nasabah::find($Id_Nasabah)->update($request->all());
         
         //jika data berhasil diupdate, akan kembali ke halaman utama
-        return redirect()->route('admin.nasabah.index')->with('success', 'Data Nasabah Berhasil Diupdate');
+        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Diupdate');
     }
 
     /**
@@ -140,6 +140,6 @@ class NasabahController extends Controller
     {
          //fungsi eloquent untuk menghapus data
          Nasabah::find($Id_Nasabah)->delete();
-         return redirect()->route('admin.nasabah.index')-> with('success', 'Data Nasabah Berhasil Dihapus'); 
+         return redirect()->route('nasabah.index')-> with('success', 'Data Nasabah Berhasil Dihapus'); 
     }
 }

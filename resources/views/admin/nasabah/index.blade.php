@@ -40,7 +40,7 @@
                       <td>{{ $nsb->Id_Nasabah }}</td>
                       <td>{{ $nsb->Nama }}</td>
                       <td>{{ $nsb->Username }}</td>
-                      <td>{{ $nsb->TanggalLahir }}</td>
+                      <td>{{ $nsb->TangalLahir }}</td>
                       <td>{{ $nsb->JenisKelamin }}</td>
                       <td>{{ $nsb->Usia }}</td>
                       <td>{{ $nsb->Alamat }}</td>
