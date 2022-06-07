@@ -19,27 +19,32 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="{{ route('petugas.update', $petugas->id_Petugas) }}" id="myForm">
+            <form method="post" action="{{ route('petugas.update', $petugas->kd_Petugas) }}" enctype="multipart/form-data"  id="myForm">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="id_Petugas">id_Petugas</label>
-                    <input type="text" name="id_Petugas" class="form-control" id="id_Petugas" value="{{ $petugas->id_Petugas }}" aria-describedby="id_Petugas" > </div>
+                    <label for="kd_Petugas">Kode_Petugas</label>
+                    <input type="text" name="kd_Petugas" class="form-control" id="kd_Petugas" value="{{ $petugas->kd_Petugas }}" aria-describedby="kd_Petugas" > </div>
                     <div class="form-group">
                         <label for="Nama">Nama</label>
                         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $petugas->Nama }}" aria-describedby="Nama" >
                     </div>
                     <div class="form-group">
                         <label for="Username">Username</label>
-                        <input type="Username" name="Kelas" class="form-control" id="Kelas" value="{{ $petugas->Username }}" aria-describedby="Kelas" >
+                        <input type="Username" name="Username" class="form-control" id="Username" value="{{ $petugas->Username }}" aria-describedby="Kelas" >
                     </div>
                     <div class="form-group">
-                        <label for="Tanggal Lahir">Tanggal Lahir</label>
-                        <input type="Tanggal Lahir" name="Tanggal Lahir" class="form-control" id="Tanggal Lahir" value="{{ $petugas->TanggalLahir}}" aria-describedby="Tanggal Lahir" >
+                        <label for="Foto">Foto</label>
+                        <input type="file" class="form-control" required="required" name="Foto" value="{{$petugas->Foto}}"><br>
+                        <img width="100px" height="100px" src="{{asset('storage/'.$petugas->Foto)}}">
                     </div>
                     <div class="form-group">
-                        <label for="Jenis Kelamin">Jenis Kelamin</label>
-                        <input type="Jenis Kelamin" name="Jenis Kelamin" class="form-control" id="Jenis Kelamin" value="{{ $petugas->JenisKelamin }}" aria-describedby="Jenis Kelamin" >
+                        <label for="TanggalLahir">Tanggal Lahir</label>
+                        <input type="TanggalLahir" name="TanggalLahir" class="form-control" id="TanggalLahir" value="{{ $petugas->TanggalLahir}}" aria-describedby="TanggalLahir" >
+                    </div>
+                    <div class="form-group">
+                        <label for="JenisKelamin">Jenis Kelamin</label>
+                        <input type="JenisKelamin" name="JenisKelamin" class="form-control" id="JenisKelamin" value="{{ $petugas->JenisKelamin }}" aria-describedby="JenisKelamin" >
                     </div>
                     <div class="form-group">
                         <label for="Usia">Usia</label>

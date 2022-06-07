@@ -12,8 +12,8 @@
             <div class="table-responsive ">
                 <table id="example1" class="table table-bordered table-striped">
                     <tr>
-                        <td>Id Petugas</td>
-                        <td>{{ $petugas->id_Petugas}}</td>
+                        <td>Kode Petugas</td>
+                        <td>{{ $petugas->kd_Petugas}}</td>
                     </tr>
                     <tr>
                         <td>Nama Nasabah</td>
@@ -22,6 +22,10 @@
                     <tr>
                         <td>Username</td>
                         <td>{{ $petugas->Username }}</td>
+                    </tr>
+                    <tr>
+                        <td>Foto</td>
+                        <td> <img width="100px" height="100px" src="{{asset('storage/'.$petugas->Foto)}}"> </td>
                     </tr>
                     <tr>
                         <td>Tanggal Lahir</td>
