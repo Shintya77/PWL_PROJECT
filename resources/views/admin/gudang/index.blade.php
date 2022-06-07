@@ -36,9 +36,9 @@
                     <tbody>
                       @foreach ($gudang as $gdg)
                       <tr>
-                      <td>{{ $gdg->kd_Barang }}</td>
-                      <td>{{ $gdg->Nama }}</td>
-                      <td>{{ $gdg->Pemilik }}</td>
+                      <td>{{ $gdg->barang->Kd_Barang }}</td>
+                      <td>{{ $gdg->barang->Nama }}</td>
+                      <td>{{ $gdg->barang->Pemilik }}</td>
                       <td>{{ $gdg->Deskripsi}}</td>
                       <td>{{ $gdg->Kondisi }}</td>
                       <td><img width="500px" height="500px" src="{{asset('storage/'.$gdg->Foto)}}"></td>
