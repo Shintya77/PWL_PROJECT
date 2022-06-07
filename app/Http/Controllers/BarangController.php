@@ -1,0 +1,169 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Barang;
+use Illuminate\Support\Facades\DB;
+
+class BarangController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        // Mengambil semua isi tabel
+        $barang = Barang::paginate(3); 
+        
+        //fungsi eloquent menampilkan data menggunakan pagination
+        $posts = Barang::orderBy('Kd_Barang', 'desc')->paginate(3);
+        return view('admin.barang.index', compact('barang'));
+        with('i', (request()->input('page', 1) - 1) * 5);
+   
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function search(Request $request){
+        //menangkap data pencarian
+        $cari = $request->search;
+
+        //mengambil data dari table barang sesuai pencarian data
+        $barang = Barang::where('Nama','like',"%".$cari."%")->paginate();
+
+        //mengiriim data barang ke view index
+        return view('admin.barang.index', compact('barang'));
+    }
+
+    public function create()
+    {
+        return view('admin.barang.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //melakukan validasi data
+        $request->validate([
+            'Kd_Barang' => 'required',
+            'Nama' => 'required',
+            'Foto' => 'required',
+            'Pemilik' => 'required',
+            'TanggalMasuk' => 'required',
+            'TanggalKeluar' => 'required',
+            'HargaGadai' => 'required',
+            'Status' => 'required',
+        ]);
+
+        if ($request->file('FotoBarang')){
+            $image_name = $request->file('FotoBarang')->store('FotoBarang', 'public');
+        }
+        
+        $barang = new Barang;
+        $barang->Kd_barang = $request->get('Kd_barang');
+        $barang->Nama = $request->get('Nama');
+        $barang->Foto = $image_name;
+        $barang->Pemilik= $request->get('Pemilik');
+        $barang->TanggalMasuk= $request->get('TanggalMasuk');
+        $barang->TanggalKeluar= $request->get('TanggalKeluar');
+        $barang->HargaGadai= $request->get('HargaGadai');
+        $barang->Status= $request->get('Status');
+        $barang->save();
+        
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('barang.index')->with('success', 'Data Barang Berhasil Ditambahkan');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($Kd_Barang)
+    {
+        //menampilkan detail data dengan menemukan/berdasarkan kode barang
+        $barang = Barang::find($Kd_Barang);
+         return view('admin.barang.detail', compact('barang'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($Kd_Barang)
+    {
+         //menampilkan detail data dengan menemukan berdasarkan kode barang untuk diedit
+         $barang = Barang::find($Kd_Barang);
+         return view('admin.barang.edit', compact('barang'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $Kd_Barang)
+    {
+        //melakukan validasi data
+        $request->validate([
+            'Kd_Barang' => 'required',
+            'Nama' => 'required',
+            'Foto' => 'required',
+            'Pemilik' => 'required',
+            'TanggalMasuk' => 'required',
+            'TanggalKeluar' => 'required',
+            'HargaGadai' => 'required',
+            'Status' => 'required',
+        ]);
+
+        $barang = Barang::where('Kd_Barang', $Kd_Barang)->first();
+        $barang->Kd_Barang = $request->get('Kd_Barang');
+        $barang->Nama = $request->get('Nama');
+        $barang->Foto = $request->get('Foto');
+        $barang->Pemilik= $request->get('Pemilik');
+        $barang->TanggalMasuk= $request->get('TanggalMasuk');
+        $barang->TanggalKeluar= $request->get('TanggalKeluar');
+        $barang->HargaGadai= $request->get('HargaGadai');
+        $barang->Status= $request->get('Status');
+        
+        if ($barang->Foto && file_exists(storage_path('app/public/'.$barang->Foto))){
+            \Storage::delete('public/'. $barang->Foto);
+        }
+        $image_name = $request->file('FotoBarang')->store('FotoBarang', 'public');
+        $barang->Foto = $image_name;
+        $barang->save();
+        
+        //jika data berhasil diupdate, akan kembali ke halaman utama
+        return redirect()->route('barang.index')->with('success', 'Data Barang Berhasil Diupdate');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($Kd_Barang)
+    {
+         //fungsi eloquent untuk menghapus data
+         Barang::find($Kd_Barang)->delete();
+         return redirect()->route('barang.index')-> with('success', 'Data Barang Berhasil Dihapus');
+    }
+}

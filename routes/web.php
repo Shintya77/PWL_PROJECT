@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\NasabahController;
 use App\Http\Controllers\PetugasController;
+use App\Http\Controllers\BarangController;
 
 
 /*
@@ -44,12 +45,12 @@ Route::get('/formgadai',[UserController::class, 'formgadai']);
 Route::group(['middleware' => ['auth', 'CekAdmin']], function () {
     // isi router
     Route::get('/dasboard',[AdminController::class, 'dasboard']);
-Route::resource('nasabah',NasabahController::class);
-Route::resource('petugas',PetugasController::class);
-// Route::get('/nasabah',[AdminController::class, 'nasabah']);
-Route::get('/barang',[AdminController::class, 'barang']);
-Route::get('/gudang',[AdminController::class, 'gudang']);
-Route::get('/pembayaran',[AdminController::class, 'pembayaran']);
-Route::get('/pinjaman',[AdminController::class, 'pinjaman']);
-// Route::get('/petugas',[AdminController::class, 'petugas']);
+    Route::resource('nasabah',NasabahController::class);
+    Route::resource('petugas',PetugasController::class);
+    Route::resource('/barang',BarangController::class);
+    Route::get('/gudang',[AdminController::class, 'gudang']);
+    // Route::get('/nasabah',[AdminController::class, 'nasabah']);
+    Route::get('/pembayaran',[AdminController::class, 'pembayaran']);
+    Route::get('/pinjaman',[AdminController::class, 'pinjaman']);
+    // Route::get('/petugas',[AdminController::class, 'petugas']);
 });
