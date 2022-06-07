@@ -32,10 +32,7 @@
                     <div class="form-group">
                         <label for="Pemilik">Pemilik</label>
                         <input type="Pemilik" name="Pemilik" class="form-control" id="Pemilik" value="{{ $gudang->Pemilik }}" aria-describedby="Pemilik" ></div>
-                    <div class="form-group">
-                        <label for="TanggalLahir">Tanggal Lahir</label>
-                        <input type="TanggalLahir" name="TanggalLahir" class="form-control" id="TanggalLahir" value="{{ $gudang->TanggalLahir}}" aria-describedby="TanggalLahir" >
-                    </div>
+
                     
                     <div class="form-group">
                         <label for="Deskripsi">Deskripsi</label>

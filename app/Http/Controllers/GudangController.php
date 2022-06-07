@@ -16,7 +16,7 @@ class GudangController extends Controller
     public function index()
     {
          // Mengambil semua isi tabel
-         $guadng = Gudang::paginate(3); 
+         $gudang = Gudang::paginate(3); 
         
          //fungsi eloquent menampilkan data menggunakan pagination
          $posts = Gudang::orderBy('kd_Barang', 'desc')->paginate(3);
@@ -61,8 +61,8 @@ class GudangController extends Controller
             
         ]);
 
-        if ($request->file('FotoBarang')){
-            $image_name = $request->file('FotoBarang')->store('FotoBarang', 'public');
+        if ($request->file('Foto')){
+            $image_name = $request->file('Foto')->store('Foto', 'public');
         }
         
         $gudang = new Gudang;
@@ -144,7 +144,7 @@ class GudangController extends Controller
         if ($gudang->Foto && file_exists(storage_path('app/public/'.$gudang->Foto))){
             \Storage::delete('public/'. $gudang->Foto);
         }
-        $image_name = $request->file('FotoBarang')->store('FotoBarang', 'public');
+        $image_name = $request->file('Foto')->store('Foto', 'public');
         $gudang->Foto = $image_name;
         
         $gudang->save();

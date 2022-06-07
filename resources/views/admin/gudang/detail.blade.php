@@ -19,16 +19,19 @@
                         <td>Nama Barang</td>
                         <td>{{ $gudang->Nama }}</td>
                     </tr>
+
                     <tr>
-                        <td></td>
-                        <td>{{ $gudang->Pemilik }}</td>
+                        <td>Pemilik</td>
+                        <td>{{ $gudang->Pemilik}}</td>
                     </tr>
+
                     <tr>
-                        <td></td>
+                        <td>Deskripsi</td>
                         <td>{{ $gudang->Deskripsi }}</td>
                     </tr>
+
                     <tr>
-                        <td></td>
+                        <td>Kondisi</td>
                         <td>{{ $gudang->Kondisi }}</td>
                     </tr>
                     

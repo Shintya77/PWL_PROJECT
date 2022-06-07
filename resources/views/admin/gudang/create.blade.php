@@ -26,7 +26,7 @@
                         <input type="text" name="kd_Barang" class="form-control" id="kd_Barang" aria-describedby="kd_Barang" >
                     </div>
                     <div class="form-group">
-                        <label for="Nama">Nama</label>
+                        <label for="Nama">Nama Barang</label>
                         <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" >
                     </div>
                     <div class="form-group">
@@ -35,7 +35,7 @@
                     </div>
                     <div class="form-group">
                             <label for="Deskripsi">Deskripsi</label>
-                            <input type="date" name="Deskripsi" class="form-control" id="Deskripsi" aria-describedby="Deskripsi">
+                            <input type="Deskripsi" name="Deskripsi" class="form-control" id="Deskripsi" aria-describedby="Deskripsi">
                         </div>
                    
                    

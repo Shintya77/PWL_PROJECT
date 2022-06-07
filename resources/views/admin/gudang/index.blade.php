@@ -30,7 +30,7 @@
                         <th>Kondisi</th>
                         <th>Foto</th>
                         <th>Aksi</th>
-                        <th></th>
+                        
                       </tr>
                     </thead>
                     <tbody>
