@@ -40,7 +40,7 @@
                       <td>{{ $brg->Kd_Barang }}</td>
                       <td>{{ $brg->Nama }}</td>
                       <td><img width="1000px" height="1000px" src="{{asset('storage/'.$brg->Foto)}}"></td>
-                      <td>{{ $brg->Pemilik }}</td>
+                      <td>{{ $brg->nasabah->Pemilik }}</td>
                       <td>{{ $brg->TanggalMasuk }}</td>
                       <td>{{ $brg->TanggalKeluar }}</td>
                       <td>{{ $brg->HargaGadai }}</td>

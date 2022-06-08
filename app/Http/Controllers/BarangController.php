@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Barang;
+use App\Models\Nasabah;
 use Illuminate\Support\Facades\DB;
 
 class BarangController extends Controller
@@ -16,7 +17,7 @@ class BarangController extends Controller
     public function index()
     {
         // Mengambil semua isi tabel
-        $barang = Barang::paginate(3); 
+        $barang = Barang::with('nasabah')->paginate(3); 
         
         //fungsi eloquent menampilkan data menggunakan pagination
         $posts = Barang::orderBy('Kd_Barang', 'desc')->paginate(3);
@@ -44,6 +45,8 @@ class BarangController extends Controller
 
     public function create()
     {
+        $nasabah = Nasabah::all();
+        return view('admin.barang.create', ['nasabah'=>$nasabah]);
         return view('admin.barang.create');
     }
 

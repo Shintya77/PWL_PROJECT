@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBarangsTable extends Migration
+class CreateBarangTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,6 +16,7 @@ class CreateBarangsTable extends Migration
         Schema::create('barang', function (Blueprint $table) {
             $table->id();
             $table->string('Kd_Barang',10)->index();
+            $table->string('Kd_Nasabah',10);
             $table->string('Nama',50);
             $table->string('Foto');
             $table->string('Pemilik',50);
@@ -24,6 +25,7 @@ class CreateBarangsTable extends Migration
             $table->integer('HargaGadai');
             $table->string('Status',50);
             $table->timestamps();
+            $table->foreign('Kd_Nasabah')->references('Kd_Nasabah')->on('Nasabah'); 
         });
     }
 

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Barang;
 
 class Nasabah extends Model
 {
@@ -23,5 +24,8 @@ class Nasabah extends Model
         'Alamat',
         'Pekerjaan',
     ];
+    public function barang(){
+        return $this->hasOne(Barang::class);
+    }
 
 }

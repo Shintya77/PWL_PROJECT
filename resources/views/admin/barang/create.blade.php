@@ -34,9 +34,17 @@
                         <label for="Foto">Gambar</label> 
                         <input type="file" class="form-control" required="required" name="Foto">
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="Pemilik">Pemilik</label> 
                         <input type="text" name="Pemilik" class="form-control" id="Pemilik" aria-describedby="Pemilik" > 
+                    </div> --}}
+                    <div class="form-group">
+                        <label for="Pemilik">Pemilik</label>
+                        <select name="Pemilik" id="Pemilik" class="form-control">
+                            @foreach ($nasabah as $nsb)
+                                <option value="{{$nsb->Kd_Barang}}" >{{$nsb->Nama}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="TanggalMasuk">Tanggal Masuk</label> 
