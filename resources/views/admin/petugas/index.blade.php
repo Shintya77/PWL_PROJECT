@@ -23,9 +23,10 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>id Petugas</th>
+                        <th>Kode Petugas</th>
                         <th>Nama Petugas</th>
                         <th>Username</th>
+                        <th>Foto</th>
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
                         <th>Usia</th>
@@ -37,9 +38,10 @@
                     <tbody>
                       @foreach ($petugas as $ptg)
                       <tr>
-                      <td>{{ $ptg->id_Petugas }}</td>
+                      <td>{{ $ptg->kd_Petugas }}</td>
                       <td>{{ $ptg->Nama }}</td>
                       <td>{{ $ptg->Username }}</td>
+                      <td><img width="500px" height="500px" src="{{asset('storage/'.$ptg->Foto)}}"></td>
                       <td>{{ $ptg->TanggalLahir}}</td>
                       <td>{{ $ptg->JenisKelamin }}</td>
                       <td>{{ $ptg->Usia }}</td>
@@ -47,12 +49,14 @@
                       <td>{{ $ptg->Jabatan }}</td>
                       
                         <td>
-                          <form action="{{ route('petugas.destroy',$ptg->id_Petugas) }}" method="POST">
-                              <a class="btn btn-info" href="{{ route('petugas.show',$ptg->id_Petugas) }}">Detail</a>
-                              <a class="btn btn-primary" href="{{ route('petugas.edit',$ptg->id_Petugas) }}">Edit</a>
+                          <form action="{{ route('petugas.destroy',$ptg->kd_Petugas) }}" method="POST">
+                              <a class="btn btn-info" href="{{ route('petugas.show',$ptg->kd_Petugas) }}">Detail</a>
+                              <a class="btn btn-primary" href="{{ route('petugas.edit',$ptg->kd_Petugas) }}">Edit</a>
                               @csrf
                               @method('DELETE')
-                              <button type="submit" class="btn btn-danger">Hapus</button>
+                              <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger">Hapus</button>
+
+                              
                           </form>
                         </td>
                       </tr>

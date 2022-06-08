@@ -15,9 +15,10 @@ class CreatePetugasTable extends Migration
     {
         Schema::create('petugas', function (Blueprint $table) {
             $table->id();
-            $table->string('id_Petugas',10)->index();
+            $table->string('kd_Petugas',10)->index();
             $table->string('Nama',50);
             $table->string('Username',50);
+            $table->string('Foto',50);
             $table->date('TanggalLahir');
             $table->string('JenisKelamin',5);
             $table->integer('Usia');

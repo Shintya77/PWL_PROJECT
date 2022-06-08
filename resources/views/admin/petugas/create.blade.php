@@ -19,11 +19,11 @@
                     </ul>
                 </div>
                 @endif
-                <form method="post" action="{{ route('petugas.store') }}" id="myForm">
+                <form method="post" action="{{ route('petugas.store') }}"  enctype="multipart/form-data" id="myForm">
                     @csrf
                     <div class="form-group">
-                        <label for="id_Petugas">id_Petugas</label>
-                        <input type="text" name="id_Petugas" class="form-control" id="id_Petugas" aria-describedby="id_Petugas" >
+                        <label for="kd_Petugas">kd_Petugas</label>
+                        <input type="text" name="kd_Petugas" class="form-control" id="kd_Petugas" aria-describedby="kd_Petugas" >
                     </div>
                     <div class="form-group">
                         <label for="Nama">Nama</label>
@@ -32,6 +32,10 @@
                     <div class="form-group">
                         <label for="Username">Username</label>
                         <input type="Username" name="Username" class="form-control" id="Username" aria-describedby="Username" >
+                    </div>
+                    <div class="form-group">
+                        <label for="Foto">Foto</label>
+                        <input type="file" class="form-control" required="required" name="Foto">
                     </div>
 
                     <div class="form-group">

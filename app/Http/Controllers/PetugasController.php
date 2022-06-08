@@ -20,7 +20,7 @@ class PetugasController extends Controller
         $petugas = Petugas::paginate(3); 
         
         //fungsi eloquent menampilkan data menggunakan pagination
-        $posts = Petugas::orderBy('id_Petugas', 'desc')->paginate(3);
+        $posts = Petugas::orderBy('kd_Petugas', 'desc')->paginate(3);
         return view('admin.petugas.index', compact('petugas'));
         with('i', (request()->input('page', 1) - 1) * 5);
 
@@ -55,19 +55,36 @@ class PetugasController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'id_Petugas' => 'required',
+            'kd_Petugas' => 'required',
             'Nama' => 'required',
             'Username' => 'required',
+            'Foto' => 'required',
             'TanggalLahir' => 'required',
             'JenisKelamin' => 'required',
             'Usia' => 'required',
             'Alamat' => 'required',
             'Jabatan' => 'required',
         ]);
+
+       
         
-        //fungsi eloquent untuk menambah data
-        Petugas::create($request->all());
         
+        if ($request->file('Foto')){
+            $image_name = $request->file('Foto')->store('Foto', 'public');
+        }
+        
+        $petugas = new Petugas;
+        $petugas->kd_Petugas = $request->get('kd_Petugas');
+        $petugas->Nama = $request->get('Nama');
+        $petugas->Username= $request->get('Username');
+        $petugas->Foto = $image_name;
+        $petugas->TanggalLahir= $request->get('TanggalLahir');
+        $petugas->JenisKelamin= $request->get('JenisKelamin');
+        $petugas->Usia= $request->get('Usia');
+        $petugas->Alamat= $request->get('Alamat');
+        $petugas->Jabatan= $request->get('Jabatan');
+        $petugas->save();
+   
        
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
         return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Ditambahkan');
@@ -79,10 +96,10 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id_Petugas)
+    public function show($kd_Petugas)
     {
         //menampilkan detail data dengan menemukan/berdasarkan id petugas
-        $petugas = Petugas::find($id_Petugas);
+        $petugas = Petugas::find($kd_Petugas);
          return view('admin.petugas.detail', compact('petugas'));
     }
 
@@ -92,10 +109,10 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id_Petugas)
+    public function edit($kd_Petugas)
     {
         //menampilkan detail data dengan menemukan berdasarkan id petugas untuk diedit
-        $petugas = Petugas::find($id_Petugas);
+        $petugas = Petugas::find($kd_Petugas);
         return view('admin.petugas.edit', compact('petugas'));
     }
 
@@ -106,22 +123,45 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id_Petugas)
+    public function update(Request $request, $kd_Petugas)
     {
         //melakukan validasi data
         $request->validate([
-            'id_Petugas' => 'required',
+            'kd_Petugas' => 'required',
             'Nama' => 'required',
             'Username' => 'required',
+            'Foto' => 'required',
             'TanggalLahir' => 'required',
             'JenisKelamin' => 'required',
             'Usia' => 'required',
             'Alamat' => 'required',
             'Jabatan' => 'required',
         ]);
-       
+
+    
         //fungsi eloquent untuk mengupdate data inputan kita
-        Petugas::find($id_Petugas)->update($request->all());
+
+        $petugas = Petugas::where('kd_Petugas', $kd_Petugas)->first();
+        $petugas->kd_Petugas = $request->get('kd_Petugas');
+        $petugas->Nama = $request->get('Nama');
+        $petugas->Foto = $request->get('Foto');
+        $petugas->TanggalLahir= $request->get('TanggalLahir');
+        $petugas->JenisKelamin= $request->get('JenisKelamin');
+        $petugas->Usia= $request->get('Usia');
+        $petugas->Alamat= $request->get('Alamat');
+        $petugas->Jabatan= $request->get('Jabatan');
+
+
+        if ($petugas->Foto && file_exists(storage_path('app/public/'.$petugas->Foto))){
+            \Storage::delete('public/'. $petugas->Foto);
+        }
+        $image_name = $request->file('Foto')->store('Foto', 'public');
+        $petugas->Foto = $image_name;
+        
+        $petugas->save();
+        // Petugas::find($kd_Petugas)->update($request->all());
+
+
        
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('petugas.index')->with('success', 'Data Petugas Berhasil Diupdate');
@@ -135,10 +175,13 @@ class PetugasController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id_Petugas)
+    public function destroy($kd_Petugas)
     {
         //fungsi eloquent untuk menghapus data
-        Petugas::find($id_Petugas)->delete();
+        Petugas::find($kd_Petugas)->delete();
         return redirect()->route('petugas.index')-> with('success', 'Data Petugas Berhasil Dihapus');
+
+
+       
     }
 }
