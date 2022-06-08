@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Gudang;
+use App\Models\Barang;
 use Illuminate\Support\Facades\DB;
 
 class GudangController extends Controller
@@ -16,8 +17,9 @@ class GudangController extends Controller
     public function index()
     {
          // Mengambil semua isi tabel
-         $gudang = Gudang::paginate(3); 
+         $gudang = Gudang::with('barang')->paginate(3); 
         
+
          //fungsi eloquent menampilkan data menggunakan pagination
          $posts = Gudang::orderBy('kd_Barang', 'desc')->paginate(3);
          return view('admin.gudang.index', compact('gudang'));
@@ -39,7 +41,12 @@ class GudangController extends Controller
 
     public function create()
     {
-        return view('admin.gudang.create');
+
+       
+
+        $barang = Barang::all();
+        return view('admin.gudang.create', ['barang'=>$barang]);
+
     }
 
     /**

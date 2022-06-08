@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Nasabah;
+use App\Models\Gudang;
 
 class Barang extends Model
 {
@@ -22,7 +22,4 @@ class Barang extends Model
         'HargaGadai',
         'Status',
     ];
-    public function nasabah(){
-        return $this->belongsTo(Nasabah::class);
-    }
 }

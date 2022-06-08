@@ -25,10 +25,20 @@
                         <label for="kd_Barang">Kode Barang</label>
                         <input type="text" name="kd_Barang" class="form-control" id="kd_Barang" aria-describedby="kd_Barang" >
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="Nama">Nama Barang</label>
                         <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" >
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="Nama">Nama Barang</label>
+                        <select name="Nama" id="Nama" class="form-control">
+                            @foreach ($barang as $brg)
+                                <option value="{{$brg->Kd_Barang}}" >{{$brg->Kd_Barang}}</option>
+                            @endforeach
+                        </select>
                     </div>
+
                     <div class="form-group">
                         <label for="Pemilik">Pemilik</label>
                         <input type="Pemilik" name="Pemilik" class="form-control" id="Pemilik" aria-describedby="Pemilik" >
