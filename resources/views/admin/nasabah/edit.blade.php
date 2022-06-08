@@ -19,12 +19,12 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="{{ route('nasabah.update', $nasabah->Id_Nasabah) }}" id="myForm">
+            <form method="post" action="{{ route('nasabah.update', $nasabah->Kd_Nasabah) }}" enctype="multipart/form-data" id="myForm">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="Id_Nasabah">Id_Nasabah</label> 
-                    <input type="text" name="Id_Nasabah" class="form-control" id="Id_Nasabah" value="{{ $nasabah->Id_Nasabah }}" aria-describedby="Id_Nasabah" > </div>
+                    <label for="Kd_Nasabah">Kode Nasabah</label> 
+                    <input type="text" name="Kd_Nasabah" class="form-control" id="Kd_Nasabah" value="{{ $nasabah->Kd_Nasabah }}" aria-describedby="Kd_Nasabah" > </div>
                     <div class="form-group">
                         <label for="Nama">Nama</label> 
                         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $nasabah->Nama }}" aria-describedby="Nama" > 
@@ -32,6 +32,11 @@
                     <div class="form-group">
                         <label for="Username">Username</label> 
                         <input type="Username" name="Username" class="form-control" id="Username" value="{{ $nasabah->Username }}" aria-describedby="Username" > 
+                    </div>
+                    <div class="form-group">
+                        <label for="Foto">Foto</label> 
+                        <input type="file" class="form-control" required="required" name="Foto" value="{{$nasabah->Foto}}"><br>
+                        <img width="100px" height="100px" src="{{asset('storage/'.$nasabah->Foto)}}">
                     </div>
                     <div class="form-group">
                         <label for="TangalLahir">TanggalLahir</label> 

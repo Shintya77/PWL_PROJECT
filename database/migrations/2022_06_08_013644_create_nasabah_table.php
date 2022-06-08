@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNasabahsTable extends Migration
+class CreateNasabahTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,9 +15,10 @@ class CreateNasabahsTable extends Migration
     {
         Schema::create('nasabah', function (Blueprint $table) {
             $table->id();
-            $table->string('Id_Nasabah',10)->index();
+            $table->string('Kd_Nasabah',10)->index();
             $table->string('Nama',50);
             $table->string('Username',50);
+            $table->string('Foto');
             $table->date('TangalLahir');
             $table->string('JenisKelamin',5);
             $table->integer('Usia');

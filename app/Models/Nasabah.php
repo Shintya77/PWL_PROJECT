@@ -10,12 +10,13 @@ class Nasabah extends Model
     use HasFactory;
 
     protected $table="nasabah"; 
-    protected $primaryKey = 'Id_Nasabah'; 
+    protected $primaryKey = 'Kd_Nasabah'; 
 
     protected $fillable = [
-        'Id_Nasabah',
+        'Kd_Nasabah',
         'Nama',
         'Username',
+        'Foto',
         'TangalLahir',
         'JenisKelamin',
         'Usia',
