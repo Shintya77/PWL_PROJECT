@@ -16,11 +16,11 @@ class AdminController extends Controller
         ['title'=> 'Data Nasabah Pegadaian']);
     }
     public function barang(){
-        return view('admin.barang.barang',
+        return view('admin.barang.index',
         ['title'=> 'Data Barang Pegadaian']);
     }
     public function gudang(){
-        return view('admin.gudang.gudang',
+        return view('admin.gudang.index',
         ['title'=> 'Data Gudang Pegadaian']);
     }
     public function petugas(){
