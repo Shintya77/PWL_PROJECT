@@ -67,12 +67,12 @@ class BarangController extends Controller
             'Status' => 'required',
         ]);
 
-        if ($request->file('FotoBarang')){
-            $image_name = $request->file('FotoBarang')->store('FotoBarang', 'public');
+        if ($request->file('Foto')){
+            $image_name = $request->file('Foto')->store('Foto', 'public');
         }
         
         $barang = new Barang;
-        $barang->Kd_barang = $request->get('Kd_barang');
+        $barang->Kd_Barang = $request->get('Kd_Barang');
         $barang->Nama = $request->get('Nama');
         $barang->Foto = $image_name;
         $barang->Pemilik= $request->get('Pemilik');
@@ -146,7 +146,7 @@ class BarangController extends Controller
         if ($barang->Foto && file_exists(storage_path('app/public/'.$barang->Foto))){
             \Storage::delete('public/'. $barang->Foto);
         }
-        $image_name = $request->file('FotoBarang')->store('FotoBarang', 'public');
+        $image_name = $request->file('Foto')->store('Foto', 'public');
         $barang->Foto = $image_name;
         $barang->save();
         
