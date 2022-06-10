@@ -8,6 +8,8 @@ use App\Http\Controllers\NasabahController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\GudangController;
+use App\Http\Controllers\PinjamanController;
+use App\Http\Controllers\PembayaranController;
 
 
 /*
@@ -52,7 +54,7 @@ Route::group(['middleware' => ['auth', 'CekAdmin']], function () {
     Route::resource('/gudang',GudangController::class);
 
     // Route::get('/nasabah',[AdminController::class, 'nasabah']);
-    Route::get('/pembayaran',[AdminController::class, 'pembayaran']);
-    Route::get('/pinjaman',[AdminController::class, 'pinjaman']);
+    Route::resource('/pembayaran',PembayaranController::class);
+    Route::resource('/pinjaman',PinjamanController::class);
     // Route::get('/petugas',[AdminController::class, 'petugas']);
 });

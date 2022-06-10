@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\Nasabah;
+use App\Models\Pinjaman;
 use Illuminate\Support\Facades\DB;
 
 class PinjamanController extends Controller
@@ -16,31 +17,75 @@ class PinjamanController extends Controller
      */
     public function index()
     {
-        $barang = Barang::with('nasabah')->get();
-        $paginate = Barang::orderBy('Kd_Barang', 'asc')->paginate(3);
-        return view('admin.barang.index', ['barang' => $barang, 'paginate'=>$paginate]);
+        // $pinjaman = Pinjaman::with('barang')->get();
+        $paginate = Pinjaman::orderBy('Kd_Pinjaman', 'asc')->paginate(3);
+        return view('admin.pinjaman.index', [ 'paginate'=>$paginate]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function search(Request $request){
+        //menangkap data pencarian
+        $cari = $request->search;
+
+        //mengambil data dari table pinj$pinjaman sesuai pencarian data
+        $pinjaman = Pinjaman::where('Nama','like',"%".$cari."%")->paginate();
+
+        //mengiriim data pinj$pinjaman ke view index
+        return view('admin.pinjaman.index', compact('pinjaman'));
+    }
+
+
+
     public function create()
     {
-        //
+        $barang = Barang::all();
+        return view('admin.pinjaman.create', ['barang'=>$barang]);
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+  
     public function store(Request $request)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'Kd_Pinjaman' => 'required',
+            'Kd_Nasabah' => 'required',
+            'Kd_Barang' => 'required',
+            'Pemilik' => 'required',
+            'Nama' => 'required',
+            'JumlahPinjaman' => 'required',
+            'JangkaWaktu' => 'required',
+            
+        ]);
+
+       
+        
+        $pinjaman = new Pinjaman;
+        
+        $pinjaman->Kd_Pinjaman = $request->get('Kd_Pinjaman');
+        $pinjaman->Kd_Nasabah= $request->get('Kd_Nasabah');
+        $pinjaman->Kd_Barang= $request->get('Kd_Barang');
+        $pinjaman->Pemilik= $request->get('Pemilik');
+        $pinjaman->Nama = $request->get('Nama');
+        $pinjaman->JumlahPinjaman= $request->get('JumlahPinjaman');
+        $pinjaman->JangkaWaktu= $request->get('JangkaWaktu');
+       
+        
+        $barang = new Barang;
+        $barang->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $barang->Kd_Barang = $request->get('Kd_Barang');
+        $barang->Pemilik = $request->get('Pemilik');
+        $barang->Nama = $request->get('Nama');
+
+
+        
+        // $pinjaman->nasabah()->associate($nasabah);
+        $pinjaman->save();
+        
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        return redirect()->route('pinjaman.index')->with('success', 'Data Barang Berhasil Ditambahkan');
     }
+    
 
     /**
      * Display the specified resource.
@@ -48,9 +93,12 @@ class PinjamanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($Kd_Pinjaman)
     {
-        //
+        
+        //menampilkan detail data dengan menemukan/berdasarkan kode pinjama$pinjaman
+        $pinjaman = Pinjaman::find($Kd_Pinjaman);
+         return view('admin.pinjaman.detail', compact('pinjaman'));
     }
 
     /**
@@ -59,9 +107,12 @@ class PinjamanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($Kd_Pinjaman)
     {
-        //
+        
+        $pinjaman = Pinjaman::where('Kd_Pinjaman', $Kd_Pinjaman)->first();
+        $barang = Barang::all(); 
+        return view('admin.pinjaman.edit', compact('pinjaman', 'barang'));
     }
 
     /**
@@ -71,9 +122,39 @@ class PinjamanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $Kd_Pinjaman)
     {
-        //
+        //melakukan validasi data
+        $request->validate([
+            'Kd_Pinjaman' => 'required',
+            'Kd_Nasabah' => 'required',
+            'Kd_Barang' => 'required',
+            'Pemilik' => 'required',
+            'Nama' => 'required',
+            'JumlahPinjaman' => 'required',
+            'JangkaWaktu' => 'required',
+        ]);
+
+        $pinjaman = Pinjaman::with('barang')->where('Kd_Pinjaman', $Kd_Pinjaman)->first();
+        $pinjaman->Kd_Pinjaman = $request->get('Kd_Pinjaman');
+        $pinjaman->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $pinjaman->Kd_Barang = $request->get('Kd_Barang');
+        $pinjaman->Pemilik= $request->get('Pemilik');
+        $pinjaman->Nama = $request->get('Nama');
+        $pinjaman->JumlahPinjaman= $request->get('JumlahPinjaman');
+        $pinjaman->JangkaWaktu= $request->get('JangkaWaktu');
+       
+        $barang = new Barang;
+        $barang->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $barang->Kd_Barang = $request->get('Kd_Barang');
+        $barang->Pemilik = $request->get('Pemilik');
+        $barang->Nama = $request->get('Nama');
+
+        
+        $pinjaman->save();
+        
+        //jika data berhasil diupdate, akan kembali ke halaman utama
+        return redirect()->route('pinjaman.index')->with('success', 'Data Barang Berhasil Diupdate');
     }
 
     /**
@@ -82,8 +163,11 @@ class PinjamanController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($Kd_Pinjaman)
     {
-        //
+        //fungsi eloquent untuk menghapus data
+        Pinjaman::find($Kd_Pinjaman)->delete();
+        return redirect()->route('pinjaman.index')-> with('success', 'Data Barang Berhasil Dihapus');
     }
+
 }
