@@ -12,7 +12,7 @@
               <div class="card-body">
                 <div class="table-responsive">
                   <div>
-                    <a href="{{ route('gudang.create')}}" class="btn btn-primary">
+                    <a href="{{ route('pembayaran.create')}}" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Tambah Data</a>
                     {{-- <a href="?page=add-pengguna" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Edit Data</a>
@@ -25,15 +25,34 @@
                       <tr>
                         <th>Kode Bayar</th>
                         <th>Nama Nasabah</th>
-                        <th>Nama Barang</th>
+                        <th>Barang</th>
                         <th>Total Bayar</th>
                         <th>Tanggal Akhir Bayar</th>
                         <th>Status</th>
+                        <th>Aksi</th>
                       </tr>
                     </thead>
                     <tbody>
-            
-                      
+                      @foreach ($paginate as $pbr)
+                      <tr>
+                      <td>{{ $pbr->Kd_Pembayaran }}</td>
+                      <td>{{ $pbr->Kd_Pinjaman }}</td>
+                      <td>{{ $pbr->NamaNasabah }}</td>
+                     <td>{{ $pbr->NamaBarang }}</td>
+                      <td>{{ $pbr->TotalBayar }}</td>
+                      <td>{{ $pbr->TanggaAkhir }}</td>
+                      <td>{{ $pbr->Status }}</td>
+                        <td>
+                          <form action="{{ route('pembayaran.destroy',$pbr->Kd_Pembayaran) }}" method="POST">
+                              <a class="btn btn-info" href="{{ route('pembayaran.show',$pbr->Kd_Pembayaran) }}">Detail</a>
+                              <a class="btn btn-primary" href="{{ route('pembayaran.edit',$pbr->Kd_Pembayaran) }}">Edit</a>
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger">Hapus</button>
+                          </form>
+                        </td>
+                      </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
