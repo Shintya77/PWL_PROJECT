@@ -114,8 +114,13 @@ class GudangController extends Controller
     public function edit($Kd_Barang)
     {
         //menampilkan detail data dengan menemukan berdasarkan id gudan$gudang untuk diedit
-        $gudang = Gudang::find($Kd_Barang);
-        return view('admin.gudang.edit', compact('gudang'));
+        // $gudang = Gudang::find($Kd_Barang);
+        // return view('admin.gudang.edit', compact('gudang'));
+
+
+        $gudang = Gudang::where('Kd_Barang', $Kd_Barang)->first();
+        $barang = Barang::all(); 
+        return view('admin.gudang.edit', compact('gudang', 'barang'));
     }
 
     /**

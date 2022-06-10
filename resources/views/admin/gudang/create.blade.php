@@ -57,7 +57,7 @@
                         <label for="Pemilik">Pemilik</label>
                         <select name="Pemilik" id="Pemilik" class="Pemilik">
                             @foreach ($barang as $brg)
-                                <option value="{{$brg->Kd_Barang}}" >{{$brg->Pemilik}}</option>
+                                <option value="{{$brg->Pemilik}}" >{{$brg->Pemilik}}</option>
                             @endforeach
                         </select>
                     </div>
