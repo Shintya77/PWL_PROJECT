@@ -10,10 +10,10 @@ class Gudang extends Model
 {
     use HasFactory;
     protected $table="gudang";
-    protected $primaryKey = "kd_Barang";
+    protected $primaryKey = "Kd_Barang";
 
     protected $fillable = [
-        'kd_Barang',
+        'Kd_Barang',
         'Nama',
         'Pemilik',
         'Deskripsi',

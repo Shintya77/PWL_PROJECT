@@ -34,19 +34,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($gudang as $gdg)
+                      @foreach ($paginate as $gdg)
                       <tr>
-                      <td>{{ $gdg->barang->Kd_Barang }}</td>
-                      <td>{{ $gdg->barang->Nama }}</td>
-                      <td>{{ $gdg->barang->Pemilik }}</td>
+                      <td>{{ $gdg->Kd_Barang }}</td>
+                      <td>{{ $gdg->Nama }}</td>
+                      <td>{{ $gdg->Pemilik }}</td>
                       <td>{{ $gdg->Deskripsi}}</td>
                       <td>{{ $gdg->Kondisi }}</td>
                       <td><img width="500px" height="500px" src="{{asset('storage/'.$gdg->Foto)}}"></td>
                      
                         <td>
-                          <form action="{{ route('gudang.destroy',$gdg->kd_Barang) }}" method="POST">
-                              <a class="btn btn-info" href="{{ route('gudang.show',$gdg->kd_Barang) }}">Detail</a>
-                              <a class="btn btn-primary" href="{{ route('gudang.edit',$gdg->kd_Barang) }}">Edit</a>
+                          <form action="{{ route('gudang.destroy',$gdg->Kd_Barang) }}" method="POST">
+                              <a class="btn btn-info" href="{{ route('gudang.show',$gdg->Kd_Barang) }}">Detail</a>
+                              <a class="btn btn-primary" href="{{ route('gudang.edit',$gdg->Kd_Barang) }}">Edit</a>
                               @csrf
                               @method('DELETE')
                               <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger">Hapus</button>

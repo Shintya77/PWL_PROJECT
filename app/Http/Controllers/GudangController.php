@@ -17,13 +17,12 @@ class GudangController extends Controller
     public function index()
     {
          // Mengambil semua isi tabel
-         $gudang = Gudang::with('barang')->paginate(3); 
+        //  $gudang = Gudang::with('barang')->paginate(3); 
         
 
-         //fungsi eloquent menampilkan data menggunakan pagination
-         $posts = Gudang::orderBy('kd_Barang', 'desc')->paginate(3);
-         return view('admin.gudang.index', compact('gudang'));
-         with('i', (request()->input('page', 1) - 1) * 5);
+        //  $gudang = Gudang::with('barang')->get();
+         $paginate = Gudang::orderBy('Kd_Barang', 'asc')->paginate(3);
+         return view('admin.gudang.index', [ 'paginate'=>$paginate]);
     }
 
     
@@ -59,7 +58,7 @@ class GudangController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'kd_Barang' => 'required',
+            'Kd_Barang' => 'required',
             'Nama' => 'required',
             'Pemilik' => 'required',
             'Deskripsi' => 'required',
@@ -73,12 +72,18 @@ class GudangController extends Controller
         }
         
         $gudang = new Gudang;
-        $gudang->kd_Barang = $request->get('kd_Barang');
+        $barang = new Barang;
+        $gudang->Kd_Barang = $request->get('Kd_Barang');
         $gudang->Nama = $request->get('Nama');
         $gudang->Pemilik= $request->get('Pemilik');
         $gudang->Deskripsi= $request->get('Deskripsi');
         $gudang->Kondisi= $request->get('Kondisi');
         $gudang->Foto = $image_name;
+
+       
+        $barang->Kd_Barang = $request->get('Kd_Barang');
+        $barang->Nama = $request->get('Pemilik');
+        
         $gudang->save();
    
        
@@ -93,10 +98,10 @@ class GudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($kd_Barang)
+    public function show($Kd_Barang)
     {
          //menampilkan detail data dengan menemukan/berdasarkan id gudan$gudang
-         $gudang = Gudang::find($kd_Barang);
+         $gudang = Gudang::find($Kd_Barang);
          return view('admin.gudang.detail', compact('gudang'));
     }
 
@@ -106,10 +111,10 @@ class GudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($kd_Barang)
+    public function edit($Kd_Barang)
     {
         //menampilkan detail data dengan menemukan berdasarkan id gudan$gudang untuk diedit
-        $gudang = Gudang::find($kd_Barang);
+        $gudang = Gudang::find($Kd_Barang);
         return view('admin.gudang.edit', compact('gudang'));
     }
 
@@ -120,11 +125,11 @@ class GudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $kd_Barang)
+    public function update(Request $request, $Kd_Barang)
     {
         //melakukan validasi data
         $request->validate([
-            'kd_Barang' => 'required',
+            'Kd_Barang' => 'required',
             'Nama' => 'required',
             'Pemilik' => 'required',
             'Deskripsi' => 'required',
@@ -138,8 +143,8 @@ class GudangController extends Controller
 
 
 
-        $gudang = Gudang::where('kd_Barang', $kd_Barang)->first();
-        $gudang->kd_Barang = $request->get('kd_Barang');
+        $gudang = Gudang::where('Kd_Barang', $Kd_Barang)->first();
+        $gudang->Kd_Barang = $request->get('Kd_Barang');
         $gudang->Nama = $request->get('Nama');
         $gudang->Pemilik= $request->get('Pemilik');
         $gudang->Deskripsi= $request->get('Deskripsi');
@@ -154,10 +159,14 @@ class GudangController extends Controller
         $image_name = $request->file('Foto')->store('Foto', 'public');
         $gudang->Foto = $image_name;
         
+
+        $Barang = new Barang;
+        $Barang->Kd_Barang = $request->get('Kd_Barang');
+        $Barang->Nama = $request->get('Pemilik');
+       
+        
         $gudang->save();
-        // Petugas::find($kd_Petugas)->update($request->all());
-
-
+        
        
         //jika data berhasil diupdate, akan kembali ke halaman utama
         return redirect()->route('gudang.index')->with('success', 'Data Petugas Berhasil Diupdate');
@@ -169,10 +178,10 @@ class GudangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($kd_Barang)
+    public function destroy($Kd_Barang)
     {
          //fungsi eloquent untuk menghapus data
-         Gudang::find($kd_Barang)->delete();
+         Gudang::find($Kd_Barang)->delete();
          return redirect()->route('gudang.index')-> with('success', 'Data Petugas Berhasil Dihapus');
     }
 }

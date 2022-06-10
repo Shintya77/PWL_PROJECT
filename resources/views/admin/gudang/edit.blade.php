@@ -19,12 +19,12 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="{{ route('gudang.update', $gudang->kd_Barang) }}" enctype="multipart/form-data"  id="myForm">
+            <form method="post" action="{{ route('gudang.update', $gudang->Kd_Barang) }}" enctype="multipart/form-data"  id="myForm">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
                     <label for="kd_Petugas">Kode_Barang</label>
-                    <input type="text" name="kd_Barang" class="form-control" id="kd_Barang" value="{{ $gudang->kd_Barang }}" aria-describedby="kd_Barang" > </div>
+                    <input type="text" name="Kd_Barang" class="form-control" id="Kd_Barang" value="{{ $gudang->Kd_Barang }}" aria-describedby="Kd_Barang" > </div>
                     <div class="form-group">
                         <label for="Nama">Nama</label>
                         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $gudang->Nama }}" aria-describedby="Nama" >

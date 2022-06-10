@@ -15,7 +15,7 @@ class CreateGudangTable extends Migration
     {
         Schema::create('gudang', function (Blueprint $table) {
             $table->id();
-            $table->string('kd_Barang',10);
+            $table->string('Kd_Barang',10);
             $table->string('Nama',50);
             $table->string('Pemilik',50);
             $table->string('Deskripsi',50);

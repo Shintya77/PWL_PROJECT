@@ -13,7 +13,7 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <tr>
                         <td>Kode Barang</td>
-                        <td>{{ $gudang->kd_Barang}}</td>
+                        <td>{{ $gudang->Kd_Barang}}</td>
                     </tr>
                     <tr>
                         <td>Nama Barang</td>
