@@ -25,7 +25,6 @@ class CreatePinjamanTable extends Migration
             $table->timestamps();
 
             
-            $table->foreign('Kd_Nasabah')->references('Kd_Nasabah')->on('Nasabah'); 
             $table->foreign('Kd_Barang')->references('Kd_Barang')->on('Barang'); 
         });
     }

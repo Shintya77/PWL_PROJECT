@@ -31,9 +31,7 @@ class Pinjaman extends Model
         return $this->hasOne(Barang::class);
 }
 
-    public function nasabah(){
-    return $this->hasOne(Nasabah::class);
-}
+    
 public function pembayaran(){
     return $this->belongsTo(Pembayaran::class);
 }
