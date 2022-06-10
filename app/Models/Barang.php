@@ -22,4 +22,7 @@ class Barang extends Model
         'HargaGadai',
         'Status',
     ];
+    public function gudang(){
+        return $this->belongsTo(Gudang::class);
+}
 }
