@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Gudang;
 use App\Models\Nasabah;
+use App\Models\Pinjaman;
 
 class Barang extends Model
 {
@@ -28,5 +29,9 @@ class Barang extends Model
 }
 public function nasabah(){
     return $this->belongsTo(Nasabah::class);
+}
+
+public function pinjaman(){
+    return $this->belongsTo(Pinjaman::class);
 }
 }
