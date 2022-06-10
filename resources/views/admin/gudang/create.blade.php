@@ -43,7 +43,7 @@
                         <label for="Nama">Nama Barang</label>
                         <select name="Nama" id="Nama" class="form-control">
                             @foreach ($barang as $brg)
-                                <option value="{{$brg->Kd_Barang}}" >{{$brg->Nama}}</option>
+                                <option value="{{$brg->Nama}}" >{{$brg->Nama}}</option>
                             @endforeach
                         </select>
                     </div>
