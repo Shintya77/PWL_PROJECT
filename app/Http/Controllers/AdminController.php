@@ -33,6 +33,6 @@ class AdminController extends Controller
     }
     public function pinjaman(){
         return view('admin.pinjaman.index', 
-        ['title'=> 'Data Pinjaman Pegadaia']);
+        ['title'=> 'Data Pinjaman Pegadaian']);
     }
 }
