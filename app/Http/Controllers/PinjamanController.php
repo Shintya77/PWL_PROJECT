@@ -135,7 +135,7 @@ class PinjamanController extends Controller
             'JangkaWaktu' => 'required',
         ]);
 
-        $pinjaman = Pinjaman::with('barang')->where('Kd_Pinjaman', $Kd_Pinjaman)->first();
+        $pinjaman = Pinjaman::where('Kd_Pinjaman', $Kd_Pinjaman)->first();
         $pinjaman->Kd_Pinjaman = $request->get('Kd_Pinjaman');
         $pinjaman->Kd_Nasabah = $request->get('Kd_Nasabah');
         $pinjaman->Kd_Barang = $request->get('Kd_Barang');
