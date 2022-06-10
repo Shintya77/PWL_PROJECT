@@ -28,11 +28,11 @@ class AdminController extends Controller
         ['title'=> 'Data Petugas Pegadaian']);
     }
     public function pembayaran(){
-        return view('admin.pembayaran.pembayaran', 
-        ['title'=> 'Data Transaksi Pegadaia']);
+        return view('admin.pembayaran.index', 
+        ['title'=> 'Data Transaksi Pegadaian']);
     }
     public function pinjaman(){
-        return view('admin.pinjaman.pinjaman', 
+        return view('admin.pinjaman.index', 
         ['title'=> 'Data Pinjaman Pegadaia']);
     }
 }

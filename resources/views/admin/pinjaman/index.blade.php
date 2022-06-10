@@ -13,12 +13,12 @@
                 <div class="table-responsive">
                   <div>
                     <a href="{{ route('pinjaman.create')}}" class="btn btn-primary">
-                      <!-- <i class="fa fa-edit"></i> Tambah Data</a>
-                    <a href="?page=add-pengguna" class="btn btn-primary">
+                      <i class="fa fa-edit"></i> Tambah Data</a>
+                    <!-- <a href="?page=add-pengguna" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Edit Data</a>
                     <a href="?page=add-pengguna" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Hapus Data</a> -->
-                  </div>
+                  </div> -->
                   <br>
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
