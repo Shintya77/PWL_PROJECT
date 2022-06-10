@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Gudang;
+use App\Models\Nasabah;
 
 class Barang extends Model
 {
@@ -14,6 +15,7 @@ class Barang extends Model
 
     protected $fillable = [
         'Kd_Barang',
+        'Kd_Nasabah',
         'Nama',
         'Foto',
         'Pemilik',
@@ -24,5 +26,9 @@ class Barang extends Model
     ];
     public function gudang(){
         return $this->belongsTo(Gudang::class);
+    }
+    public function nasabah(){
+        return $this->belongsTo(Nasabah::class);
 }
+
 }

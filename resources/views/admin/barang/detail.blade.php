@@ -16,6 +16,10 @@
                         <td>{{ $barang->Kd_Barang}}</td>
                     </tr>
                     <tr>
+                        <td>Kode Nasbah</td>
+                        <td>{{ $barang->Kd_Nasabah}}</td>
+                    </tr>
+                    <tr>
                         <td>Nama Barang</td>
                         <td>{{ $barang->Nama }}</td>
                     </tr>

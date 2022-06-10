@@ -17,12 +17,16 @@ class BarangController extends Controller
     public function index()
     {
         // Mengambil semua isi tabel
-        $barang = Barang::with('nasabah')->paginate(3); 
+        // $barang = Barang::with('nasabah')->paginate(3); 
         
-        //fungsi eloquent menampilkan data menggunakan pagination
-        $posts = Barang::orderBy('Kd_Barang', 'desc')->paginate(3);
-        return view('admin.barang.index', compact('barang'));
-        with('i', (request()->input('page', 1) - 1) * 5);
+        // //fungsi eloquent menampilkan data menggunakan pagination
+        // $posts = Barang::orderBy('Kd_Barang', 'desc')->paginate(3);
+        // return view('admin.barang.index', compact('barang'));
+        // with('i', (request()->input('page', 1) - 1) * 5);
+
+        $barang = Barang::with('nasabah')->get();
+        $paginate = Barang::orderBy('Kd_Barang', 'asc')->paginate(3);
+        return view('admin.barang.index', ['barang' => $barang, 'paginate'=>$paginate]);
    
     }
 
@@ -47,7 +51,7 @@ class BarangController extends Controller
     {
         $nasabah = Nasabah::all();
         return view('admin.barang.create', ['nasabah'=>$nasabah]);
-        return view('admin.barang.create');
+        // return view('admin.barang.create');
     }
 
     /**
@@ -61,6 +65,7 @@ class BarangController extends Controller
         //melakukan validasi data
         $request->validate([
             'Kd_Barang' => 'required',
+            'Kd_Nasabah' => 'required',
             'Nama' => 'required',
             'Foto' => 'required',
             'Pemilik' => 'required',
@@ -75,7 +80,10 @@ class BarangController extends Controller
         }
         
         $barang = new Barang;
+        
+        $nasabah = new Nasabah;
         $barang->Kd_Barang = $request->get('Kd_Barang');
+        $barang->Kd_Nasabah= $request->get('Kd_Nasabah');
         $barang->Nama = $request->get('Nama');
         $barang->Foto = $image_name;
         $barang->Pemilik= $request->get('Pemilik');
@@ -83,6 +91,11 @@ class BarangController extends Controller
         $barang->TanggalKeluar= $request->get('TanggalKeluar');
         $barang->HargaGadai= $request->get('HargaGadai');
         $barang->Status= $request->get('Status');
+
+        $nasabah->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $nasabah->Nama = $request->get('Pemilik');
+        
+        // $barang->nasabah()->associate($nasabah);
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
@@ -98,7 +111,7 @@ class BarangController extends Controller
     public function show($Kd_Barang)
     {
         //menampilkan detail data dengan menemukan/berdasarkan kode barang
-        $barang = Barang::find($Kd_Barang);
+        $barang = Barang::with('nasabah')->find($Kd_Barang);
          return view('admin.barang.detail', compact('barang'));
     }
 
@@ -111,7 +124,7 @@ class BarangController extends Controller
     public function edit($Kd_Barang)
     {
          //menampilkan detail data dengan menemukan berdasarkan kode barang untuk diedit
-         $barang = Barang::find($Kd_Barang);
+         $barang = Barang::with('nasabah')->find($Kd_Barang);
          return view('admin.barang.edit', compact('barang'));
     }
 
@@ -127,6 +140,7 @@ class BarangController extends Controller
         //melakukan validasi data
         $request->validate([
             'Kd_Barang' => 'required',
+            'Kd_Nasabah' => 'required',
             'Nama' => 'required',
             'Foto' => 'required',
             'Pemilik' => 'required',
@@ -136,8 +150,9 @@ class BarangController extends Controller
             'Status' => 'required',
         ]);
 
-        $barang = Barang::where('Kd_Barang', $Kd_Barang)->first();
+        $barang = Barang::with('nasabah')->where('Kd_Barang', $Kd_Barang)->first();
         $barang->Kd_Barang = $request->get('Kd_Barang');
+        $barang->Kd_Nasabah = $request->get('Kd_Nasabah');
         $barang->Nama = $request->get('Nama');
         $barang->Foto = $request->get('Foto');
         $barang->Pemilik= $request->get('Pemilik');
@@ -151,6 +166,12 @@ class BarangController extends Controller
         }
         $image_name = $request->file('Foto')->store('Foto', 'public');
         $barang->Foto = $image_name;
+
+        $nasabah = new Nasabah;
+        $nasabah->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $nasabah->Nama = $request->get('Pemilik');
+        // $nasabah->nasabah()->associate($nasabah);
+        
         $barang->save();
         
         //jika data berhasil diupdate, akan kembali ke halaman utama

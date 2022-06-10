@@ -24,6 +24,7 @@
                     <thead>
                       <tr>
                         <th>Kode Barang</th>
+                        <th>Kode Nasabah</th>
                         <th>Nama Barang</th>
                         <th>Gambar</th>
                         <th>Pemilik</th>
@@ -35,12 +36,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($barang as $brg)
+                      @foreach ($paginate as $brg)
                       <tr>
                       <td>{{ $brg->Kd_Barang }}</td>
+                      <td>{{ $brg->Kd_Nasabah }}</td>
                       <td>{{ $brg->Nama }}</td>
                       <td><img width="1000px" height="1000px" src="{{asset('storage/'.$brg->Foto)}}"></td>
-                      <td>{{ $brg->nasabah->Pemilik }}</td>
+                      <td>{{ $brg->Pemilik }}</td>
                       <td>{{ $brg->TanggalMasuk }}</td>
                       <td>{{ $brg->TanggalKeluar }}</td>
                       <td>{{ $brg->HargaGadai }}</td>
@@ -52,7 +54,6 @@
                               @csrf
                               @method('DELETE')
                               <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger">Hapus</button>
-
                           </form>
                         </td>
                       </tr>

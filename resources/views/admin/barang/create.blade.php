@@ -27,6 +27,14 @@
                         <input type="text" name="Kd_Barang" class="form-control" id="Kd_Barang" aria-describedby="Kd_Barang" > 
                     </div>
                     <div class="form-group">
+                        <label for="Kd_Nasabah">Kode Nasabah</label>
+                        <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control" required="required">
+                            @foreach ($nasabah as $nsb)
+                                <option value="{{$nsb->Kd_Nasabah}}" >{{$nsb->Kd_Nasabah}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="Nama">Nama Barang</label> 
                         <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" > 
                     </div>
@@ -34,15 +42,11 @@
                         <label for="Foto">Gambar</label> 
                         <input type="file" class="form-control" required="required" name="Foto">
                     </div>
-                    {{-- <div class="form-group">
-                        <label for="Pemilik">Pemilik</label> 
-                        <input type="text" name="Pemilik" class="form-control" id="Pemilik" aria-describedby="Pemilik" > 
-                    </div> --}}
                     <div class="form-group">
                         <label for="Pemilik">Pemilik</label>
-                        <select name="Pemilik" id="Pemilik" class="form-control">
+                        <select name="Pemilik" id="Pemilik" class="form-control" required="required">
                             @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Kd_Barang}}" >{{$nsb->Nama}}</option>
+                                <option value="{{$nsb->Kd_Nasabah}}" >{{$nsb->Nama}}</option>
                             @endforeach
                         </select>
                     </div>

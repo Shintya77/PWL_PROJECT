@@ -30,6 +30,10 @@
                         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $barang->Nama }}" aria-describedby="Nama" > 
                     </div>
                     <div class="form-group">
+                        <label for="Kd_Nasabah">Kode Nasabah</label> 
+                        <input type="text" name="Kd_Nasabah" class="form-control" id="Kd_Nasabah" value="{{ $barang->Kd_Nasabah }}" aria-describedby="Kd_Nasabah" > 
+                    </div>
+                    <div class="form-group">
                         <label for="Foto">Gambar</label> 
                         <input type="file" class="form-control" required="required" name="Foto" value="{{$barang->Foto}}"><br>
                         <img width="100px" height="100px" src="{{asset('storage/'.$barang->Foto)}}">
