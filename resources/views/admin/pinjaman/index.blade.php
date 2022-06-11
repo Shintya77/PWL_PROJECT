@@ -36,9 +36,7 @@
                     @foreach ($paginate as $pjm)
                       <tr>
                       <td>{{ $pjm->Kd_Pinjaman }}</td>
-                      <!-- <td>{{ $pjm->Kd_Nasabah }}</td> -->
                       <td>{{ $pjm->Pemilik }}</td>
-                      <!-- <td>{{ $pjm->Kd_Barang }}</td> -->
                       <td>{{ $pjm->Nama }}</td>
                       <td>{{ $pjm->JumlahPinjaman}}</td>
                       <td>{{ $pjm->JangkaWaktu }}</td>
