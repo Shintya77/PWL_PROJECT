@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pinjaman;
+use App\Models\Pembayaran;
 use Illuminate\Support\Facades\DB;
 
 class PembayaranController extends Controller
@@ -15,9 +16,9 @@ class PembayaranController extends Controller
      */
     public function index()
     {
-        $pembayaran = Pembayaran::with('pinjaman')->get();
+        // $pembayaran = Pembayaran::with('pinjaman')->get();
         $paginate = Pembayaran::orderBy('Kd_Pembayaran', 'asc')->paginate(3);
-        return view('admin.pembayaran.index', ['pembayaran' => $pembayaran, 'paginate'=>$paginate]);
+        return view('admin.pembayaran.index', ['paginate'=>$paginate]);
     }
 
     /**
@@ -94,7 +95,7 @@ class PembayaranController extends Controller
     public function show($Kd_Pembayaran)
     {
          //menampilkan detail data dengan menemukan/berdasarkan kode Pembayaran
-         $pembayaran = Pembayaran::with('pinjaman')->find($Kd_Pembayaran);
+         $pembayaran = Pembayaran::find($Kd_Pembayaran);
          return view('admin.pembayaran.detail', compact('pembayaran'));
     }
 
@@ -106,7 +107,7 @@ class PembayaranController extends Controller
      */
     public function edit($Kd_Pembayaran)
     {
-        $pembayaran = Pembayaran::with('pinjaman')->where('Kd_Pembayaran', $Kd_Pembayaran)->first();
+        $pembayaran = Pembayaran::where('Kd_Pembayaran', $Kd_Pembayaran)->first();
         $pinjaman = Pinjaman::all(); 
         return view('admin.pembayaran.edit', compact('pembayaran', 'pinjaman'));
     }
@@ -131,14 +132,13 @@ class PembayaranController extends Controller
             'Status' => 'required',
         ]);
 
-        $pembayaran = Pembayaran::with('pinjaman')->where('Kd_Pembayaran', $Kd_Pembayaran)->first();
+        $pembayaran = Pembayaran::where('Kd_Pembayaran', $Kd_Pembayaran)->first();
         $pembayaran->Kd_Pembayaran = $request->get('Kd_Pembayaran');
         $pembayaran->Kd_Pinjaman = $request->get('Kd_Pinjaman');
         $pembayaran->NamaNasabah = $request->get('NamaNasabah');
         $pembayaran->NamaBarang = $request->get('NamaBarang');
         $pembayaran->TotalBayar= $request->get('TotalBayar');
         $pembayaran->TanggaAkhir= $request->get('TanggaAkhir');
-        $pembayaran->TanggalKeluar= $request->get('TanggalKeluar');
         $pembayaran->Status= $request->get('Status');
 
         $pinjaman = new Pinjaman;
