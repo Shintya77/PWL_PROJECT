@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Barang;
 use App\Models\Nasabah;
+use App\Models\Pembayaran;
 
 
 class Pinjaman extends Model
@@ -33,5 +34,10 @@ class Pinjaman extends Model
     public function nasabah(){
     return $this->hasOne(Nasabah::class);
 }
+public function pembayaran(){
+    return $this->belongsTo(Pembayaran::class);
+}
+
+
 
 }
