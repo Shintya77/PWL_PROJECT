@@ -124,8 +124,12 @@ class BarangController extends Controller
     public function edit($Kd_Barang)
     {
          //menampilkan detail data dengan menemukan berdasarkan kode barang untuk diedit
-         $barang = Barang::with('nasabah')->find($Kd_Barang);
-         return view('admin.barang.edit', compact('barang'));
+        //  $barang = Barang::with('nasabah')->find($Kd_Barang);
+        //  return view('admin.barang.edit', compact('barang'));
+
+         $barang = Barang::with('nasabah')->where('Kd_Barang', $Kd_Barang)->first();
+         $nasabah = Nasabah::all(); 
+         return view('admin.barang.edit', compact('barang', 'nasabah'));
     }
 
     /**

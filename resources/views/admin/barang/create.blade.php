@@ -46,7 +46,7 @@
                         <label for="Pemilik">Pemilik</label>
                         <select name="Pemilik" id="Pemilik" class="form-control" required="required">
                             @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Kd_Nasabah}}" >{{$nsb->Nama}}</option>
+                                <option value="{{$nsb->Nama}}" >{{$nsb->Nama}}</option>
                             @endforeach
                         </select>
                     </div>

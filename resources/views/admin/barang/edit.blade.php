@@ -19,7 +19,7 @@
                 </ul>
             </div>
             @endif
-            <form method="post" action="{{ route('barang.update', $barang->Kd_Barang) }}" enctype="multipart/form-data" id="myForm">
+            <form method="post" action="{{ route('barang.update', $barang->Kd_Barang ) }}" enctype="multipart/form-data" id="myForm">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
@@ -30,8 +30,12 @@
                         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $barang->Nama }}" aria-describedby="Nama" > 
                     </div>
                     <div class="form-group">
-                        <label for="Kd_Nasabah">Kode Nasabah</label> 
-                        <input type="text" name="Kd_Nasabah" class="form-control" id="Kd_Nasabah" value="{{ $barang->Kd_Nasabah }}" aria-describedby="Kd_Nasabah" > 
+                        <label for="Kd_Nasabah">Kode Nasabah</label>
+                        <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control" required="required">
+                            @foreach ($nasabah as $nsb)
+                                <option value="{{$nsb->Kd_Nasabah}}" {{$barang->Kd_Nasabah == $nsb->Kd_Nasabah ? 'selected' : ''}} >{{$nsb->Kd_Nasabah}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="Foto">Gambar</label> 
@@ -39,8 +43,12 @@
                         <img width="100px" height="100px" src="{{asset('storage/'.$barang->Foto)}}">
                     </div>
                     <div class="form-group">
-                        <label for="Pemilik">Pemilik</label> 
-                        <input type="Pemilik" name="Pemilik" class="form-control" id="Pemilik" value="{{ $barang->Pemilik }}" aria-describedby="Pemilik" > 
+                        <label for="Pemilik">Pemilik</label>
+                        <select name="Pemilik" id="Pemilik" class="form-control">
+                            @foreach ($nasabah as $nsb)
+                                <option value="{{$nsb->Nama}}" {{$barang->Nama == $nsb->Nama ? 'selected' : ''}} >{{$nsb->Nama}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="TanggalMasuk">TanggalMasuk</label> 
