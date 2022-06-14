@@ -18,6 +18,8 @@ class PinjamanController extends Controller
     public function index()
     {
         // $pinjaman = Pinjaman::with('barang')->get();
+
+        $pinjaman = Pinjaman::paginate(3); 
         $paginate = Pinjaman::orderBy('Kd_Pinjaman', 'asc')->paginate(3);
         return view('admin.pinjaman.index', [ 'paginate'=>$paginate]);
     }

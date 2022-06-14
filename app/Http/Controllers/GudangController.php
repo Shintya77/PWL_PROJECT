@@ -18,6 +18,7 @@ class GudangController extends Controller
     {
          // Mengambil semua isi tabel
         //  $gudang = Gudang::with('barang')->paginate(3); 
+        $gudang = Gudang::paginate(3); 
         
 
         //  $gudang = Gudang::with('barang')->get();
