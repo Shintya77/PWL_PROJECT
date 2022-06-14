@@ -58,6 +58,7 @@
                     </tbody>
                     </tfoot>
                   </table>
+                  {{ $paginate->links() }}
                 </div>
               </div>
               <!-- /.card-body -->

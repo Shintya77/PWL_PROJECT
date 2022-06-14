@@ -64,6 +64,7 @@
                     </tbody>
                     
                   </table>
+                  {{ $petugas->links() }}
                 </div>
               </div>
               <!-- /.card-body -->
