@@ -26,7 +26,7 @@
               <div class="row">
                 <div class="col-9">
                   <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">1</h3>
+                    <h3 class="mb-0">{{ $jumlah_nasabah }}</h3>
                     {{-- <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p> --}}
                   </div>
                 </div>
@@ -46,7 +46,7 @@
               <div class="row">
                 <div class="col-9">
                   <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">1</h3>
+                    <h3 class="mb-0">{{$jumlah_barang}}</h3>
                     {{-- <p class="text-success ml-2 mb-0 font-weight-medium">+11%</p> --}}
                   </div>
                 </div>
@@ -66,7 +66,7 @@
               <div class="row">
                 <div class="col-9">
                   <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">1</h3>
+                    <h3 class="mb-0">{{$jumlah_pinjaman}}</h3>
                     {{-- <p class="text-danger ml-2 mb-0 font-weight-medium">-2.4%</p> --}}
                   </div>
                 </div>
@@ -86,7 +86,7 @@
               <div class="row">
                 <div class="col-9">
                   <div class="d-flex align-items-center align-self-start">
-                    <h3 class="mb-0">1</h3>
+                    <h3 class="mb-0">{{$jumlah_pembayaran}}</h3>
                     {{-- <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p> --}}
                   </div>
                 </div>
@@ -238,7 +238,7 @@
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">1</h2>
+                    <h2 class="mb-0">{{$jumlah_nasabah}}</h2>
                     {{-- <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p> --}}
                   </div>
                   <h6 class="text-muted font-weight-normal">Jumlah Data Nasabah Saat Ini</h6>
@@ -257,7 +257,7 @@
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">2</h2>
+                    <h2 class="mb-0">{{$jumlah_barang}}</h2>
                     {{-- <p class="text-success ml-2 mb-0 font-weight-medium">+8.3%</p> --}}
                   </div>
                   <h6 class="text-muted font-weight-normal">Jumlah Data Barang Saat Ini</h6>
@@ -276,7 +276,7 @@
               <div class="row">
                 <div class="col-8 col-sm-12 col-xl-8 my-auto">
                   <div class="d-flex d-sm-block d-md-flex align-items-center">
-                    <h2 class="mb-0">1</h2>
+                    <h2 class="mb-0">{{$jumlah_pinjaman}}</h2>
                     {{-- <p class="text-danger ml-2 mb-0 font-weight-medium">-2.1% </p> --}}
                   </div>
                   <h6 class="text-muted font-weight-normal">Jumlah Data Pinjaman Saat Ini</h6>

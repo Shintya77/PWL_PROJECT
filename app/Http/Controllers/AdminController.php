@@ -3,12 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Nasabah;
+use App\Models\Barang;
+use App\Models\Pinjaman;
+use App\Models\Pembayaran;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
     public function dasboard(){
-        return view('admin.dasboard', 
-        ['title'=> 'Dasboard Admin Pegadaian']);
+        $jumlah_nasabah = Nasabah::all()->count();
+        $jumlah_barang = Barang::all()->count();
+        $jumlah_pinjaman = Pinjaman::all()->count();
+        $jumlah_pembayaran = Pembayaran::all()->count();
+        return view('admin.dasboard', compact('jumlah_nasabah', 'jumlah_barang',
+                    'jumlah_pinjaman', 'jumlah_pembayaran')); 
     }
    
     public function nasabah(){
