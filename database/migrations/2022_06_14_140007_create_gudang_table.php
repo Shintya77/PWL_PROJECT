@@ -24,6 +24,8 @@ class CreateGudangTable extends Migration
             $table->timestamps();
 
             $table->foreign('kd_Barang')->references('Kd_Barang')->on('Barang'); 
+
+            
         });
     }
 

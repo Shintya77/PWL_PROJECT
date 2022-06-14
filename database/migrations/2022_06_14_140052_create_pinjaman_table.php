@@ -15,8 +15,8 @@ class CreatePinjamanTable extends Migration
     {
         Schema::create('pinjaman', function (Blueprint $table) {
             $table->id();
-            $table->string('Kd_Pinjaman',10)->index();
-            $table->string('Kd_Nasabah',10);
+            
+            $table->UnsignedBigInteger('Kd_Nasabah',10);
             $table->string('Kd_Barang',10);
             $table->string('Pemilik',50);
             $table->string('Nama',50);
@@ -26,6 +26,7 @@ class CreatePinjamanTable extends Migration
 
             
             $table->foreign('Kd_Barang')->references('Kd_Barang')->on('Barang'); 
+          
         });
     }
 
