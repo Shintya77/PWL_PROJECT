@@ -14,16 +14,13 @@
                   <div>
                     <a href="{{ route('pembayaran.create')}}" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Tambah Data</a>
-                    {{-- <a href="?page=add-pengguna" class="btn btn-primary">
-                      <i class="fa fa-edit"></i> Edit Data</a>
-                    <a href="?page=add-pengguna" class="btn btn-primary">
-                      <i class="fa fa-edit"></i> Hapus Data</a> --}}
                   </div>
                   <br>
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
                         <th>Kode Bayar</th>
+                        <th>Kode Pinjaman</th>
                         <th>Nama Nasabah</th>
                         <th>Barang</th>
                         <th>Total Bayar</th>
@@ -41,7 +38,8 @@
                      <td>{{ $pbr->NamaBarang }}</td>
                       <td>{{ $pbr->TotalBayar }}</td>
                       <td>{{ $pbr->TanggaAkhir }}</td>
-                      <td>{{ $pbr->Status }}</td>
+                      <td>
+                        <div class="badge badge-outline-success">{{ $pbr->Status }}</div></td>
                         <td>
                           <form action="{{ route('pembayaran.destroy',$pbr->Kd_Pembayaran) }}" method="POST">
                               <a class="btn btn-info" href="{{ route('pembayaran.show',$pbr->Kd_Pembayaran) }}">Detail</a>
