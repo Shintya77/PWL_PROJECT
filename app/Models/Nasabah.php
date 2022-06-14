@@ -15,7 +15,6 @@ class Nasabah extends Model
     protected $primaryKey = 'Kd_Nasabah'; 
 
     protected $fillable = [
-        'Kd_Nasabah',
         'Nama',
         'Username',
         'Foto',
