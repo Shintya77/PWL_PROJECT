@@ -50,7 +50,7 @@ class PinjamanController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Pinjaman' => 'required',
+           
             'Kd_Nasabah' => 'required',
             'Kd_Barang' => 'required',
             'Pemilik' => 'required',
@@ -64,7 +64,7 @@ class PinjamanController extends Controller
         
         $pinjaman = new Pinjaman;
         
-        $pinjaman->Kd_Pinjaman = $request->get('Kd_Pinjaman');
+        
         $pinjaman->Kd_Nasabah= $request->get('Kd_Nasabah');
         $pinjaman->Kd_Barang= $request->get('Kd_Barang');
         $pinjaman->Pemilik= $request->get('Pemilik');
@@ -128,7 +128,7 @@ class PinjamanController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Pinjaman' => 'required',
+           
             'Kd_Nasabah' => 'required',
             'Kd_Barang' => 'required',
             'Pemilik' => 'required',
@@ -138,7 +138,7 @@ class PinjamanController extends Controller
         ]);
 
         $pinjaman = Pinjaman::where('Kd_Pinjaman', $Kd_Pinjaman)->first();
-        $pinjaman->Kd_Pinjaman = $request->get('Kd_Pinjaman');
+       
         $pinjaman->Kd_Nasabah = $request->get('Kd_Nasabah');
         $pinjaman->Kd_Barang = $request->get('Kd_Barang');
         $pinjaman->Pemilik= $request->get('Pemilik');

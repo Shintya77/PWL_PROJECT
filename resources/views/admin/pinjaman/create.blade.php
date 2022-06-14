@@ -21,10 +21,10 @@
                 @endif
                 <form method="post" action="{{ route('pinjaman.store') }}"  enctype="multipart/form-data" id="myForm">
                     @csrf
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="Kd_Pinjaman">Kode Pinjaman</label>
                         <input type="text" name="Kd_Pinjaman" class="form-control" id="Kd_Pinjaman" aria-describedby="Kd_Pinjaman" >
-                    </div>
+                    </div> -->
 
                     <!-- <div class="form-group">
                         <label for="Nama">Nama Barang</label>

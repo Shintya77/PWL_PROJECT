@@ -16,7 +16,7 @@ class Pinjaman extends Model
     protected $primaryKey = "Kd_Pinjaman";
 
     protected $fillable = [
-        'Kd_Pinjaman',
+        
         'Kd_Nasabah',
         'Kd_Barang',
         'Pemilik',
