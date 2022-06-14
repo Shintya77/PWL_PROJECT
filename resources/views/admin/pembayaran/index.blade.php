@@ -53,6 +53,7 @@
                       @endforeach
                     </tbody>
                   </table>
+                  {{ $paginate->links() }}
                 </div>
               </div>
               <!-- /.card-body -->
