@@ -1,6 +1,9 @@
 @extends('layouts.user.master')
  
 @section('content')
+
+
+<div class="container">
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="card card-info">
@@ -23,7 +26,6 @@
                 <form method="post" action="{{ route('formpembayaran.store') }}" enctype="multipart/form-data" id="myForm">
                     @csrf
                     {{-- <div class="form-group">
-                        <label for="Kd_Pembayaran">Kode Pembayaran</label> 
                         <input type="text" name="Kd_Pembayaran" class="form-control" id="Kd_Pembayaran" aria-describedby="Kd_Pembayaran" > 
                     </div> --}}
                     {{-- <div class="form-group">
@@ -60,4 +62,7 @@
         </div>
     </div>
  </div>
+</div>
+
+
 @endsection
