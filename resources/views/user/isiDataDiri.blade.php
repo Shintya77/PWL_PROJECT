@@ -21,7 +21,7 @@
                        </ul>
                    </div>
                    @endif
-                   <form method="post" action="{{ route('formgadai.store') }}" enctype="multipart/form-data" id="myForm">
+                   <form method="post" action="{{ route('formnasabah.store') }}" enctype="multipart/form-data" id="myForm">
                        @csrf
                        {{-- <div class="form-group">
                            <label for="Kd_Nasabah">Kode Nasabah</label> 

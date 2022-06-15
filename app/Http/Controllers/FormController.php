@@ -13,7 +13,7 @@ class FormController extends Controller
      */
     public function index()
     {
-        return view('user.formgadai', ['title'=> 'Pengajuan']);
+        return view('user.isiDataDiri', ['title'=> 'Pengajuan']);
     }
 
     /**
@@ -65,7 +65,7 @@ class FormController extends Controller
             // Nasabah::create($request->all());
             
             //jika data berhasil ditambahkan, akan kembali ke halaman utama
-            return redirect('/home')->with('success', 'Data Nasabah Berhasil Ditambahkan');
+            return redirect('/pengajuan')->with('success', 'Data Nasabah Berhasil Ditambahkan');
        
     }
 

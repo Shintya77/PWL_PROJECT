@@ -27,7 +27,7 @@ class UserController extends Controller
 
     public function pengajuan()
     {
-        return view('user.formgadai', ['title'=> 'Pengajuan']);
+        return view('user.pengajuan', ['title'=> 'Pengajuan']);
     }
 
     public function contact()
@@ -35,9 +35,9 @@ class UserController extends Controller
         return view('user.contact', ['title'=> 'Kontak']);
     }
 
-    public function formgadai()
-    {
-        return view('user.formgadai', ['title'=> 'form pengajuan gadai']);
-    }
+    // public function formgadai()
+    // {
+    //     return view('user.formgadai', ['title'=> 'form pengajuan gadai']);
+    // }
 
 }
