@@ -71,7 +71,7 @@ class FormPinjamanController extends Controller
         $pinjaman->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('/home')->with('success', 'Data Pinjaman Berhasil Ditambahkan');
+        return redirect('/pengajuan')->with('success', 'Data Pinjaman Berhasil Ditambahkan');
     }
 
     /**

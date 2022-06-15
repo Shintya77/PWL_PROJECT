@@ -70,7 +70,7 @@ class FormBarangController extends Controller
         $barang->save();
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect('/home')->with('success', 'Data Barang Berhasil Ditambahkan');
+        return redirect('/pengajuan')->with('success', 'Data Barang Berhasil Ditambahkan');
     }
 
     /**
