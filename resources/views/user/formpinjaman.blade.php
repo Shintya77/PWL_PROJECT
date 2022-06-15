@@ -2,6 +2,8 @@
  
 @section('content')
 
+
+<div class="container">
 <div class="main-panel">
     <div class="content-wrapper">
       <div class="card card-info">
@@ -43,6 +45,9 @@
         </div>
     </div>
  </div>
+</div>
+</div>
+
 
 
 @endsection
