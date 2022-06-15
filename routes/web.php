@@ -10,6 +10,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\GudangController;
 use App\Http\Controllers\PinjamanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\FormController;
 
 
 /*
@@ -38,7 +39,7 @@ Route::get('/about',[UserController::class, 'about']);
 Route::get('/service',[UserController::class, 'service']);
 Route::get('/pengajuan',[UserController::class, 'pengajuan']);
 Route::get('/contact',[UserController::class, 'contact']);
-Route::get('/formgadai',[UserController::class, 'formgadai']);
+Route::resource('/formgadai',FormController::class);
 
 
 //Admin
