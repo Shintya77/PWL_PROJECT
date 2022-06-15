@@ -7,7 +7,7 @@
       <div class="card card-info">
         <div class="card-header">
           <h3 class="card-title">
-            <i class="fa fa-table"></i> Isi Barang Yang Ingin Anda Ajukan</h3>
+            <i class=""></i> Isi Barang Yang Ingin Anda Ajukan</h3>
         </div>
 
             <div class="card-body">
