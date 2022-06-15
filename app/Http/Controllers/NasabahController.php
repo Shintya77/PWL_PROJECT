@@ -58,7 +58,6 @@ class NasabahController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Nasabah' => 'required',
             'Nama' => 'required',
             'Username' => 'required',
             'Foto' => 'required',
@@ -74,7 +73,6 @@ class NasabahController extends Controller
         }
         
         $nasabah = new Nasabah;
-        $nasabah->Kd_Nasabah = $request->get('Kd_Nasabah');
         $nasabah->Nama = $request->get('Nama');
         $nasabah->Username= $request->get('Username');
         $nasabah->Foto = $image_name;
@@ -130,7 +128,6 @@ class NasabahController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Nasabah' => 'required',
             'Nama' => 'required',
             'Username' => 'required',
             'Foto' => 'required',
@@ -145,7 +142,6 @@ class NasabahController extends Controller
         // Nasabah::find($Kd_Nasabah)->update($request->all());
 
         $nasabah = Nasabah::where('Kd_Nasabah', $Kd_Nasabah)->first();
-        $nasabah->Kd_Nasabah = $request->get('Kd_Nasabah');
         $nasabah->Nama = $request->get('Nama');
         $nasabah->Foto = $request->get('Foto');
         $nasabah->TangalLahir= $request->get('TangalLahir');

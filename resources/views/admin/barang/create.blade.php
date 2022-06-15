@@ -22,10 +22,10 @@
                 @endif
                 <form method="post" action="{{ route('barang.store') }}" enctype="multipart/form-data" id="myForm">
                     @csrf
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="Kd_Barang">Kode Barang</label> 
                         <input type="text" name="Kd_Barang" class="form-control" id="Kd_Barang" aria-describedby="Kd_Barang" > 
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="Kd_Nasabah">Kode Nasabah</label>
                         <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control" required="required">

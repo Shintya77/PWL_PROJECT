@@ -64,7 +64,6 @@ class BarangController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Barang' => 'required',
             'Kd_Nasabah' => 'required',
             'Nama' => 'required',
             'Foto' => 'required',
@@ -82,7 +81,6 @@ class BarangController extends Controller
         $barang = new Barang;
         
         $nasabah = new Nasabah;
-        $barang->Kd_Barang = $request->get('Kd_Barang');
         $barang->Kd_Nasabah= $request->get('Kd_Nasabah');
         $barang->Nama = $request->get('Nama');
         $barang->Foto = $image_name;
@@ -143,7 +141,6 @@ class BarangController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Barang' => 'required',
             'Kd_Nasabah' => 'required',
             'Nama' => 'required',
             'Foto' => 'required',
@@ -155,7 +152,6 @@ class BarangController extends Controller
         ]);
 
         $barang = Barang::with('nasabah')->where('Kd_Barang', $Kd_Barang)->first();
-        $barang->Kd_Barang = $request->get('Kd_Barang');
         $barang->Kd_Nasabah = $request->get('Kd_Nasabah');
         $barang->Nama = $request->get('Nama');
         $barang->Foto = $request->get('Foto');

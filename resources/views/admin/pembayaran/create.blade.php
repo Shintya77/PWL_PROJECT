@@ -22,10 +22,10 @@
                 @endif
                 <form method="post" action="{{ route('pembayaran.store') }}" enctype="multipart/form-data" id="myForm">
                     @csrf
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label for="Kd_Pembayaran">Kode Pembayaran</label> 
                         <input type="text" name="Kd_Pembayaran" class="form-control" id="Kd_Pembayaran" aria-describedby="Kd_Pembayaran" > 
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="Kd_Pinjaman">Kode Pinjaman</label>
                         <select name="Kd_Pinjaman" id="Kd_Pinjaman" class="form-control" required="required">

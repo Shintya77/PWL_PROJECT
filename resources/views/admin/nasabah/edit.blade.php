@@ -23,8 +23,9 @@
                 @csrf
                 @method('PUT')
                 <div class="form-group">
-                    <label for="Kd_Nasabah">Kode Nasabah</label> 
+                    {{-- <label for="Kd_Nasabah">Kode Nasabah</label> 
                     <input type="text" name="Kd_Nasabah" class="form-control" id="Kd_Nasabah" value="{{ $nasabah->Kd_Nasabah }}" aria-describedby="Kd_Nasabah" > </div>
+                     --}}
                     <div class="form-group">
                         <label for="Nama">Nama</label> 
                         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $nasabah->Nama }}" aria-describedby="Nama" > 

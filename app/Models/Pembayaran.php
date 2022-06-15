@@ -13,7 +13,6 @@ class Pembayaran extends Model
     protected $primaryKey = 'Kd_Pembayaran'; 
 
     protected $fillable = [
-        'Kd_Pembayaran',
         'Kd_Pinjaman',
         'NamaNasabah',
         'NamaBarang',

@@ -15,7 +15,6 @@ class Barang extends Model
     protected $primaryKey = 'Kd_Barang'; 
 
     protected $fillable = [
-        'Kd_Barang',
         'Nama',
         'Foto',
         'Pemilik',

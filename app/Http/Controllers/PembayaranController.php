@@ -55,7 +55,6 @@ class PembayaranController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Pembayaran' => 'required',
             'Kd_Pinjaman' => 'required',
             'NamaNasabah' => 'required',
             'NamaBarang' => 'required',
@@ -67,7 +66,6 @@ class PembayaranController extends Controller
         $pembayaran = new Pembayaran;
         
         $pinjaman = new Pinjaman;
-        $pembayaran->Kd_Pembayaran = $request->get('Kd_Pembayaran');
         $pembayaran->Kd_Pinjaman= $request->get('Kd_Pinjaman');
         $pembayaran->NamaNasabah = $request->get('NamaNasabah');
         $pembayaran->NamaBarang= $request->get('NamaBarang');
@@ -123,7 +121,6 @@ class PembayaranController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Pembayaran' => 'required',
             'Kd_Pinjaman' => 'required',
             'NamaNasabah' => 'required',
             'NamaBarang' => 'required',
@@ -133,7 +130,6 @@ class PembayaranController extends Controller
         ]);
 
         $pembayaran = Pembayaran::where('Kd_Pembayaran', $Kd_Pembayaran)->first();
-        $pembayaran->Kd_Pembayaran = $request->get('Kd_Pembayaran');
         $pembayaran->Kd_Pinjaman = $request->get('Kd_Pinjaman');
         $pembayaran->NamaNasabah = $request->get('NamaNasabah');
         $pembayaran->NamaBarang = $request->get('NamaBarang');
