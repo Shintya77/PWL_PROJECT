@@ -23,18 +23,7 @@
                 @endif
                 <form method="post" action="{{ route('formbarang.store') }}" enctype="multipart/form-data" id="myForm">
                     @csrf
-                    {{-- <div class="form-group">
-                        <label for="Kd_Barang">Kode Barang</label> 
-                        <input type="text" name="Kd_Barang" class="form-control" id="Kd_Barang" aria-describedby="Kd_Barang" > 
-                    </div> --}}
-                    <div class="form-group">
-                        <label for="Kd_Nasabah">Kode Nasabah</label>
-                        <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control" required="required">
-                            @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Kd_Nasabah}}" >{{$nsb->Kd_Nasabah}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                    
                     <div class="form-group">
                         <label for="Nama">Nama Barang</label> 
                         <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" > 
@@ -43,14 +32,9 @@
                         <label for="Foto">Gambar</label> 
                         <input type="file" class="form-control" required="required" name="Foto">
                     </div>
-                    <div class="form-group">
-                        <label for="Pemilik">Pemilik</label>
-                        <select name="Pemilik" id="Pemilik" class="form-control" required="required">
-                            @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Nama}}" >{{$nsb->Nama}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                  
+                        
+
                     <div class="form-group">
                         <label for="TanggalMasuk">Tanggal Masuk</label> 
                         <input type="date" name="TanggalMasuk" class="form-control" id="TanggalMasuk" aria-describedby="TanggalMasuk" > 

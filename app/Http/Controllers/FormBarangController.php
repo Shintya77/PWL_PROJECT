@@ -14,7 +14,7 @@ class FormBarangController extends Controller
      */
     public function index()
     {
-        return view('user.formbarang', ['title'=> 'form pengajuan barang']);
+        return view('user.formbarang', ['title'=> 'formbarang']);
     }
 
     /**
@@ -37,10 +37,10 @@ class FormBarangController extends Controller
     {
         //melakukan validasi data
         $request->validate([
-            'Kd_Nasabah' => 'required',
+            // 'Kd_Nasabah' => 'required',
             'Nama' => 'required',
             'Foto' => 'required',
-            'Pemilik' => 'required',
+            // 'Pemilik' => 'required',
             'TanggalMasuk' => 'required',
             'TanggalKeluar' => 'required',
             'HargaGadai' => 'required',
@@ -53,18 +53,18 @@ class FormBarangController extends Controller
         
         $barang = new Barang;
         
-        $nasabah = new Nasabah;
-        $barang->Kd_Nasabah= $request->get('Kd_Nasabah');
+        // $nasabah = new Nasabah;
+        // $barang->Kd_Nasabah= $request->get('Kd_Nasabah');
         $barang->Nama = $request->get('Nama');
         $barang->Foto = $image_name;
-        $barang->Pemilik= $request->get('Pemilik');
+        // $barang->Pemilik= $request->get('Pemilik');
         $barang->TanggalMasuk= $request->get('TanggalMasuk');
         $barang->TanggalKeluar= $request->get('TanggalKeluar');
         $barang->HargaGadai= $request->get('HargaGadai');
         $barang->Status= $request->get('Status');
 
-        $nasabah->Kd_Nasabah = $request->get('Kd_Nasabah');
-        $nasabah->Nama = $request->get('Pemilik');
+        // $nasabah->Kd_Nasabah = $request->get('Kd_Nasabah');
+        // $nasabah->Nama = $request->get('Pemilik');
         
         // $barang->nasabah()->associate($nasabah);
         $barang->save();
