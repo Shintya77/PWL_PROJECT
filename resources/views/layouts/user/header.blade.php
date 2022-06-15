@@ -8,6 +8,7 @@
         <div class="offcanvas__logo">
             <a href="{{url('/home')}}"><img src="img/logo2.png" alt=""></a>
         </div>
+        
         <nav class="offcanvas__menu mobile-menu">
             <ul>
                 <li class="active"><a href="{{url('/home')}}">Beranda</a></li>
@@ -101,6 +102,7 @@
                                     </ul>
                                 </li> -->
                                 <li><a href="{{url('/contact')}}">Kontak</a></li>
+                                
                             </ul>
                         </nav>
                     </div>
