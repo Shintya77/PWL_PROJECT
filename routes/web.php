@@ -11,6 +11,8 @@ use App\Http\Controllers\GudangController;
 use App\Http\Controllers\PinjamanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\FormBarangController;
+use App\Http\Controllers\FormPinjamanController;
 
 
 /*
@@ -39,8 +41,9 @@ Route::get('/about',[UserController::class, 'about']);
 Route::get('/service',[UserController::class, 'service']);
 Route::get('/pengajuan',[UserController::class, 'pengajuan']);
 Route::get('/contact',[UserController::class, 'contact']);
-Route::resource('/formnasabah',FormController::class);
-Route::resource('/formbarang',FormController::class);
+Route::resource('/formgadai',FormController::class);
+Route::resource('/formbarang',FormBarangController::class);
+Route::resource('/formpinjaman',FormPinjamanController::class);
 
 
 
