@@ -15,14 +15,14 @@
                 <li><a href="{{url('/about')}}">Tentang Kami</a></li>
                 <li><a href="{{url('/service')}}">Layanan</a></li>
                 <li><a href="{{url('/pengajuan')}}">Pengajuan</a></li>
-                
-                <!-- <li><a href="#">Pages</a>
+                <li>
                     <ul class="dropdown">
-                        <li><a href="./services.html">Features</a></li>
-                        <li><a href="./services-details.html">Services Details</a></li>
-                        <li><a href="./blog-details.html">Blog Details</a></li>
-                    </ul> -->
-                </li>
+                        <li><a href="{{url('/formnasabah')}}">Isi Data Diri</a></li>
+                        <li><a href="{{url('/formbarang')}}">Ajukan Barang</a></li>
+                        <li><a href="{{url('/formpinjaman')}}">Ajukan Peminjaman</a></li>
+                        <li><a href="{{url('/formpembayaran')}}">Pembayaran Pinjaman</a></li>
+                    </ul>
+                </li> 
                 <li><a href="{{url('/contact')}}">Kontak</a></li>
             </ul>
         </nav>
@@ -95,7 +95,7 @@
                                         <li><a href="{{url('/formnasabah')}}">Isi Data Diri</a></li>
                                         <li><a href="{{url('/formbarang')}}">Ajukan Barang</a></li>
                                         <li><a href="{{url('/formpinjaman')}}">Ajukan Peminjaman</a></li>
-                                        <li><a href="#">Pembayaran Pinjaman</a></li>
+                                        <li><a href="{{url('/formpembayaran')}}">Pembayaran Pinjaman</a></li>
                                     </ul>
                                 </li> 
                                 <li><a href="{{url('/contact')}}">Kontak</a></li>

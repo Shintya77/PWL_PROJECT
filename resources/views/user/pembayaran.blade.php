@@ -1,4 +1,4 @@
-@extends('layouts.admin.master')
+@extends('layouts.user.master')
  
 @section('content')
 <div class="main-panel">
@@ -36,19 +36,11 @@
                     </div> --}}
                     <div class="form-group">
                         <label for="NamaNasabah">Nama Nasabah</label>
-                        <select name="NamaNasabah" id="NamaNasabah" class="form-control" required="required">
-                            @foreach ($pinjaman as $pjm)
-                                <option value="{{$pjm->Pemilik}}" >{{$pjm->Pemilik}}</option>
-                            @endforeach
-                        </select>
+                        <input type="NamaNasabah" name="NamaNasabah" class="form-control" id="NamaNasabah" aria-describedby="NamaNasabah" > 
                     </div>
                     <div class="form-group">
                         <label for="NamaBarang">Nama Barang</label>
-                        <select name="NamaBarang" id="NamaBarang" class="form-control" required="required">
-                            @foreach ($pinjaman as $pjm)
-                                <option value="{{$pjm->Nama}}" >{{$pjm->Nama}}</option>
-                            @endforeach
-                        </select>
+                        <input type="NamaBarang" name="NamaBarang" class="form-control" id="NamaBarang" aria-describedby="NamaBarang" > 
                     </div>
                     <div class="form-group">
                         <label for="TotalBayar">Total Bayar</label> 
