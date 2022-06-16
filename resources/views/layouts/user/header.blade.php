@@ -93,8 +93,9 @@
                                 <li><a href="{{url('/pengajuan')}}">Pengajuan</a>
                                     <ul class="dropdown">
                                         <li><a href="{{url('/formnasabah')}}">Isi Data Diri</a></li>
-                                        <li><a href="#">Ajukan Barang</a></li>
-                                        <li><a href="#">Ajukan Peminjaman</a></li>
+                                        <li><a href="{{url('/formbarang')}}">Ajukan Barang</a></li>
+                                        <li><a href="{{url('/formpinjaman')}}">Ajukan Peminjaman</a></li>
+                                        <li><a href="#">Pembayaran Pinjaman</a></li>
                                     </ul>
                                 </li> 
                                 <li><a href="{{url('/contact')}}">Kontak</a></li>
