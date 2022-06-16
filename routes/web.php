@@ -39,7 +39,7 @@ Route::get('/about',[UserController::class, 'about']);
 Route::get('/service',[UserController::class, 'service']);
 Route::get('/pengajuan',[UserController::class, 'pengajuan']);
 Route::get('/contact',[UserController::class, 'contact']);
-Route::resource('/formgadai',FormController::class);
+Route::resource('/formnasabah',FormController::class);
 Route::resource('/formbarang',FormController::class);
 
 

@@ -14,7 +14,7 @@
                 <li class="active"><a href="{{url('/home')}}">Beranda</a></li>
                 <li><a href="{{url('/about')}}">Tentang Kami</a></li>
                 <li><a href="{{url('/service')}}">Layanan</a></li>
-                <li><a href="{{url('/formgadai')}}">Pengajuan</a></li>
+                <li><a href="{{url('/pengajuan')}}">Pengajuan</a></li>
                 
                 <!-- <li><a href="#">Pages</a>
                     <ul class="dropdown">
@@ -90,9 +90,9 @@
                                 <li><a href="{{url('/home')}}">Beranda</a></li>
                                 <li><a href="{{url('/about')}}">Tentang Kami</a></li>
                                 <li><a href="{{url('/service')}}">Layanan</a></li>
-                                <li><a href="{{url('/formgadai')}}">Pengajuan</a>
+                                <li><a href="{{url('/pengajuan')}}">Pengajuan</a>
                                     <ul class="dropdown">
-                                        <li><a href="#">Isi Data Diri</a></li>
+                                        <li><a href="{{url('/formnasabah')}}">Isi Data Diri</a></li>
                                         <li><a href="#">Ajukan Barang</a></li>
                                         <li><a href="#">Ajukan Peminjaman</a></li>
                                     </ul>
