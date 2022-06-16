@@ -89,17 +89,13 @@
                                 <li><a href="{{url('/home')}}">Beranda</a></li>
                                 <li><a href="{{url('/about')}}">Tentang Kami</a></li>
                                 <li><a href="{{url('/service')}}">Layanan</a></li>
-                                
-
-                                <!-- active -->
-                                <li><a href="{{url('/formgadai')}}">Pengajuan</a></li>
-                                <!-- <li><a href="#">Pages</a>
+                                <li><a href="{{url('/formgadai')}}">Pengajuan</a>
                                     <ul class="dropdown">
-                                        <li><a href="./services.html">Features</a></li>
-                                        <li><a href="./services-details.html">Services Details</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="#">Isi Data Diri</a></li>
+                                        <li><a href="#">Ajukan Barang</a></li>
+                                        <li><a href="#">Ajukan Peminjaman</a></li>
                                     </ul>
-                                </li> -->
+                                </li> 
                                 <li><a href="{{url('/contact')}}">Kontak</a></li>
                             </ul>
                         </nav>
