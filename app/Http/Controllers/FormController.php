@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Nasabah;
+use App\Models\User;
 class FormController extends Controller
 {
     /**
@@ -34,39 +34,7 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-            //melakukan validasi data
-            $request->validate([
-                'Nama' => 'required',
-                'Username' => 'required',
-                'Foto' => 'required',
-                'TangalLahir' => 'required',
-                'JenisKelamin' => 'required',
-                'Usia' => 'required',
-                'Alamat' => 'required',
-                'Pekerjaan' => 'required',
-            ]);
-    
-            if ($request->file('Foto')){
-                $image_name = $request->file('Foto')->store('Foto', 'public');
-            }
             
-            $nasabah = new Nasabah;
-            $nasabah->Nama = $request->get('Nama');
-            $nasabah->Username= $request->get('Username');
-            $nasabah->Foto = $image_name;
-            $nasabah->TangalLahir= $request->get('TangalLahir');
-            $nasabah->JenisKelamin= $request->get('JenisKelamin');
-            $nasabah->Usia= $request->get('Usia');
-            $nasabah->Alamat= $request->get('Alamat');
-            $nasabah->Pekerjaan= $request->get('Pekerjaan');
-            $nasabah->save();
-     
-            //fungsi eloquent untuk menambah data
-            // Nasabah::create($request->all());
-            
-            //jika data berhasil ditambahkan, akan kembali ke halaman utama
-            return redirect('/pengajuan')->with('success', 'Data Nasabah Berhasil Ditambahkan');
-       
     }
 
     /**
@@ -88,7 +56,7 @@ class FormController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('user.isiDataDiri', ['title'=> 'Pengajuan', 'user'=>User::find($id)]);
     }
 
     /**
@@ -100,7 +68,54 @@ class FormController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //melakukan validasi data
+        // $request->validate([
+        //     'Nama' => 'required',
+        //     'Username' => 'required',
+        //     'Foto' => 'required',
+        //     'TangalLahir' => 'required',
+        //     'JenisKelamin' => 'required',
+        //     'Usia' => 'required',
+        //     'Alamat' => 'required',
+        //     'Pekerjaan' => 'required',
+        // ]);
+
+        // if ($request->file('Foto')){
+        //     $image_name = $request->file('Foto')->store('Foto', 'public');
+        // }
+        
+        // $nasabah = new User;
+        // $nasabah->Nama = $request->get('Nama');
+        // $nasabah->Username= $request->get('Username');
+        // $nasabah->Foto = $image_name;
+        // $nasabah->TangalLahir= $request->get('TangalLahir');
+        // $nasabah->JenisKelamin= $request->get('JenisKelamin');
+        // $nasabah->Usia= $request->get('Usia');
+        // $nasabah->Alamat= $request->get('Alamat');
+        // $nasabah->Pekerjaan= $request->get('Pekerjaan');
+        // $nasabah->();
+ 
+        //fungsi eloquent untuk menambah data
+        // Nasabah::create($request->all());
+        
+        //jika data berhasil ditambahkan, akan kembali ke halaman utama
+        // return redirect('/pengajuan')->with('success', 'Data Nasabah Berhasil Ditambahkan');
+
+        $validateData = $request->validate([
+            'Username' => 'required',
+            'TangalLahir' => 'required',
+            'JenisKelamin' => 'required',
+            'Usia' => 'required',
+            'Alamat' => 'required',
+            'Pekerjaan' => 'required',
+            'Foto' => 'image|file|max:1024'
+        ]);
+        if($request->file('Foto')){
+            $validateData['Foto'] = $request->file('Foto')->store('Foto', 'public');
+        }
+        User::where('id', $id)->update($validateData);
+        return redirect('/pengajuan')->with('success', 'Data berhasil diubah');
+   
     }
 
     /**

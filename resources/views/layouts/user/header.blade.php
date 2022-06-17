@@ -6,7 +6,7 @@
             <i class="fa fa-search search-switch"></i>
         </div>
         <div class="offcanvas__logo">
-            <a href="{{url('/home')}}"><img src="img/logo2.png" alt=""></a>
+            <a href="{{url('/home')}}"><img src="{{asset('img/logo2.png')}}" alt=""></a>
         </div>
         
         <nav class="offcanvas__menu mobile-menu">
@@ -17,7 +17,7 @@
                 <li><a href="{{url('/pengajuan')}}">Pengajuan</a></li>
                 <li>
                     <ul class="dropdown">
-                        <li><a href="{{url('/formnasabah')}}">Isi Data Diri</a></li>
+                        <li><a href="/formnasabah">Isi Data Diri</a></li>
                         <li><a href="{{url('/formbarang')}}">Ajukan Barang</a></li>
                         <li><a href="{{url('/formpinjaman')}}">Ajukan Peminjaman</a></li>
                         <li><a href="{{url('/formpembayaran')}}">Pembayaran Pinjaman</a></li>
@@ -92,7 +92,7 @@
                                 <li><a href="{{url('/service')}}">Layanan</a></li>
                                 <li><a href="{{url('/pengajuan')}}">Pengajuan</a>
                                     <ul class="dropdown">
-                                        <li><a href="{{url('/formnasabah')}}">Isi Data Diri</a></li>
+                                        <li><a href="/formnasabah/{{Auth::user()->id}}/edit">Isi Data Diri</a></li>
                                         <li><a href="{{url('/formbarang')}}">Ajukan Barang</a></li>
                                         <li><a href="{{url('/formpinjaman')}}">Ajukan Peminjaman</a></li>
                                         <li><a href="{{url('/formpembayaran')}}">Pembayaran Pinjaman</a></li>

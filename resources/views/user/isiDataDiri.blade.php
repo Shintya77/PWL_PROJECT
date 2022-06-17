@@ -21,16 +21,17 @@
                        </ul>
                    </div>
                    @endif
-                   <form method="post" action="{{ route('formnasabah.store') }}" enctype="multipart/form-data" id="myForm">
+                   <form method="post" action="/formnasabah/{{$user->id}}" enctype="multipart/form-data" id="myForm">
                        @csrf
+                       @method('put')
                        {{-- <div class="form-group">
                            <label for="Kd_Nasabah">Kode Nasabah</label> 
                            <input type="text" name="Kd_Nasabah" class="form-control" id="Kd_Nasabah" aria-describedby="Kd_Nasabah" > 
                        </div> --}}
-                       <div class="form-group">
+                       {{-- <div class="form-group">
                            <label for="Nama">Nama</label> 
                            <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" > 
-                       </div>
+                       </div> --}}
                        <div class="form-group">
                            <label for="Username">Username</label> 
                            <input type="Username" name="Username" class="form-control" id="Username" aria-describedby="Username" > 

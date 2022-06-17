@@ -25,7 +25,10 @@
                 @endif
                 <form method="post" action="{{ route('formbarang.store') }}" enctype="multipart/form-data" id="myForm">
                     @csrf
-                    
+                    {{-- <div class="form-group">
+                        <label for="Nama">Id Barang</label> 
+                        <input type="Nama" name="Nama" value="{{Auth::user()->id}}" class="form-control" id="Nama" aria-describedby="Nama" > 
+                    </div> --}}
                     <div class="form-group">
                         <label for="Nama">Nama Barang</label> 
                         <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" > 
@@ -34,9 +37,6 @@
                         <label for="Foto">Gambar</label> 
                         <input type="file" class="form-control" required="required" name="Foto">
                     </div>
-                  
-                        
-
                     <div class="form-group">
                         <label for="TanggalMasuk">Tanggal Masuk</label> 
                         <input type="date" name="TanggalMasuk" class="form-control" id="TanggalMasuk" aria-describedby="TanggalMasuk" > 
