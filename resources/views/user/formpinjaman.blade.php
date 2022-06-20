@@ -24,10 +24,6 @@
                 @endif
                 <form method="post" action="{{ route('formpinjaman.store') }}"  enctype="multipart/form-data" id="myForm">
                     @csrf
-                   
-
-                   
-
                     <div class="form-group">
                             <label for="JumlahPinjaman">Jumlah Pinjaman</label>
                             <input type="JumlahPinjaman" name="JumlahPinjaman" class="form-control" id="JumlahPinjaman" aria-describedby="JumlahPinjaman">

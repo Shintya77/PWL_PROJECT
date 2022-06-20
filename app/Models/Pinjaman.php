@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Barang;
-use App\Models\Nasabah;
+use App\Models\User;
 use App\Models\Pembayaran;
 
 
@@ -16,15 +16,12 @@ class Pinjaman extends Model
     protected $primaryKey = "Kd_Pinjaman";
 
     protected $fillable = [
-        
-        'Kd_Nasabah',
+        'Id_Nasabah',
         'Kd_Barang',
         'Pemilik',
         'Nama',
         'JumlahPinjaman',
-        'JangkaWaktu',
-       
-       
+        'JangkaWaktu',   
     ];
 
     public function barang(){
@@ -35,7 +32,5 @@ class Pinjaman extends Model
 public function pembayaran(){
     return $this->belongsTo(Pembayaran::class);
 }
-
-
 
 }

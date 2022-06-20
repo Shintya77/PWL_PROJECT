@@ -34,44 +34,18 @@ class FormPinjamanController extends Controller
      */
     public function store(Request $request)
     {
-        //melakukan validasi data
-        $request->validate([
-           
-            // 'Kd_Nasabah' => 'required',
-            // 'Kd_Barang' => 'required',
-            // 'Pemilik' => 'required',
-            // 'Nama' => 'required',
+        $pinjaman = $request->validate([
             'JumlahPinjaman' => 'required',
             'JangkaWaktu' => 'required',
-            
         ]);
 
-       
-        
-        $pinjaman = new Pinjaman;
-        
-        
-        // $pinjaman->Kd_Nasabah= $request->get('Kd_Nasabah');
-        // $pinjaman->Kd_Barang= $request->get('Kd_Barang');
-        // $pinjaman->Pemilik= $request->get('Pemilik');
-        // $pinjaman->Nama = $request->get('Nama');
-        $pinjaman->JumlahPinjaman= $request->get('JumlahPinjaman');
-        $pinjaman->JangkaWaktu= $request->get('JangkaWaktu');
-       
-        
-        // $barang = new Barang;
-        // $barang->Kd_Nasabah = $request->get('Kd_Nasabah');
-        // $barang->Kd_Barang = $request->get('Kd_Barang');
-        // $barang->Pemilik = $request->get('Pemilik');
-        // $barang->Nama = $request->get('Nama');
-
-
-        
-        // $pinjaman->nasabah()->associate($nasabah);
-        $pinjaman->save();
-        
-        //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect('/pengajuan')->with('success', 'Data Pinjaman Berhasil Ditambahkan');
+        // $barang['Id_Nasabah']=Auth::user()->id;
+        $pinjaman['Id_Nasabah']=auth()->user()->id;
+        $pinjaman['Kd_Barang']=auth()->barang()->Kd_Barang;
+        $pinjaman['Nama']=auth()->barang()->Nama;
+        $pinjaman['Pemilik']=auth()->user()->name;
+        Pinjaman::create($pinjaman);
+        return redirect('/pengajuan')->with('success', 'Barang Berhasil Diinput!');
     }
 
     /**
