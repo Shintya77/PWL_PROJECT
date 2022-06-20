@@ -39,7 +39,7 @@
                       @foreach ($paginate as $brg)
                       <tr>
                       <td>{{ $brg->Kd_Barang }}</td>
-                      <td>{{ $brg->Kd_Nasabah }}</td>
+                      <td>{{ $brg->Id_Nasabah }}</td>
                       <td>{{ $brg->Nama }}</td>
                       <td><img width="1000px" height="1000px" src="{{asset('storage/'.$brg->Foto)}}"></td>
                       <td>{{ $brg->Pemilik }}</td>

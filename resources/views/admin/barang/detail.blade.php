@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <td>Kode Nasbah</td>
-                        <td>{{ $barang->Kd_Nasabah}}</td>
+                        <td>{{ $barang->Id_Nasabah}}</td>
                     </tr>
                     <tr>
                         <td>Nama Barang</td>

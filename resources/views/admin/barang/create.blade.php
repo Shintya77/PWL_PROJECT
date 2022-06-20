@@ -27,10 +27,10 @@
                         <input type="text" name="Kd_Barang" class="form-control" id="Kd_Barang" aria-describedby="Kd_Barang" > 
                     </div> --}}
                     <div class="form-group">
-                        <label for="Kd_Nasabah">Kode Nasabah</label>
-                        <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control" required="required">
-                            @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Kd_Nasabah}}" >{{$nsb->Kd_Nasabah}}</option>
+                        <label for="Id_Nasabah">Kode Nasabah</label>
+                        <select name="Id_Nasabah" id="Id_Nasabah" class="form-control" required="required">
+                            @foreach ($user as $nsb)
+                                <option value="{{$nsb->id}}" >{{$nsb->id}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -45,8 +45,8 @@
                     <div class="form-group">
                         <label for="Pemilik">Pemilik</label>
                         <select name="Pemilik" id="Pemilik" class="form-control" required="required">
-                            @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Nama}}" >{{$nsb->Nama}}</option>
+                            @foreach ($user as $nsb)
+                                <option value="{{$nsb->name}}" >{{$nsb->name}}</option>
                             @endforeach
                         </select>
                     </div>

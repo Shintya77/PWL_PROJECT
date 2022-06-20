@@ -31,10 +31,10 @@
                         <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $barang->Nama }}" aria-describedby="Nama" > 
                     </div>
                     <div class="form-group">
-                        <label for="Kd_Nasabah">Kode Nasabah</label>
-                        <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control" required="required">
-                            @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Kd_Nasabah}}" {{$barang->Kd_Nasabah == $nsb->Kd_Nasabah ? 'selected' : ''}} >{{$nsb->Kd_Nasabah}}</option>
+                        <label for="Id_Nasabah">Kode Nasabah</label>
+                        <select name="Id_Nasabah" id="Id_Nasabah" class="form-control" required="required">
+                            @foreach ($user as $nsb)
+                                <option value="{{$nsb->id}}" {{$barang->Id_Nasabah == $nsb->id ? 'selected' : ''}} >{{$nsb->id}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -46,8 +46,8 @@
                     <div class="form-group">
                         <label for="Pemilik">Pemilik</label>
                         <select name="Pemilik" id="Pemilik" class="form-control">
-                            @foreach ($nasabah as $nsb)
-                                <option value="{{$nsb->Nama}}" {{$barang->Nama == $nsb->Nama ? 'selected' : ''}} >{{$nsb->Nama}}</option>
+                            @foreach ($user as $nsb)
+                                <option value="{{$nsb->name}}" {{$barang->Nama == $nsb->name ? 'selected' : ''}} >{{$nsb->name}}</option>
                             @endforeach
                         </select>
                     </div>
