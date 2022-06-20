@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Nasabah;
+use App\Models\User;
 use App\Models\Barang;
 use App\Models\Pinjaman;
 use App\Models\Pembayaran;
@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         if($role=='1')
         {
-            $jumlah_nasabah = Nasabah::all()->count();
+            $jumlah_nasabah = User::all()->count();
             $jumlah_barang = Barang::all()->count();
             $jumlah_pinjaman = Pinjaman::all()->count();
             $jumlah_pembayaran = Pembayaran::all()->count();

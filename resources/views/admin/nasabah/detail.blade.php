@@ -13,41 +13,41 @@
                 <table id="example1" class="table table-bordered table-striped">
                     <tr>
                         <td>Kode Nasabah</td>
-                        <td>{{ $nasabah->Kd_Nasabah}}</td>
+                        <td>{{ $user->id}}</td>
                     </tr>
                     <tr>
                         <td>Nama Nasabah</td>
-                        <td>{{ $nasabah->Nama }}</td>
+                        <td>{{ $user->name }}</td>
                     </tr>
                     <tr>
                         <td>Username</td>
-                        <td>{{ $nasabah->Username }}</td>
+                        <td>{{ $user->Username }}</td>
                     </tr>
                     <tr>
                         <td>Foto</td>
                         <td>
-                        <img width="1000px" height="1000px" src="{{asset('storage/'.$nasabah->Foto)}}">
+                        <img width="1000px" height="1000px" src="{{asset('storage/'.$user->Foto)}}">
                         </td>
                     </tr>
                     <tr>
                         <td>Tanggal Lahir</td>
-                        <td>{{ $nasabah->TangalLahir }}</td>
+                        <td>{{ $user->TangalLahir }}</td>
                     </tr>
                     <tr>
                         <td>Jenis Kelamin</td>
-                        <td>{{ $nasabah->JenisKelamin }}</td>
+                        <td>{{ $user->JenisKelamin }}</td>
                     </tr>
                     <tr>
                         <td>Usia</td>
-                        <td>{{ $nasabah->Usia }}</td>
+                        <td>{{ $user->Usia }}</td>
                     </tr>
                     <tr>
                         <td>Alamat</td>
-                        <td>{{ $nasabah->Alamat }}</td>
+                        <td>{{ $user->Alamat }}</td>
                     </tr>
                     <tr>
                         <td>Pekerjaan</td>
-                        <td>{{ $nasabah->Pekerjaan }}</td>
+                        <td>{{ $user->Pekerjaan }}</td>
                     </tr>
                   </table>
             </div>

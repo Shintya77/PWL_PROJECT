@@ -32,10 +32,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($nasabah as $nsb)
+                      @foreach ($user as $nsb)
                       <tr>
-                      <td>{{ $nsb->Kd_Nasabah }}</td>
-                      <td>{{ $nsb->Nama }}</td>
+                      <td>{{ $nsb->id }}</td>
+                      <td>{{ $nsb->name }}</td>
                       <td>{{ $nsb->Username }}</td>
                       <td><img width="1000px" height="1000px" src="{{asset('storage/'.$nsb->Foto)}}"></td>
                       <td>{{ $nsb->TangalLahir }}</td>
@@ -44,9 +44,9 @@
                       <td>{{ $nsb->Alamat }}</td>
                       <td>{{ $nsb->Pekerjaan }}</td>
                         <td>
-                          <form action="{{ route('nasabah.destroy',$nsb->Kd_Nasabah) }}" method="POST">
-                              <a class="btn btn-info" href="{{ route('nasabah.show',$nsb->Kd_Nasabah) }}">Detail</a>
-                              <a class="btn btn-primary" href="{{ route('nasabah.edit',$nsb->Kd_Nasabah) }}">Edit</a>
+                          <form action="{{ route('nasabah.destroy',$nsb->id) }}" method="POST">
+                              <a class="btn btn-info" href="{{ route('nasabah.show',$nsb->id) }}">Detail</a>
+                              <a class="btn btn-primary" href="{{ route('nasabah.edit',$nsb->id) }}">Edit</a>
                               @csrf
                               @method('DELETE')
                               <button type="submit" onclick="return confirm('Apakah anda yakin hapus data ini ?')" class="btn btn-danger">Hapus</button>
@@ -57,7 +57,7 @@
                       @endforeach
                     </tbody>
                   </table>
-                  {{ $nasabah->links() }}
+                  {{ $user->links() }}
                 </div>
               </div>
             </div>

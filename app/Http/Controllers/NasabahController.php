@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Nasabah;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
 class NasabahController extends Controller
@@ -16,11 +16,11 @@ class NasabahController extends Controller
     public function index()
     {
          // Mengambil semua isi tabel
-         $nasabah = Nasabah::paginate(3); 
+         $user = User::paginate(3); 
         
          //fungsi eloquent menampilkan data menggunakan pagination
-         $posts = Nasabah::orderBy('Kd_Nasabah', 'desc')->paginate(3);
-         return view('admin.nasabah.index', compact('nasabah'));
+         $posts = User::orderBy('id', 'desc')->paginate(3);
+         return view('admin.nasabah.index', compact('user'));
          with('i', (request()->input('page', 1) - 1) * 5);
  
     }
@@ -35,11 +35,11 @@ class NasabahController extends Controller
         //menangkap data pencarian
         $cari = $request->search;
 
-        //mengambil data dari table nasabah sesuai pencarian data
-        $nasabah = Nasabah::where('Nama','like',"%".$cari."%")->paginate();
+        //mengambil data dari table user sesuai pencarian data
+        $user = User::where('Nama','like',"%".$cari."%")->paginate();
 
-        //mengiriim data Nasabah ke view index
-        return view('admin.nasabah.index', compact('nasabah'));
+        //mengiriim data User ke view index
+        return view('admin.nasabah.index', compact('user'));
     }
 
 
@@ -72,22 +72,22 @@ class NasabahController extends Controller
             $image_name = $request->file('Foto')->store('Foto', 'public');
         }
         
-        $nasabah = new Nasabah;
-        $nasabah->Nama = $request->get('Nama');
-        $nasabah->Username= $request->get('Username');
-        $nasabah->Foto = $image_name;
-        $nasabah->TangalLahir= $request->get('TangalLahir');
-        $nasabah->JenisKelamin= $request->get('JenisKelamin');
-        $nasabah->Usia= $request->get('Usia');
-        $nasabah->Alamat= $request->get('Alamat');
-        $nasabah->Pekerjaan= $request->get('Pekerjaan');
-        $nasabah->save();
+        $user = new User;
+        $user->name = $request->get('Nama');
+        $user->Username= $request->get('Username');
+        $user->Foto = $image_name;
+        $user->TangalLahir= $request->get('TangalLahir');
+        $user->JenisKelamin= $request->get('JenisKelamin');
+        $user->Usia= $request->get('Usia');
+        $user->Alamat= $request->get('Alamat');
+        $user->Pekerjaan= $request->get('Pekerjaan');
+        $user->save();
  
         //fungsi eloquent untuk menambah data
-        // Nasabah::create($request->all());
+        // User::create($request->all());
         
         //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Ditambahkan');
+        return redirect()->route('nasabah.index')->with('success', 'Data User Berhasil Ditambahkan');
    
     }
 
@@ -97,11 +97,11 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($Kd_Nasabah)
+    public function show($id)
     {
-        //menampilkan detail data dengan menemukan/berdasarkan Id Nasabah
-        $nasabah = Nasabah::find($Kd_Nasabah);
-         return view('admin.nasabah.detail', compact('nasabah'));
+        //menampilkan detail data dengan menemukan/berdasarkan Id User
+        $user = User::find($id);
+         return view('admin.nasabah.detail', compact('user'));
     }
 
     /**
@@ -110,11 +110,11 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($Kd_Nasabah)
+    public function edit($id)
     {
-        //menampilkan detail data dengan menemukan berdasarkan id nasabah untuk diedit
-        $nasabah = Nasabah::find($Kd_Nasabah);
-        return view('admin.nasabah.edit', compact('nasabah'));
+        //menampilkan detail data dengan menemukan berdasarkan id user untuk diedit
+        $user = User::find($id);
+        return view('admin.nasabah.edit', compact('user'));
     }
 
     /**
@@ -124,7 +124,7 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $Kd_Nasabah)
+    public function update(Request $request, $id)
     {
         //melakukan validasi data
         $request->validate([
@@ -139,26 +139,26 @@ class NasabahController extends Controller
         ]);
         
         //fungsi eloquent untuk mengupdate data inputan kita
-        // Nasabah::find($Kd_Nasabah)->update($request->all());
+        // User::find($id)->update($request->all());
 
-        $nasabah = Nasabah::where('Kd_Nasabah', $Kd_Nasabah)->first();
-        $nasabah->Nama = $request->get('Nama');
-        $nasabah->Foto = $request->get('Foto');
-        $nasabah->TangalLahir= $request->get('TangalLahir');
-        $nasabah->JenisKelamin= $request->get('JenisKelamin');
-        $nasabah->Usia= $request->get('Usia');
-        $nasabah->Alamat= $request->get('Alamat');
-        $nasabah->Pekerjaan= $request->get('Pekerjaan');
+        $user = User::where('id', $id)->first();
+        $user->name = $request->get('Nama');
+        $user->Foto = $request->get('Foto');
+        $user->TangalLahir= $request->get('TangalLahir');
+        $user->JenisKelamin= $request->get('JenisKelamin');
+        $user->Usia= $request->get('Usia');
+        $user->Alamat= $request->get('Alamat');
+        $user->Pekerjaan= $request->get('Pekerjaan');
         
-        if ($nasabah->Foto && file_exists(storage_path('app/public/'.$nasabah->Foto))){
-            \Storage::delete('public/'. $nasabah->Foto);
+        if ($user->Foto && file_exists(storage_path('app/public/'.$user->Foto))){
+            \Storage::delete('public/'. $user->Foto);
         }
         $image_name = $request->file('Foto')->store('Foto', 'public');
-        $nasabah->Foto = $image_name;
-        $nasabah->save();
+        $user->Foto = $image_name;
+        $user->save();
         
         //jika data berhasil diupdate, akan kembali ke halaman utama
-        return redirect()->route('nasabah.index')->with('success', 'Data Nasabah Berhasil Diupdate');
+        return redirect()->route('nasabah.index')->with('success', 'Data User Berhasil Diupdate');
     }
 
     /**
@@ -167,10 +167,10 @@ class NasabahController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($Kd_Nasabah)
+    public function destroy($id)
     {
          //fungsi eloquent untuk menghapus data
-         Nasabah::find($Kd_Nasabah)->delete();
-         return redirect()->route('nasabah.index')-> with('success', 'Data Nasabah Berhasil Dihapus'); 
+         User::find($id)->delete();
+         return redirect()->route('nasabah.index')-> with('success', 'Data User Berhasil Dihapus'); 
     }
 }
