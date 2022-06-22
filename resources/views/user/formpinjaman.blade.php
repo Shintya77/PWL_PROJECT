@@ -26,16 +26,13 @@
                     @csrf
                     <input type="hidden" name="Kd_Barang" value="{{$barang->Kd_Barang}}">
                     <div class="form-group">
-                            <label for="Nama">Nama Barang</label>
-                    <input type="text" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" readonly value="{{$barang->Nama}}">
-                        </div>
-                   
+                        <label for="Nama">Nama Barang</label>
+                        <input type="text" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" readonly value="{{$barang->Nama}}">
+                    </div>
                     <div class="form-group">
                             <label for="JumlahPinjaman">Jumlah Pinjaman</label>
                             <input type="JumlahPinjaman" name="JumlahPinjaman" class="form-control" id="JumlahPinjaman" aria-describedby="JumlahPinjaman">
-                        </div>
-                   
-                   
+                    </div>
                     <div class="form-group">
                         <label for="JangkaWaktu">Jangka Waktu</label>
                         <input type="JangkaWaktu" name="JangkaWaktu" class="form-control" id="JangkaWaktu" aria-describedby="JangkaWaktu" >

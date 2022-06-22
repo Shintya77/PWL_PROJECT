@@ -45,7 +45,7 @@ Route::get('/contact',[UserController::class, 'contact']);
 Route::resource('/formnasabah',FormController::class)->only(['edit','update']);
 Route::resource('/formbarang',FormBarangController::class)->middleware('auth');
 Route::resource('/formpinjaman',FormPinjamanController::class)->middleware('auth');
-Route::resource('/formpembayaran',FormPembayaranController::class);
+Route::resource('/formpembayaran',FormPembayaranController::class)->middleware('auth');
 
 
 

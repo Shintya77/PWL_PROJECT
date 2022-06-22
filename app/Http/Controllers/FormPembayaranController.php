@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pembayaran;
 use App\Models\Pinjaman;
+use App\Models\Barang;
 
 class FormPembayaranController extends Controller
 {
@@ -15,7 +16,16 @@ class FormPembayaranController extends Controller
      */
     public function index()
     {
-        return view('user.pembayaran', ['title'=> 'Pengajuan']);
+        
+        $barang1=Barang::where('Id_Nasabah', auth()->user()->Id_Nasabah)->where('Status', 'gadai')->get();
+        $barang = Barang::where('Id_Nasabah', auth()->user()->id)->where('Status', 'gadai')->first();
+        $pinjaman = Pinjaman::where('Id_Nasabah', auth()->user()->id)->where('Kd_Barang', $barang->Kd_Barang)->first();
+        
+        return view('user.pembayaran', [
+            'title'=> 'Pembayaran Gadai',
+            'barang' => $barang,
+            'pinjaman' => $pinjaman,
+        ]);
     }
 
     /**
@@ -36,35 +46,18 @@ class FormPembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //melakukan validasi data
-        $request->validate([
+        $pembayaran = $request->validate([
             'Kd_Pinjaman' => 'required',
-            'NamaNasabah' => 'required',
             'NamaBarang' => 'required',
+            'NamaNasabah' => 'required',
             'TotalBayar' => 'required',
             'TanggaAkhir' => 'required',
             'Status' => 'required',
         ]);
+        // $pinjaman['NamaNasabah'] = auth()->user()->name;
+        Pembayaran::create($pembayaran);
+        return redirect('/pengajuan')->with('success', 'Pembayaran Berhasil Dilakukan!');
         
-        $pembayaran = new Pembayaran;
-        
-        $pinjaman = new Pinjaman;
-        $pembayaran->Kd_Pinjaman= $request->get('Kd_Pinjaman');
-        $pembayaran->NamaNasabah = $request->get('NamaNasabah');
-        $pembayaran->NamaBarang= $request->get('NamaBarang');
-        $pembayaran->TotalBayar= $request->get('TotalBayar');
-        $pembayaran->TanggaAkhir= $request->get('TanggaAkhir');
-        $pembayaran->Status= $request->get('Status');
-
-        $pinjaman->Kd_Pinjaman = $request->get('Kd_Pinjaman');
-        $pinjaman->Pemilik = $request->get('NamaNasabah');
-        $pinjaman->Nama = $request->get('NamaBarang');
-        
-        // $barang->nasabah()->associate($nasabah);
-        $pembayaran->save();
-        
-        //jika data berhasil ditambahkan, akan kembali ke halaman utama
-        return redirect('/pengajuan')->with('success', 'Data Pembayaran Berhasil Ditambahkan');
     }
 
     /**

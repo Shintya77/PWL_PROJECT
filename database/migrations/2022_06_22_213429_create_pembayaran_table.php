@@ -24,7 +24,6 @@ class CreatePembayaranTable extends Migration
             $table->timestamps();
             $table->foreign('Kd_Pinjaman')->references('Kd_Pinjaman')->on('Pinjaman'); 
         });
-        
     }
 
     /**

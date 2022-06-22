@@ -25,32 +25,22 @@
                 @endif
                 <form method="post" action="{{ route('formpembayaran.store') }}" enctype="multipart/form-data" id="myForm">
                     @csrf
-                    {{-- <div class="form-group">
-                        <input type="text" name="Kd_Pembayaran" class="form-control" id="Kd_Pembayaran" aria-describedby="Kd_Pembayaran" > 
-                    </div> --}}
-                    {{-- <div class="form-group">
-                        <label for="Kd_Pinjaman">Kode Pinjaman</label>
-                        <select name="Kd_Pinjaman" id="Kd_Pinjaman" class="form-control" required="required">
-                            @foreach ($pinjaman as $pjm)
-                                <option value="{{$pjm->Kd_Pinjaman}}" >{{$pjm->Kd_Pinjaman}}</option>
-                            @endforeach
-                        </select>
-                    </div> --}}
-                    <div class="form-group">
-                        <label for="NamaNasabah">Nama Nasabah</label>
-                        <input type="NamaNasabah" name="NamaNasabah" class="form-control" id="NamaNasabah" aria-describedby="NamaNasabah" > 
-                    </div>
+                    <input type="hidden" name="Kd_Pinjaman" value="{{$pinjaman->Kd_Pinjaman}}">
                     <div class="form-group">
                         <label for="NamaBarang">Nama Barang</label>
-                        <input type="NamaBarang" name="NamaBarang" class="form-control" id="NamaBarang" aria-describedby="NamaBarang" > 
+                        <input type="text" name="NamaBarang" class="form-control" id="NamaBarang" aria-describedby="NamaBarang" readonly value="{{$barang->Nama}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="NamaNasabah">Nama Nasabah</label>
+                        <input type="text" name="NamaNasabah" class="form-control" id="NamaNasabah" aria-describedby="NamaNasabah" readonly value="{{$barang->Pemilik}}">
                     </div>
                     <div class="form-group">
                         <label for="TotalBayar">Total Bayar</label> 
                         <input type="TotalBayar" name="TotalBayar" class="form-control" id="TotalBayar" aria-describedby="TotalBayar" > 
                     </div>
                     <div class="form-group">
-                        <label for="TanggaAkhir">Tanggal Akhir Bayar</label> 
-                        <input type="date" name="TanggaAkhir" class="form-control" id="TanggaAkhir" aria-describedby="TanggaAkhir" > 
+                        <label for="TanggaAkhir">Tanggal Akhir Bayar</label>
+                        <input type="date" name="TanggaAkhir" class="form-control" id="TanggaAkhir" aria-describedby="TanggaAkhir" readonly value="{{$barang->TanggalKeluar}}">
                     </div>
                     <div class="form-group">
                         <label for="Status">Status</label> 
