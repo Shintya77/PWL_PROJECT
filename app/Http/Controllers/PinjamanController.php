@@ -51,7 +51,7 @@ class PinjamanController extends Controller
         //melakukan validasi data
         $request->validate([
            
-            'Kd_Nasabah' => 'required',
+            'Id_Nasabah' => 'required',
             'Kd_Barang' => 'required',
             'Pemilik' => 'required',
             'Nama' => 'required',
@@ -65,7 +65,7 @@ class PinjamanController extends Controller
         $pinjaman = new Pinjaman;
         
         
-        $pinjaman->Kd_Nasabah= $request->get('Kd_Nasabah');
+        $pinjaman->Id_Nasabah= $request->get('Id_Nasabah');
         $pinjaman->Kd_Barang= $request->get('Kd_Barang');
         $pinjaman->Pemilik= $request->get('Pemilik');
         $pinjaman->Nama = $request->get('Nama');
@@ -74,7 +74,7 @@ class PinjamanController extends Controller
        
         
         $barang = new Barang;
-        $barang->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $barang->Id_Nasabah = $request->get('Id_Nasabah');
         $barang->Kd_Barang = $request->get('Kd_Barang');
         $barang->Pemilik = $request->get('Pemilik');
         $barang->Nama = $request->get('Nama');
@@ -129,7 +129,7 @@ class PinjamanController extends Controller
         //melakukan validasi data
         $request->validate([
            
-            'Kd_Nasabah' => 'required',
+            'Id_Nasabah' => 'required',
             'Kd_Barang' => 'required',
             'Pemilik' => 'required',
             'Nama' => 'required',
@@ -139,7 +139,7 @@ class PinjamanController extends Controller
 
         $pinjaman = Pinjaman::where('Kd_Pinjaman', $Kd_Pinjaman)->first();
        
-        $pinjaman->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $pinjaman->Id_Nasabah = $request->get('Id_Nasabah');
         $pinjaman->Kd_Barang = $request->get('Kd_Barang');
         $pinjaman->Pemilik= $request->get('Pemilik');
         $pinjaman->Nama = $request->get('Nama');
@@ -147,7 +147,7 @@ class PinjamanController extends Controller
         $pinjaman->JangkaWaktu= $request->get('JangkaWaktu');
        
         $barang = new Barang;
-        $barang->Kd_Nasabah = $request->get('Kd_Nasabah');
+        $barang->Id_Nasabah = $request->get('Id_Nasabah');
         $barang->Kd_Barang = $request->get('Kd_Barang');
         $barang->Pemilik = $request->get('Pemilik');
         $barang->Nama = $request->get('Nama');

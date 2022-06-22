@@ -21,21 +21,11 @@
                 @endif
                 <form method="post" action="{{ route('pinjaman.store') }}"  enctype="multipart/form-data" id="myForm">
                     @csrf
-                    <!-- <div class="form-group">
-                        <label for="Kd_Pinjaman">Kode Pinjaman</label>
-                        <input type="text" name="Kd_Pinjaman" class="form-control" id="Kd_Pinjaman" aria-describedby="Kd_Pinjaman" >
-                    </div> -->
-
-                    <!-- <div class="form-group">
-                        <label for="Nama">Nama Barang</label>
-                        <input type="Nama" name="Nama" class="form-control" id="Nama" aria-describedby="Nama" >
-                    </div> -->
-
                     <div class="form-group">
-                        <label for="Kd_Nasabah">Kode Nasabah</label>
-                        <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control">
+                        <label for="Id_Nasabah">Kode Nasabah</label>
+                        <select name="Id_Nasabah" id="Id_Nasabah" class="form-control">
                             @foreach ($barang as $brg)
-                                <option value="{{$brg->Kd_Nasabah}}" >{{$brg->Kd_Nasabah}}</option>
+                                <option value="{{$brg->Id_Nasabah}}" >{{$brg->Id_Nasabah}}</option>
                             @endforeach
                         </select>
                     </div>
