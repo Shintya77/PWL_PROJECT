@@ -33,4 +33,7 @@ public function pembayaran(){
     return $this->belongsTo(Pembayaran::class);
 }
 
+public function user(){
+    return $this->belongsTo(User::class);
+}
 }

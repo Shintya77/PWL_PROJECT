@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <td>Kode Nasabah</td>
-                        <td>{{ $pinjaman->Kd_Nasabah}}</td>
+                        <td>{{ $pinjaman->Id_Nasabah}}</td>
                     </tr>
                     <tr>
                         <td>Kode Barang</td>

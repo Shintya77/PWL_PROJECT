@@ -30,10 +30,10 @@
 
 
                     <div class="form-group">
-                        <label for="Kd_Nasabah">Kode Nasabah</label>
-                        <select name="Kd_Nasabah" id="Kd_Nasabah" class="form-control">
+                        <label for="Id_Nasabah">Kode Nasabah</label>
+                        <select name="Id_Nasabah" id="Id_Nasabah" class="form-control">
                             @foreach ($barang as $brg)
-                                <option value="{{$brg->Kd_Nasabah}}" {{$pinjaman->Kd_Nasabah == $brg->Kd_Nasabah ? 'selected' : ''}} >{{$brg->Kd_Nasabah}}</option>
+                                <option value="{{$brg->Id_Nasabah}}" {{$pinjaman->Id_Nasabah == $brg->Id_Nasabah ? 'selected' : ''}} >{{$brg->Id_Nasabah}}</option>
                             @endforeach
                         </select>
                     </div>
