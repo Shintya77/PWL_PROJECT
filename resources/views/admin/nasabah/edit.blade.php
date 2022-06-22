@@ -35,6 +35,14 @@
                         <input type="Username" name="Username" class="form-control" id="Username" value="{{ $user->Username }}" aria-describedby="Username" > 
                     </div>
                     <div class="form-group">
+                        <label for="email">Email</label> 
+                        <input type="email" name="email" class="form-control" id="email" value="{{ $user->email }}" aria-describedby="email" > 
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label> 
+                        <input type="password" name="password" class="form-control" id="password" value="{{ $user->password }}" aria-describedby="password" > 
+                    </div>
+                    <div class="form-group">
                         <label for="Foto">Foto</label> 
                         <input type="file" class="form-control" required="required" name="Foto" value="{{$user->Foto}}"><br>
                         <img width="100px" height="100px" src="{{asset('storage/'.$user->Foto)}}">

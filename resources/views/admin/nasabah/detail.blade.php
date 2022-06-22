@@ -24,6 +24,14 @@
                         <td>{{ $user->Username }}</td>
                     </tr>
                     <tr>
+                        <td>Email</td>
+                        <td>{{ $user->email }}</td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>{{ $user->password }}</td>
+                    </tr>
+                    <tr>
                         <td>Foto</td>
                         <td>
                         <img width="1000px" height="1000px" src="{{asset('storage/'.$user->Foto)}}">

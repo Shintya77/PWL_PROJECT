@@ -60,6 +60,8 @@ class NasabahController extends Controller
         $request->validate([
             'Nama' => 'required',
             'Username' => 'required',
+            'email' => 'required',
+            'password' => 'required',
             'Foto' => 'required',
             'TangalLahir' => 'required',
             'JenisKelamin' => 'required',
@@ -75,6 +77,8 @@ class NasabahController extends Controller
         $user = new User;
         $user->name = $request->get('Nama');
         $user->Username= $request->get('Username');
+        $user->email = $request->get('email');
+        $user->password = $request->get('password');
         $user->Foto = $image_name;
         $user->TangalLahir= $request->get('TangalLahir');
         $user->JenisKelamin= $request->get('JenisKelamin');
@@ -130,6 +134,8 @@ class NasabahController extends Controller
         $request->validate([
             'Nama' => 'required',
             'Username' => 'required',
+            'email' => 'required',
+            'password' => 'required',
             'Foto' => 'required',
             'TangalLahir' => 'required',
             'JenisKelamin' => 'required',
@@ -143,6 +149,9 @@ class NasabahController extends Controller
 
         $user = User::where('id', $id)->first();
         $user->name = $request->get('Nama');
+        $user->email = $request->get('email');
+        $user->Username= $request->get('Username');
+        $user->password = $request->get('password');
         $user->Foto = $request->get('Foto');
         $user->TangalLahir= $request->get('TangalLahir');
         $user->JenisKelamin= $request->get('JenisKelamin');
