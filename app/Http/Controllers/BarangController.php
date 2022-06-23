@@ -184,7 +184,7 @@ class BarangController extends Controller
 
     public function cetak_pdf(){
         $barang = Barang::all();
-        $pdf = PDF::loadview('barang.cetak_pdf', ['barang' => $barang]);
+        $pdf = PDF::loadview('admin.barang.cetak_pdf', ['barang' => $barang]);
         return $barang->stream();
     }
 }
