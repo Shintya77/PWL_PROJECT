@@ -7,6 +7,7 @@ use App\Models\Barang;
 use App\Models\Nasabah;
 use App\Models\Pinjaman;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class PinjamanController extends Controller
 {
@@ -170,6 +171,12 @@ class PinjamanController extends Controller
         //fungsi eloquent untuk menghapus data
         Pinjaman::find($Kd_Pinjaman)->delete();
         return redirect()->route('pinjaman.index')-> with('success', 'Data Barang Berhasil Dihapus');
+    }
+
+    public function cetak_pdf(){
+        $pinjaman = Pinjaman::all();
+        $pdf = PDF::loadview('pinjaman.cetak_pdf', ['pinjaman' => $pinjaman]);
+        return $pdf->stream();
     }
 
 }
