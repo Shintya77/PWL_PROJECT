@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Barang;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class BarangController extends Controller
 {
@@ -179,5 +180,11 @@ class BarangController extends Controller
          //fungsi eloquent untuk menghapus data
          Barang::find($Kd_Barang)->delete();
          return redirect()->route('barang.index')-> with('success', 'Data Barang Berhasil Dihapus');
+    }
+
+    public function cetak_pdf(){
+        $barang = Barang::all();
+        $pdf = PDF::loadview('barang.cetak_pdf', ['barang' => $barang]);
+        return $barang->stream();
     }
 }
