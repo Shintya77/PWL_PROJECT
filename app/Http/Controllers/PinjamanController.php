@@ -175,7 +175,7 @@ class PinjamanController extends Controller
 
     public function cetak_pdf(){
         $pinjaman = Pinjaman::all();
-        $pdf = PDF::loadview('pinjaman.cetak_pdf', ['pinjaman' => $pinjaman]);
+        $pdf = PDF::loadview('admin.pinjaman.cetak_pdf', ['pinjaman' => $pinjaman]);
         return $pdf->stream();
     }
 
