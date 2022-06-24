@@ -25,7 +25,7 @@ font-size: 9pt;
                         <th>Tanggal Keluar</th>
                         <th>Harga Gadai</th>
                         <th>Status</th>
-                        <th>Aksi</th>
+                       
 </tr>
 </thead>
 <tbody>
