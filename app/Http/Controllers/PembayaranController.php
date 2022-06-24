@@ -163,6 +163,6 @@ class PembayaranController extends Controller
     public function cetak_pdf(){
         $pembayaran = Pembayaran::all();
         $pdf = PDF::loadview('admin.pembayaran.cetak_pdf', ['pembayaran' => $pembayaran]);
-        return $pembayaran->stream();
+        return $pdf->stream();
     }
 }

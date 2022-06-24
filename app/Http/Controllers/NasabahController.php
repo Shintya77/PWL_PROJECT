@@ -185,8 +185,8 @@ class NasabahController extends Controller
     }
     public function cetak_pdf(){
         $user = User::all();
-        $pdf = PDF::loadview('admin.nasabah.cetak', ['user' => $user]);
-        return $user->stream();
+        $pdf = PDF::loadview('admin.nasabah.cetak_pdf', ['user' => $user]);
+        return $pdf->stream();
     }
 
 }
