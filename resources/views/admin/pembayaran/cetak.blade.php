@@ -27,7 +27,7 @@
                       @foreach ($pembayaran as $pbr)
                       <tr>
                       <td>{{ $pbr->Kd_Pembayaran }}</td>
-                      <td>{{ $pbr->Kd_Pinjaman }}</td>
+                      {{-- <td>{{ $pbr->Kd_Pinjaman }}</td> --}}
                       <td>{{ $pbr->NamaNasabah }}</td>
                      <td>{{ $pbr->NamaBarang }}</td>
                       <td>{{ $pbr->TotalBayar }}</td>

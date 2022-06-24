@@ -62,9 +62,9 @@ Route::group(['middleware' => ['auth', 'CekAdmin']], function () {
     Route::resource('/gudang',GudangController::class);
 
     Route::get('/barang/cetak_pdf', [BarangController::class, 'cetak_pdf']);
-    Route::get('/nasabah/cetak_pdf', [NasabahController::class, 'cetak_pdf']);
+    Route::get('/nasabah/cetak', [NasabahController::class, 'cetak'])->name('nasabah.cetak');
     Route::get('/pinjaman/cetak_pdf', [PinjamanController::class, 'cetak_pdf']);
-    Route::get('/pembayaran/cetak_pdf', [PembayaranController::class, 'cetak_pdf']);
+    Route::get('/pembayaran/cetak', [PembayaranController::class, 'cetak'])->name('pembayaran.cetak');
     
     Route::resource('/pembayaran',PembayaranController::class);
     Route::resource('/pinjaman',PinjamanController::class);
