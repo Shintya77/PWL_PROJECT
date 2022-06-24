@@ -29,7 +29,7 @@
                     </tr>
                     <tr>
                         <td>Tanggal Lahir</td>
-                        <td>{{ $petugas->TangalLahir }}</td>
+                        <td>{{ $petugas->TanggalLahir }}</td>
                     </tr>
                     <tr>
                         <td>Jenis Kelamin</td>
