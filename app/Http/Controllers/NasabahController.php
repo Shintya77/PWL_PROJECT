@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class NasabahController extends Controller
 {
@@ -182,4 +183,10 @@ class NasabahController extends Controller
          User::find($id)->delete();
          return redirect()->route('nasabah.index')-> with('success', 'Data User Berhasil Dihapus'); 
     }
+    public function cetak_pdf(){
+        $user = User::all();
+        $pdf = PDF::loadview('admin.nasabah.index', ['user' => $user]);
+        return $user->stream();
+    }
+
 }

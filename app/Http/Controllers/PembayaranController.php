@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Pinjaman;
 use App\Models\Pembayaran;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class PembayaranController extends Controller
 {
@@ -158,5 +159,10 @@ class PembayaranController extends Controller
          //fungsi eloquent untuk menghapus data
          Pembayaran::find($Kd_Pembayaran)->delete();
          return redirect()->route('pembayaran.index')-> with('success', 'Data Pembayaran Berhasil Dihapus');
+    }
+    public function cetak_pdf(){
+        $pembayaran = Pembayaran::all();
+        $pdf = PDF::loadview('admin.nasabah.index', ['pembayaran' => $pembayaran]);
+        return $pembayaran->stream();
     }
 }

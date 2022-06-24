@@ -61,13 +61,12 @@ Route::group(['middleware' => ['auth', 'CekAdmin']], function () {
     Route::resource('/barang',BarangController::class);
     Route::resource('/gudang',GudangController::class);
 
-
     Route::get('/barang/cetak_pdf', [BarangController::class, 'cetak_pdf']);
-
+    Route::get('/nasabah/cetak_pdf', [NasabahController::class, 'cetak_pdf']);
+    Route::get('/pinjaman/cetak_pdf', [PinjamanController::class, 'cetak_pdf']);
+    Route::get('/pembayaran/cetak_pdf', [PembayaranController::class, 'cetak_pdf']);
     
-    // Route::get('/nasabah',[AdminController::class, 'nasabah']);
     Route::resource('/pembayaran',PembayaranController::class);
     Route::resource('/pinjaman',PinjamanController::class);
-    // Route::get('/petugas',[AdminController::class, 'petugas']);
 });
 

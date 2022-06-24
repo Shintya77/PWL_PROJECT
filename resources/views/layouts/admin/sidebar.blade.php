@@ -109,10 +109,10 @@
         </a>
         <div class="collapse" id="cetak">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Data Nasabah</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('/nasabah/cetak_pdf')}}">Data Nasabah</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{url('/barang/cetak_pdf')}}">Data Barang</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Struk Peminjaman</a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Struk Pembayaran</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('/pinjaman/cetak_pdf')}}">Struk Peminjaman</a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{url('/pembayaran/cetak_pdf')}}">Struk Pembayaran</a></li>
           </ul>
         </div>
       </li>
