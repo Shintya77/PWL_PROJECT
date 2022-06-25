@@ -14,6 +14,8 @@
                   <div>
                     <a href="{{ route('pinjaman.create')}}" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Tambah Data</a>
+                      <a href="{{ route('pinjaman.cetak_pdf') }}" class="btn btn-primary">
+                      <i class="fa fa-edit"></i> Export PDF</a> 
                     <!-- <a href="?page=add-pengguna" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Edit Data</a>
                     <a href="?page=add-pengguna" class="btn btn-primary">

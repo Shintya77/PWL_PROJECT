@@ -1,20 +1,42 @@
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
-<title> Pinjaman Nasabah</title>
-</head>
-<body>
-<style type="text/css">
-table tr td,
-table tr th{
-font-size: 9pt;
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#c td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
 }
 </style>
+</head>
+<body>
 <center>
-<h5>Laporan Pinjaman Nasabah</h4>
+  <h2>Data Pinjaman</h2>
+  <h3>Data Penggadaian Si Gadai 2022</h3>
 </center>
-<table class='table table-bordered'>
-<thead>
+
+<table id="customers">
 <tr>
                         <th>Kode Pinjaman</th>
                         <th>Nama Nasabah</th>
@@ -22,8 +44,6 @@ font-size: 9pt;
                         <th>Jumlah Pinjaman</th>
                         <th>Jangka Waktu</th>
 </tr>
-</thead>
-<tbody>
 @foreach($pinjaman as $pjm)
 <tr>
 <tr>
@@ -36,7 +56,6 @@ font-size: 9pt;
                        
                       </tr>
 @endforeach
-</tbody>
 </table>
 </body>
 </html>
