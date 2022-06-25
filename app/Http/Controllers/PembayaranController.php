@@ -161,10 +161,9 @@ class PembayaranController extends Controller
          return redirect()->route('pembayaran.index')-> with('success', 'Data Pembayaran Berhasil Dihapus');
     }
     public function cetak(){
-        // $pembayaran = Pembayaran::with('pinjaman')->get();
         $pembayaran = Pembayaran::all();
-        view()->share('pembayaran',$pembayaran);
-        $pdf = PDF::loadview('admin.pembayaran.cetak');
+        // $pembayaran = Pembayaran::all();
+        $pdf = PDF::loadview('admin.pembayaran.cetak', ['pembayaran' => $pembayaran]);
         return $pdf->stream();
     }
 }

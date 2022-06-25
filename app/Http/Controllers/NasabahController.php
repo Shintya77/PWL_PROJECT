@@ -183,13 +183,5 @@ class NasabahController extends Controller
          User::find($id)->delete();
          return redirect()->route('nasabah.index')-> with('success', 'Data User Berhasil Dihapus'); 
     }
-    public function cetak(){
-        $user = User::all();
-        dd($user);
-        return view('admin.nasabah.cetak');
-        // view()->share('user',$user);
-        // $pdf = PDF::loadview('admin.nasabah.cetak');
-        // return $pdf->stream();
-    }
 
 }

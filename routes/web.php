@@ -14,6 +14,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\FormBarangController;
 use App\Http\Controllers\FormPinjamanController;
 use App\Http\Controllers\FormPembayaranController;
+use App\Http\Controllers\CetakController;
 
 
 /*
@@ -62,7 +63,7 @@ Route::group(['middleware' => ['auth', 'CekAdmin']], function () {
     Route::resource('/gudang',GudangController::class);
 
     Route::get('/barang/cetak_pdf', [BarangController::class, 'cetak_pdf']);
-    Route::get('/nasabah/cetak', [NasabahController::class, 'cetak'])->name('nasabah.cetak');
+    Route::get('/nasabah/cetak', [CetakController::class, 'cetak'])->name('nasabah.cetak');
     Route::get('/pinjaman/cetak_pdf', [PinjamanController::class, 'cetak_pdf']);
     Route::get('/pembayaran/cetak', [PembayaranController::class, 'cetak'])->name('pembayaran.cetak');
     
