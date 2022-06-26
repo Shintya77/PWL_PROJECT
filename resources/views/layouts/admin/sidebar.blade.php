@@ -81,41 +81,6 @@
           <span class="menu-title">Data Petugas</span>
         </a>
       </li>
-      {{-- <li class="nav-item menu-items">
-        <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-          <span class="menu-icon">
-            <i class="mdi mdi-bank"></i>
-          </span>
-          <span class="menu-title">Data ---</span>
-          <i class="menu-arrow"></i>
-        </a> --}}
-        {{-- <div class="collapse" id="auth">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-          </ul>
-        </div>
-      </li> --}}
-      <li class="nav-item menu-items">
-        <a class="nav-link" data-toggle="collapse" href="#cetak" aria-expanded="false" aria-controls="ui-basic">
-          <span class="menu-icon">
-            <i class="mdi mdi-animation"></i>
-          </span>
-          <span class="menu-title">Cetak Data</span>
-          <i class="menu-arrow"></i>
-        </a>
-        <div class="collapse" id="cetak">
-          <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{url('/nasabah/cetak_pdf')}}">Data Nasabah</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{url('/barang/cetak_pdf')}}">Data Barang</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{url('/pinjaman/cetak_pdf')}}">Struk Peminjaman</a></li>
-            <li class="nav-item"> <a class="nav-link" href="{{url('/pembayaran/cetak_pdf')}}">Struk Pembayaran</a></li>
-          </ul>
-        </div>
-      </li>
       
     </ul>
   </nav>

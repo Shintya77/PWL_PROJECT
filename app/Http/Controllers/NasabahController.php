@@ -183,5 +183,6 @@ class NasabahController extends Controller
          User::find($id)->delete();
          return redirect()->route('nasabah.index')-> with('success', 'Data User Berhasil Dihapus'); 
     }
+  
 
 }

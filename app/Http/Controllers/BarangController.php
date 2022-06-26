@@ -182,9 +182,5 @@ class BarangController extends Controller
          return redirect()->route('barang.index')-> with('success', 'Data Barang Berhasil Dihapus');
     }
 
-    public function cetak_pdf(){
-        $barang = Barang::all();
-        $pdf = PDF::loadview('admin.barang.cetak_pdf', ['barang' => $barang]);
-        return $barang->stream();
-    }
+ 
 }

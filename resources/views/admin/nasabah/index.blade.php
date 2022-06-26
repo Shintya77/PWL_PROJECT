@@ -14,8 +14,7 @@
                   <div>
                     <a href="{{ route('nasabah.create') }}" class="btn btn-primary">
                       <i class="fa fa-edit"></i> Tambah Data</a>
-                    <a href="{{ route('nasabah.cetak') }}" class="btn btn-primary">
-                      <i class="fa fa-edit"></i> Export PDF</a> 
+                   
                   </div>
                   <br>
                   <table id="example1" class="table table-bordered table-striped">
