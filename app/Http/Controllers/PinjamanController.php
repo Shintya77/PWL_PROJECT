@@ -177,6 +177,9 @@ class PinjamanController extends Controller
         $pinjaman = Pinjaman::all();
         $pdf = PDF::loadview('admin.pinjaman.cetak_pdf', ['pinjaman' => $pinjaman]);
         return $pdf->stream();
+
+
+        
     }
 
 }
