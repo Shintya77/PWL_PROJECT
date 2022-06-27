@@ -61,6 +61,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+            <a class="btn btn-success mt-3" href="{{ route('petugas.index') }}">Kembali</a>
         </div>
     </div>
 </div>
