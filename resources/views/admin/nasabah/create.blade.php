@@ -67,7 +67,12 @@
                         <input type="Pekerjaan" name="Pekerjaan" class="form-control" id="Pekerjaan" aria-describedby="Pekerjaan" > 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <a class="btn btn-success mt-3" href="{{ route('nasabah.index') }}">Kembali</a>
+                </div>
+                    
                 </form>
+            
             </div>
         </div>
     </div>

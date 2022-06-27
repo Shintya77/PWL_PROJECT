@@ -24,7 +24,6 @@
                         <th>Nama Nasabah</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Password</th>
                         <th>Foto</th>
                         <th>Tanggal Lahir</th>
                         <th>Jenis Kelamin</th>
@@ -41,7 +40,6 @@
                       <td>{{ $nsb->name }}</td>
                       <td>{{ $nsb->Username }}</td>
                       <td>{{ $nsb->email }}</td>
-                      <td>{{ $nsb->password }}</td>
                       <td><img width="1000px" height="1000px" src="{{asset('storage/'.$nsb->Foto)}}"></td>
                       <td>{{ $nsb->TangalLahir }}</td>
                       <td>{{ $nsb->JenisKelamin }}</td>

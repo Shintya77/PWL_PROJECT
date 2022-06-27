@@ -68,6 +68,9 @@
                         <input type="Status" name="Status" class="form-control" id="Status" value="{{ $barang->Status }}" aria-describedby="Status" > 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <a class="btn btn-success mt-3" href="{{ route('barang.index') }}">Kembali</a>
+                </div>
             </form>
         </div>
         </div>

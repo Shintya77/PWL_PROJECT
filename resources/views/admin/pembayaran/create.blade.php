@@ -22,10 +22,6 @@
                 @endif
                 <form method="post" action="{{ route('pembayaran.store') }}" enctype="multipart/form-data" id="myForm">
                     @csrf
-                    {{-- <div class="form-group">
-                        <label for="Kd_Pembayaran">Kode Pembayaran</label> 
-                        <input type="text" name="Kd_Pembayaran" class="form-control" id="Kd_Pembayaran" aria-describedby="Kd_Pembayaran" > 
-                    </div> --}}
                     <div class="form-group">
                         <label for="Kd_Pinjaman">Kode Pinjaman</label>
                         <select name="Kd_Pinjaman" id="Kd_Pinjaman" class="form-control" required="required">
@@ -63,6 +59,9 @@
                         <input type="Status" name="Status" class="form-control" id="Status" aria-describedby="Status" > 
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <a class="btn btn-success mt-3" href="{{ route('pembayaran.index') }}">Kembali</a>
+                </div>
                 </form>
             </div>
         </div>
