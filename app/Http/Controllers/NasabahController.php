@@ -61,12 +61,12 @@ class NasabahController extends Controller
         $request->validate([
             'Nama' => 'required',
             'Username' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
             'Foto' => 'required',
             'TangalLahir' => 'required',
             'JenisKelamin' => 'required',
-            'Usia' => 'required',
+            'Usia' => 'required|numeric',
             'Alamat' => 'required',
             'Pekerjaan' => 'required',
         ]);
@@ -135,12 +135,12 @@ class NasabahController extends Controller
         $request->validate([
             'Nama' => 'required',
             'Username' => 'required',
-            'email' => 'required',
+            'email' => 'required|email',
             'password' => 'required',
             'Foto' => 'required',
             'TangalLahir' => 'required',
             'JenisKelamin' => 'required',
-            'Usia' => 'required',
+            'Usia' => 'required|numeric',
             'Alamat' => 'required',
             'Pekerjaan' => 'required',
         ]);
