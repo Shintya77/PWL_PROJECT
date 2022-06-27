@@ -64,7 +64,7 @@ class GudangController extends Controller
             'Pemilik' => 'required',
             'Deskripsi' => 'required',
             'Kondisi' => 'required',
-            'Foto' => 'required',
+            'Foto' => 'image|file|max:1024',
             
         ]);
 
@@ -140,7 +140,7 @@ class GudangController extends Controller
             'Pemilik' => 'required',
             'Deskripsi' => 'required',
             'Kondisi' => 'required',
-            'Foto' => 'required',
+            'Foto' => 'image|file|max:1024',
         ]);
 
     
