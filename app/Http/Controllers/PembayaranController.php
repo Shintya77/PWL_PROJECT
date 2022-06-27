@@ -59,7 +59,7 @@ class PembayaranController extends Controller
             'Kd_Pinjaman' => 'required',
             'NamaNasabah' => 'required',
             'NamaBarang' => 'required',
-            'TotalBayar' => 'required',
+            'TotalBayar' => 'required|numeric',
             'TanggaAkhir' => 'required',
             'Status' => 'required',
         ]);
@@ -125,7 +125,7 @@ class PembayaranController extends Controller
             'Kd_Pinjaman' => 'required',
             'NamaNasabah' => 'required',
             'NamaBarang' => 'required',
-            'TotalBayar' => 'required',
+            'TotalBayar' => 'required|numeric',
             'TanggaAkhir' => 'required',
             'Status' => 'required',
         ]);

@@ -105,7 +105,7 @@ class FormController extends Controller
             'Username' => 'required',
             'TangalLahir' => 'required',
             'JenisKelamin' => 'required',
-            'Usia' => 'required',
+            'Usia' => 'required|numeric',
             'Alamat' => 'required',
             'Pekerjaan' => 'required',
             'Foto' => 'image|file|max:1024'

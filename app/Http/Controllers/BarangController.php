@@ -58,11 +58,11 @@ class BarangController extends Controller
         //melakukan validasi data
         $request->validate([
             'Nama' => 'required',
-            'Foto' => 'required',
+            'Foto' => 'image|file|max:1024',
             'Pemilik' => 'required',
             'TanggalMasuk' => 'required',
             'TanggalKeluar' => 'required',
-            'HargaGadai' => 'required',
+            'HargaGadai' => 'required|numeric',
             'Status' => 'required',
         ]);
 
@@ -134,11 +134,11 @@ class BarangController extends Controller
         //melakukan validasi data
         $request->validate([
             'Nama' => 'required',
-            'Foto' => 'required',
+            'Foto' => 'image|file|max:1024',
             'Pemilik' => 'required',
             'TanggalMasuk' => 'required',
             'TanggalKeluar' => 'required',
-            'HargaGadai' => 'required',
+            'HargaGadai' => 'required|numeric',
             'Status' => 'required',
         ]);
 

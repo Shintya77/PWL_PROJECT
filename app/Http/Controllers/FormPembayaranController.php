@@ -50,7 +50,7 @@ class FormPembayaranController extends Controller
             'Kd_Pinjaman' => 'required',
             'NamaBarang' => 'required',
             'NamaNasabah' => 'required',
-            'TotalBayar' => 'required',
+            'TotalBayar' => 'required|numeric',
             'TanggaAkhir' => 'required',
             'Status' => 'required',
         ]);
