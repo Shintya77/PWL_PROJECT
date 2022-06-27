@@ -72,6 +72,7 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
+            <a class="btn btn-success mt-3" href="{{ route('gudang.index') }}">Kembali</a>
         </div>
     </div>
 </div>
